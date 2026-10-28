@@ -1,12 +1,56 @@
 {
   "channels": [
-    { "type": "instagram", "name": "Instagram", "handle": "@hyeri_0609", "url": "https://www.instagram.com/hyeri_0609" },
-    { "type": "instagram", "name": "Instagram (Official)", "handle": "@hyeri.official", "url": "https://www.instagram.com/hyeri.official" },
-    { "type": "youtube", "name": "YouTube", "handle": "@IamLeeHyeri", "url": "https://www.youtube.com/@IamLeeHyeri" },
-    { "type": "x", "name": "X (Twitter)", "handle": "@hyeriherihey", "url": "https://x.com/hyeriherihey" },
-    { "type": "weibo", "name": "Weibo", "handle": "Hyeri", "url": "https://weibo.com/u/5985423938" },
-    { "type": "web", "name": "Sublime", "handle": "sublimeartist.co.kr", "url": "https://www.sublimeartist.co.kr/post/hyeri" }
+    {
+      "type": "instagram",
+      "name": "Instagram",
+      "handle": "@hyeri_0609",
+      "url": "https://www.instagram.com/hyeri_0609"
+    },
+    {
+      "type": "instagram",
+      "name": "Instagram (Official)",
+      "handle": "@hyeri.official",
+      "url": "https://www.instagram.com/hyeri.official"
+    },
+    {
+      "type": "youtube",
+      "name": "YouTube",
+      "handle": "@IamLeeHyeri",
+      "url": "https://www.youtube.com/@IamLeeHyeri"
+    },
+    {
+      "type": "x",
+      "name": "X (Twitter)",
+      "handle": "@hyeriherihey",
+      "url": "https://x.com/hyeriherihey"
+    },
+    {
+      "type": "weibo",
+      "name": "Weibo",
+      "handle": "Hyeri",
+      "url": "https://weibo.com/u/5985423938"
+    },
+    {
+      "type": "web",
+      "name": "Sublime",
+      "handle": "sublimeartist.co.kr",
+      "url": "https://www.sublimeartist.co.kr/post/hyeri"
+    }
   ],
   "videos": [],
-  "gallery": []
+  "gallery": [
+    {
+      "src": "images/gallery/1793206444131.webp",
+      "width": 1000,
+      "height": 1248,
+      "caption": {
+        "th": "รูปโปรไฟล์ฮเยริ",
+        "en": "Hyeri profile photo",
+        "ko": "혜리 프로필 사진"
+      },
+      "credit": "",
+      "featured": true,
+      "avatar": true
+    }
+  ]
 }
