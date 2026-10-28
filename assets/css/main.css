@@ -244,6 +244,14 @@ p { margin: 0 0 1em; }
 .chip svg { width: 16px; height: 16px; flex: none; }
 .chip-pink { background: var(--accent-soft); color: var(--accent); box-shadow: none; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Linked chip / inline text link (e.g. profile → Girl's Day) */
+a.chip-link { text-decoration: none; transition: transform .3s var(--ease-pop), background .3s var(--ease-out), box-shadow .3s var(--ease-out); }
+a.chip-link:hover { transform: translateY(-2px) rotate(-1.5deg); box-shadow: var(--shadow-sm); background: var(--surface-2); }
+a.chip-link svg { transition: transform .3s var(--ease-pop); }
+a.chip-link:hover svg { transform: translateX(3px); }
+.text-link { color: var(--accent); font-weight: 700; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: text-decoration-color .3s var(--ease-out); }
+.text-link:hover { text-decoration-color: currentColor; }
+a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .tag { display: inline-block; padding: 2px 10px; border-radius: var(--radius-pill); font-size: .75rem; font-weight: 800; letter-spacing: .3px; }
 .tag-lead { background: #DCEBFF; color: #1F56B0; }

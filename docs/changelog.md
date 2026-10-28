@@ -2,6 +2,10 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-28 — #1 Profile: Girl's Day chip and Group fact link to #/girlsday
+- `profile.js`: the "Girl's Day" chip and the "Group" fact value are now links to `#/girlsday` (all 3 languages, text comes from `profile.json`).
+- `main.css`: new reusable `a.chip-link` (small lift + arrow nudge on hover) and `.text-link` (accent text, underline on hover) with focus-visible ring.
+
 ## 2026-10-28 — First live sync reviewed
 - Pinned the 5 MV YouTube ids (all verified official uploads); C-Clown song title corrected to "Shaking Heart".
 - Added `external.tmdbIgnore` (6 reviewed TMDB credits: variety/YouTube appearances, Chinese duplicate of Reply 1988, a wrong 2007 credit).
