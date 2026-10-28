@@ -1,0 +1,72 @@
+# Runs Claude Code on admin requests.
+# Trigger: an issue gets the "claude-request" label (the Admin page does this),
+# or a maintainer comments "@claude …" on such an issue to ask for revisions.
+# Claude works on branch claude/issue-<n> and opens a PR; the admin publishes it by merging.
+name: Claude builder
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: claude-issue-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      (github.event_name == 'issues' && github.event.label.name == 'claude-request') ||
+      (github.event_name == 'issue_comment' &&
+       !github.event.issue.pull_request &&
+       contains(github.event.issue.labels.*.name, 'claude-request') &&
+       startsWith(github.event.comment.body, '@claude') &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association))
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git identity
+        run: |
+          git config user.name "claude[bot]"
+          git config user.email "claude[bot]@users.noreply.github.com"
+
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 80
+            --allowedTools "Read,Write,Edit,MultiEdit,Glob,Grep,TodoWrite,Bash(git:*),Bash(gh:*),Bash(node:*),Bash(ls:*),Bash(cat:*),Bash(mkdir:*),Bash(mv:*),Bash(rm:*),Bash(cp:*)"
+          prompt: |
+            You are the builder for this fansite repository (${{ github.repository }}).
+            You are handling GitHub issue #${{ github.event.issue.number }}.
+
+            1. Read CLAUDE.md first, then every doc it tells you to read for this kind of task.
+            2. Read the full request and all comments: `gh issue view ${{ github.event.issue.number }} --comments`.
+               The newest "@claude" comment (if any) is a revision request on top of earlier work.
+            3. Branch: `claude/issue-${{ github.event.issue.number }}`.
+               If it already exists on origin, `git fetch origin` and check it out; otherwise create it from origin/main.
+            4. Do the work exactly as CLAUDE.md and docs/ai-workflow.md describe for the request's **Type**.
+            5. Run `node tools/validate.mjs` and fix every error it reports.
+            6. Add an entry to the top of docs/changelog.md.
+            7. Commit with a clear message and `git push -u origin HEAD`.
+            8. If no open PR exists for this branch, create one:
+               `gh pr create --base main --title "<short title>" --body "<Thai summary of changes>\n\nCloses #${{ github.event.issue.number }}"`.
+            9. Comment on the issue in Thai (`gh issue comment`): what changed, which pages/files, anything the admin should check,
+               and remind them to press "เผยแพร่" on the Admin page to publish.
+
+            If the request is unclear, would break CLAUDE.md rules (e.g. copying copyrighted photos, scraping namu.wiki,
+            adding paid services or a server), or is unsafe, do NOT change files — comment on the issue explaining why and asking for what you need.

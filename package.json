@@ -1,0 +1,10 @@
+{
+  "name": "hyeri-fansite",
+  "private": true,
+  "type": "module",
+  "description": "Static fansite — no build step. Node is only used by tools/ in GitHub Actions.",
+  "scripts": {
+    "validate": "node tools/validate.mjs",
+    "sync": "node tools/sync-external.mjs"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "items": [
+    {
+      "year": "Childhood",
+      "yearLabel": { "th": "วัยเด็ก", "en": "Childhood", "ko": "어린 시절" },
+      "title": { "th": "เด็กหญิงผู้อยากเป็นประธานาธิบดี", "en": "The girl who wanted to be president", "ko": "대통령을 꿈꾸던 아이" },
+      "body": {
+        "th": "ฮเยริเติบโตในเมืองควังจู จังหวัดคยองกี ในครอบครัวที่ไม่ได้มีฐานะ แต่เป็นเด็กกระตือรือร้นและชอบเป็นผู้นำ เป็นหัวหน้าห้องทุกปีจนได้เป็นประธานนักเรียนตอนประถม เคยฝันอยากเป็นประธานาธิบดีเพราะชอบยืนอยู่ต่อหน้าผู้คน ก่อนเปลี่ยนเป็นผู้ประกาศข่าว แอร์โฮสเตส และครูภาษาเกาหลี",
+        "en": "Hyeri grew up in Gwangju, Gyeonggi Province, in a family without much money — but she was always the energetic one. She never missed a class-president election and became student council president in elementary school. Her first dream was to be President of Korea, simply because she loved standing in front of people. Later she dreamed of being a news anchor, a flight attendant and a Korean teacher.",
+        "ko": "경기도 광주에서 넉넉하지 않은 환경에서 자랐지만 어릴 때부터 활발하고 리더십이 강했다. 반장 자리를 놓친 적이 없고 초등학교 때는 전교 회장까지 지냈다. 사람들 앞에 서는 게 좋아서 대통령을 꿈꿨고, 이후에는 아나운서, 스튜어디스, 국어 교사를 꿈꾸기도 했다."
+      },
+      "tags": []
+    },
+    {
+      "year": "2010",
+      "title": { "th": "คว้ารางวัล May Queen สู่ Girl's Day", "en": "May Queen winner → Girl's Day", "ko": "메이퀸 선발대회 → 걸스데이 합류" },
+      "body": {
+        "th": "ชมรมเต้นตลอด ม.ต้น ทำให้เธอฝันอยากเป็นนักร้อง แล้วโอกาสก็มาถึงเมื่อเธอชนะการประกวด May Queen ในฐานะผู้ชนะคนแรกที่ไม่ใช่นักเรียนของสถาบัน จึงถูกแคสต์เข้าค่าย Dream T Entertainment และได้เข้าร่วมวง Girl's Day ที่เดบิวต์ไปแล้ว หลังฝึกเพียงช่วงสั้น ๆ เธอเปิดตัวเมื่อ 29 ตุลาคม 2010 กับซิงเกิล ‘Girl's Day Party #2’",
+        "en": "Three years in her middle-school dance club fed her dream of singing. Her break came at the May Queen contest, where she became the first winner who wasn't a student of the hosting academy. Dream T Entertainment cast her and, after an extremely short trainee period, she joined the already-debuted Girl's Day — making her debut on October 29, 2010 with the single “Girl's Day Party #2”.",
+        "ko": "중학교 3년 내내 댄스 동아리에서 활동하며 가수의 꿈을 키웠다. 메이퀸 선발대회에서 비학원생 최초로 수상하며 드림티엔터테인먼트에 캐스팅되었고, 아주 짧은 연습생 기간을 거쳐 이미 데뷔한 걸스데이에 합류했다. 2010년 10월 29일 《Girl's Day Party #2》로 데뷔."
+      },
+      "tags": [{ "th": "Girl's Day", "en": "Girl's Day", "ko": "걸스데이" }]
+    },
+    {
+      "year": "2012",
+      "title": { "th": "เดบิวต์การแสดง & กำเนิด ‘ฮเยริคลีส’", "en": "Acting debut & the birth of “Hyericles”", "ko": "배우 데뷔 & '혜리클레스' 탄생" },
+      "body": {
+        "th": "เริ่มงานแสดงครั้งแรกในละคร SBS ‘Delicious Life’ และสร้างเสียงฮือฮาใน Weekly Idol เมื่อแบกทั้งเดฟคอนและจองฮยองดนขึ้นหลังได้ จนได้ฉายา ‘ฮเยริคลีส’ ความเป็นกันเองแบบไม่สนภาพลักษณ์เริ่มเป็นเสน่ห์ประจำตัวของเธอ",
+        "en": "She made her acting debut in the SBS drama “Delicious Life”. On Weekly Idol she piggybacked both Defconn and Jeong Hyeong-don, earning the nickname “Hyericles” — the start of the bold, down-to-earth charm the public would fall for.",
+        "ko": "SBS 드라마 《맛있는 인생》으로 배우 데뷔. 《주간 아이돌》에서 데프콘과 정형돈을 연달아 업어 '혜리클레스'라는 별명을 얻으며 털털한 매력을 알리기 시작했다."
+      },
+      "tags": [{ "th": "Weekly Idol", "en": "Weekly Idol", "ko": "주간 아이돌" }]
+    },
+    {
+      "year": "2014",
+      "highlight": true,
+      "title": { "th": "Real Men ทหารหญิง — จุดเปลี่ยนชีวิต", "en": "Real Men: Female Soldier Special", "ko": "진짜 사나이 여군특집" },
+      "body": {
+        "th": "การออกรายการ ‘Real Men ตอนพิเศษทหารหญิง’ ทาง MBC ทำให้ฮเยริกลายเป็นที่รู้จักทั่วประเทศ ทั้งความจริงใจ ความพยายาม และท่าอ้อนอันโด่งดัง ส่งให้เธอคว้ารางวัลนักแสดงหน้าใหม่หญิงสาขาวาไรตี้ ในงาน MBC Entertainment Awards ปีเดียวกันยังได้เป็นพิธีกรรายการเพลง The Show ด้วย",
+        "en": "Her stint on MBC's Real Men Female Soldier Special made her a household name — her sincerity, grit and now-legendary aegyo won the country over and earned her the Female Rookie Award (Show/Variety) at the MBC Entertainment Awards. The same year she became an MC of the music show The Show.",
+        "ko": "MBC 《진짜 사나이》 여군특집 출연으로 전 국민적 인지도를 얻었다. 진심 어린 모습과 전설의 애교로 2014 MBC 방송연예대상 쇼 버라이어티 부문 여자 신인상을 수상. 같은 해 음악 방송 《더 쇼》 MC로도 활약했다."
+      },
+      "tags": [{ "th": "รางวัลหน้าใหม่", "en": "Rookie Award", "ko": "신인상" }, { "th": "The Show MC", "en": "The Show MC", "ko": "더 쇼 MC" }]
+    },
+    {
+      "year": "2015",
+      "highlight": true,
+      "title": { "th": "Reply 1988 — ซองด็อกซอน", "en": "Reply 1988 — Sung Deok-sun", "ko": "응답하라 1988 — 성덕선" },
+      "body": {
+        "th": "ทีมผู้สร้าง ผู้กำกับชินวอนโฮและนักเขียนอีอูจอง สร้างตัวละคร ‘ซองด็อกซอน’ โดยได้แรงบันดาลใจจากตัวตนของฮเยริใน Real Men แม้จะมีเสียงกังวลก่อนออกอากาศ แต่ละครกลับทำเรตติ้งทุบสถิติซีรีส์ Reply และบทด็อกซอนที่สดใสและน่ารักก็กลายเป็นบทแจ้งเกิดของเธอในฐานะนักแสดง",
+        "en": "Director Shin Won-ho and writer Lee Woo-jung modelled the character Sung Deok-sun on the Hyeri they saw on Real Men. Despite early doubts, the drama broke the Reply series' ratings record, and her lively, lovable Deok-sun — along with her thoughtful take on the character — became her breakout acting role.",
+        "ko": "신원호 PD와 이우정 작가가 《진짜 사나이》 속 혜리를 모델로 만든 캐릭터 성덕선. 방영 전 우려를 딛고 응답하라 시리즈 최고 시청률을 경신했으며, 사랑스러운 덕선이와 깊이 있는 캐릭터 해석으로 배우로서 인정받았다."
+      },
+      "tags": [{ "th": "tvN", "en": "tvN", "ko": "tvN" }, { "th": "บทนำ", "en": "Lead role", "ko": "주연" }]
+    },
+    {
+      "year": "2016",
+      "title": { "th": "Entertainer และรางวัล New Star", "en": "Entertainer & SBS New Star Award", "ko": "딴따라 & SBS 뉴스타상" },
+      "body": {
+        "th": "รับบท ‘จองกรีน’ สาวพาร์ตไทม์วัยยี่สิบต้น ๆ ใน ‘Entertainer’ ทาง SBS ถึงขั้นเลือกเพลง Shake It Off ของเทย์เลอร์ สวิฟต์ มาใช้ประกอบฉากเอง และได้รางวัล New Star จากงาน SBS Drama Awards",
+        "en": "She played Jung Green, a hard-working twenty-something juggling part-time jobs, in SBS's “Entertainer” — even picking Taylor Swift's “Shake It Off” for the soundtrack herself — and won the New Star Award at the SBS Drama Awards.",
+        "ko": "SBS 《딴따라》에서 '알바의 달인' 정그린 역을 맡았다. 배경음악 테일러 스위프트의 〈Shake It Off〉를 직접 선곡했으며, SBS 연기대상 뉴스타상을 수상했다."
+      },
+      "tags": [{ "th": "SBS", "en": "SBS", "ko": "SBS" }]
+    },
+    {
+      "year": "2017",
+      "title": { "th": "Two Cops — นักข่าวสายเลือดใหม่", "en": "Two Cops — a reporter role", "ko": "투깝스 — 사회부 기자" },
+      "body": {
+        "th": "รับบท ‘ซงจีอัน’ นักข่าวสายสังคมใน ‘Two Cops’ ทาง MBC เธอฝึกฉากรายงานข่าวอย่างหนักจนได้รับคำชม และละครกลายเป็นละครวันธรรมดาที่เรตติ้งสูงสุดของช่อง",
+        "en": "As social-affairs reporter Song Ji-an in MBC's “Two Cops”, she worked hard on her on-air reporting scenes and won praise for them; the show became MBC's highest-rated weekday drama of its run.",
+        "ko": "MBC 《투깝스》에서 사회부 기자 송지안 역을 맡아 리포팅 연기에 공을 들였고, 호평 속에 MBC 평일 드라마 최고 시청률을 기록했다."
+      },
+      "tags": [{ "th": "MBC", "en": "MBC", "ko": "MBC" }]
+    },
+    {
+      "year": "2018",
+      "highlight": true,
+      "title": { "th": "Amazing Saturday & ภาพยนตร์เรื่องแรก", "en": "Amazing Saturday & first film", "ko": "놀라운 토요일 & 첫 영화" },
+      "body": {
+        "th": "เปิดตัวบนจอใหญ่ใน ‘Monstrum’ (물괴) และเข้าร่วมเป็นสมาชิกประจำ ‘Amazing Saturday’ ของ tvN (2018–2020) ท่าเต้นสุดพลังทุกครั้งที่ตอบถูกในเกมขนม การเป็นเลขาจดคำตอบ และการดูแลแขกรับเชิญอย่างอบอุ่น ทำให้เธอได้ฉายา ‘พาวเวอร์เซเลบ’ วันที่เธอลาออกจากรายการ ชื่อของเธอติดเทรนด์อันดับหนึ่ง",
+        "en": "She made her big-screen debut in “Monstrum” and joined tvN's “Amazing Saturday” as a regular (2018–2020). Her all-out victory dances in the snack game, her role as the team's note-taker and the warm way she looked after guests earned her the title “Power Celebrity”. When she announced her departure, it trended at #1.",
+        "ko": "영화 《물괴》로 스크린 데뷔. tvN 《놀라운 토요일》 고정 멤버(2018–2020)로 간식 게임 세레머니 댄스, 받쓰 서기, 게스트를 챙기는 따뜻함으로 '파워 연예인'이라는 별명을 얻었다. 하차 소식은 실시간 트렌드 1위에 올랐다."
+      },
+      "tags": [{ "th": "tvN", "en": "tvN", "ko": "tvN" }, { "th": "ภาพยนตร์", "en": "Film", "ko": "영화" }]
+    },
+    {
+      "year": "2019",
+      "title": { "th": "นางเอกเต็มตัวใน Miss Lee", "en": "First leading lady: Miss Lee", "ko": "첫 타이틀롤: 청일전자 미쓰리" },
+      "body": {
+        "th": "รับบทนำ ‘อีซอนชิม’ พนักงานบัญชีระดับล่างที่จู่ ๆ ก็ต้องขึ้นเป็นประธานบริษัทที่ใกล้ล้มละลาย ใน ‘Miss Lee’ ของ tvN ช่วงเดียวกันเธอเปิดช่อง YouTube ‘나는이혜리’ ซึ่งต่อมาคว้าโกลด์เพลย์บัตตอน",
+        "en": "In tvN's “Miss Lee” she led as Lee Sun-sim, a junior clerk who suddenly becomes CEO of a company on the edge of bankruptcy. Around this time she also grew her YouTube channel “I am Lee Hyeri”, which later earned a Gold Play Button.",
+        "ko": "tvN 《청일전자 미쓰리》에서 망해가는 회사의 사장이 된 말단 경리 이선심 역으로 주연을 맡았다. 유튜브 채널 '나는이혜리'도 사랑받으며 골드 플레이 버튼을 받았다."
+      },
+      "tags": [{ "th": "YouTube", "en": "YouTube", "ko": "유튜브" }]
+    },
+    {
+      "year": "2021",
+      "title": { "th": "My Roommate Is a Gumiho & Moonshine", "en": "My Roommate Is a Gumiho & Moonshine", "ko": "간 떨어지는 동거 & 꽃 피면 달 생각하고" },
+      "body": {
+        "th": "เคมีกับจางกียงในบท ‘อีดัม’ นักศึกษาที่ไม่สนเรื่องความรักใน ‘My Roommate Is a Gumiho’ กลายเป็นกระแส ปลายปีรับบท ‘คังโรซอ’ ขุนนางยากจนที่แอบต้มเหล้าในยุคห้ามสุรา ใน ‘Moonshine’ ทาง KBS ซึ่งคว้ารางวัลความเป็นเลิศจาก KBS Drama Awards",
+        "en": "Her chemistry with Jang Ki-yong as Lee Dam, a no-romance-please college student in tvN's “My Roommate Is a Gumiho”, became a hot topic. Later that year she played Kang Ro-seo, an impoverished noblewoman secretly brewing liquor during a prohibition era, in KBS's “Moonshine” — winning an Excellence Award at the KBS Drama Awards.",
+        "ko": "tvN 《간 떨어지는 동거》의 연애에 관심 없는 대학생 이담 역으로 장기용과의 케미가 화제가 되었다. 연말 KBS 《꽃 피면 달 생각하고》에서 금주령 시대에 몰래 술을 빚는 몰락 양반 강로서 역으로 KBS 연기대상 우수상을 수상했다."
+      },
+      "tags": [{ "th": "tvN", "en": "tvN", "ko": "tvN" }, { "th": "KBS", "en": "KBS", "ko": "KBS" }]
+    },
+    {
+      "year": "2022",
+      "title": { "th": "May I Help You? — ผู้ช่วยผู้ล่วงลับ", "en": "May I Help You?", "ko": "일당백집사" },
+      "body": {
+        "th": "รับบท ‘แพ็กดงจู’ สัปเหร่อที่ได้ยินคำขอสุดท้ายของผู้เสียชีวิต ใน ‘May I Help You?’ ทาง MBC การแสดงอันอบอุ่นทำให้ได้รางวัลการแสดงยอดเยี่ยม สาขามินิซีรีส์ จาก MBC Drama Awards",
+        "en": "As funeral director Baek Dong-ju, who can hear the last wishes of the dead, in MBC's “May I Help You?”, her warm performance won an Excellence Award (Miniseries) at the MBC Drama Awards.",
+        "ko": "MBC 《일당백집사》에서 망자의 부탁을 들어주는 장례지도사 백동주 역으로 따뜻한 연기를 선보이며 MBC 연기대상 미니시리즈 부문 우수연기상을 받았다."
+      },
+      "tags": [{ "th": "MBC", "en": "MBC", "ko": "MBC" }]
+    },
+    {
+      "year": "2024",
+      "highlight": true,
+      "title": { "th": "Victory — เชียร์ลีดเดอร์บนจอใหญ่", "en": "Victory — leading the cheer", "ko": "빅토리 — 스크린 주연" },
+      "body": {
+        "th": "รับบทนำ ‘พิลซอน’ เด็ก ม.ปลายที่ฝันอยากเป็นเชียร์ลีดเดอร์ใน ‘Victory’ ประสบการณ์ไอดอลของเธอเฉิดฉายในฉากเต้นมากมาย ผลงานนี้คว้ารางวัล Screen International Rising Star Asia ที่เทศกาลภาพยนตร์เอเชียนิวยอร์ก และรางวัลนักแสดงหญิงหน้าใหม่จาก Buil Film Awards ในปีต่อมา ปีเดียวกันยังร่วมรายการ ‘Agents of Mystery’ ทาง Netflix",
+        "en": "She led the film “Victory” as Pil-seon, a high-schooler who dreams of becoming a cheerleader — her idol background shines in its many dance scenes. The role brought her the Screen International Rising Star Asia Award at the New York Asian Film Festival and, the following year, Best New Actress at the Buil Film Awards. She also starred in Netflix's variety show “Agents of Mystery”.",
+        "ko": "영화 《빅토리》에서 치어리더를 꿈꾸는 고등학생 필선 역으로 주연을 맡아 걸그룹 출신다운 댄스 실력을 보여줬다. 뉴욕 아시안 영화제 스크린 인터내셔널 라이징 스타 아시아 어워드, 이듬해 부일영화상 신인 여자연기상을 수상. 넷플릭스 예능 《미스터리 수사단》에도 출연했다."
+      },
+      "tags": [{ "th": "ภาพยนตร์", "en": "Film", "ko": "영화" }, { "th": "Netflix", "en": "Netflix", "ko": "넷플릭스" }]
+    },
+    {
+      "year": "2025",
+      "highlight": true,
+      "title": { "th": "Friendly Rivalry — บทพลิกภาพลักษณ์", "en": "Friendly Rivalry — a bold new turn", "ko": "선의의 경쟁 — 새로운 인생 캐릭터" },
+      "body": {
+        "th": "เธอเลือกบท ‘ยูเจอี’ ที่แตกต่างจากภาพลักษณ์เดิมโดยสิ้นเชิงในซีรีส์ทริลเลอร์ ‘Friendly Rivalry’ ของ U+ ทั้งที่ต้นสังกัดไม่เห็นด้วยในตอนแรก ซีรีส์ได้รับความนิยมอย่างมากในจีนและไต้หวัน จนเธอได้จัดแฟนมีตติ้งเดี่ยวที่จีน และคว้ารางวัลมากมายรวมถึง Best Actor จาก AAA 2025",
+        "en": "In the U+ Original thriller “Friendly Rivalry” she chose the role of Yoo Je-i — a sharp contrast to her usual image, and a choice she made even though her agency was initially against it. The series became a hit across Greater China, leading to a solo fan meeting in China, and swept awards including Best Actor at AAA 2025.",
+        "ko": "U+ 오리지널 《선의의 경쟁》에서 기존 이미지와 정반대인 유제이 역을 직접 선택했다. 중화권에서 큰 사랑을 받아 중국 단독 팬미팅까지 열었으며, AAA 2025 베스트 액터상 등 다수의 상을 받았다."
+      },
+      "tags": [{ "th": "U+", "en": "U+", "ko": "U+" }, { "th": "AAA 2025", "en": "AAA 2025", "ko": "AAA 2025" }]
+    },
+    {
+      "year": "2026",
+      "title": { "th": "ผลงานใหม่ปี 2026", "en": "New projects in 2026", "ko": "2026년 새로운 작품들" },
+      "body": {
+        "th": "ปี 2026 มีทั้งละคร ENA ‘Dream to You’ (그대에게 드림) ในบท ‘จูอีแจ’ ภาพยนตร์ ‘Tropical Night’ (열대야) ในบท ‘อาริ’ รายการ ‘Agents of Mystery 2’ และรายการพิเศษครบรอบ 10 ปี Reply 1988",
+        "en": "2026 brings the ENA drama “Dream to You” (as Joo Yi-jae), the film “Tropical Night” (as Ari), Netflix's “Agents of Mystery 2”, and the Reply 1988 10th-anniversary reunion show.",
+        "ko": "2026년에는 ENA 드라마 《그대에게 드림》(주이재 역), 영화 《열대야》(아리 역), 《미스터리 수사단 2》, 《응답하라 1988 10주년》으로 활약 중이다."
+      },
+      "tags": [{ "th": "ENA", "en": "ENA", "ko": "ENA" }]
+    }
+  ]
+}

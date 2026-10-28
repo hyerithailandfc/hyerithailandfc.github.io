@@ -1,0 +1,39 @@
+# Pulls posters/synopses from TMDB and MV/channel data from YouTube into data/*.json.
+# Runs every Monday, and on demand from the Admin page ("ดึงข้อมูลใหม่ตอนนี้").
+name: Sync TMDB & YouTube
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-external
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fetch TMDB + YouTube data
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node tools/sync-external.mjs
+      - run: node tools/validate.mjs
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/tmdb.json data/youtube.json
+          git commit -m "data: sync TMDB & YouTube"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push

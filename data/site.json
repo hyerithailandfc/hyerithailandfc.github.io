@@ -1,0 +1,27 @@
+{
+  "brand": {
+    "name": "Hyeri Thailand FC"
+  },
+  "source": {
+    "name": "namu.wiki — 혜리",
+    "url": "https://namu.wiki/w/%ED%98%9C%EB%A6%AC",
+    "license": "CC BY-NC-SA 2.0 KR",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
+    "sourceLastModified": "2026-10-04",
+    "lastSynced": "2026-10-28"
+  },
+  "external": {
+    "tmdbPersonId": null,
+    "tmdbPersonQueries": ["Lee Hye-ri", "Hyeri"],
+    "youtubeChannelHandle": "@IamLeeHyeri"
+  },
+  "pages": [
+    { "id": "home",    "path": "/",        "module": "home.js",    "label": { "th": "หน้าแรก",   "en": "Home",     "ko": "홈" } },
+    { "id": "profile", "path": "/profile", "module": "profile.js", "label": { "th": "โปรไฟล์",   "en": "Profile",  "ko": "프로필" } },
+    { "id": "journey", "path": "/journey", "module": "journey.js", "label": { "th": "เส้นทาง",   "en": "Journey",  "ko": "발자취" } },
+    { "id": "works",   "path": "/works",   "module": "works.js",   "label": { "th": "ผลงาน",     "en": "Works",    "ko": "출연작" } },
+    { "id": "awards",  "path": "/awards",  "module": "awards.js",  "label": { "th": "รางวัล",     "en": "Awards",   "ko": "수상" } },
+    { "id": "media",   "path": "/media",   "module": "media.js",   "label": { "th": "มีเดีย",     "en": "Media",    "ko": "미디어" } },
+    { "id": "about",   "path": "/about",   "module": "about.js",   "label": { "th": "เกี่ยวกับ",  "en": "About",    "ko": "소개" } }
+  ]
+}

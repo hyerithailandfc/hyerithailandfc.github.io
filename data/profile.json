@@ -1,0 +1,52 @@
+{
+  "stageName": { "th": "ฮเยริ", "en": "Hyeri", "ko": "혜리" },
+  "realName": { "th": "อี ฮเยริ", "en": "Lee Hye-ri", "ko": "이혜리 (李惠利)" },
+  "birthDate": "1994-06-09",
+  "birthplace": {
+    "th": "เมืองควังจู จังหวัดคยองกี ประเทศเกาหลีใต้",
+    "en": "Gwangju, Gyeonggi Province, South Korea",
+    "ko": "경기도 광주시 곤지암읍 만선리"
+  },
+  "heightCm": 167,
+  "bloodType": "AB",
+  "mbti": "ESTJ",
+  "agency": { "th": "Sublime (써브라임)", "en": "Sublime", "ko": "써브라임" },
+  "group": { "th": "Girl's Day (걸스데이)", "en": "Girl's Day", "ko": "걸스데이" },
+  "position": { "th": "ซับโวคอล, ลีดแดนเซอร์", "en": "Sub vocalist, lead dancer", "ko": "서브보컬, 리드댄서" },
+  "fandom": { "th": "HYEROOMY (ฮเยรูมี)", "en": "HYEROOMY", "ko": "혜루미 (HYEROOMY)" },
+  "debutSinger": {
+    "date": "2010-10-29",
+    "work": { "th": "Girl's Day ซิงเกิลที่ 2 ‘Girl's Day Party #2’", "en": "Girl's Day's 2nd single “Girl's Day Party #2”", "ko": "걸스데이 싱글 2집 《Girl's Day Party #2》" }
+  },
+  "debutActor": {
+    "date": "2012-04-28",
+    "work": { "th": "ละคร SBS ‘Delicious Life’", "en": "SBS drama “Delicious Life”", "ko": "SBS 드라마 《맛있는 인생》" }
+  },
+  "education": [
+    { "name": { "th": "โรงเรียนประถมซัมรี", "en": "Samri Elementary School", "ko": "삼리초등학교" }, "note": { "th": "จบการศึกษา", "en": "Graduated", "ko": "졸업" } },
+    { "name": { "th": "โรงเรียนมัธยมหญิงคยองฮวา", "en": "Gyeonghwa Girls' Middle School", "ko": "경화여자중학교" }, "note": { "th": "ย้ายโรงเรียน", "en": "Transferred", "ko": "전학" } },
+    { "name": { "th": "โรงเรียนมัธยมต้นการัก", "en": "Garak Middle School", "ko": "가락중학교" }, "note": { "th": "จบการศึกษา", "en": "Graduated", "ko": "졸업" } },
+    { "name": { "th": "โรงเรียนมัธยมหญิงจัมชิล", "en": "Jamsil Girls' High School", "ko": "잠실여자고등학교" }, "note": { "th": "ย้ายโรงเรียน", "en": "Transferred", "ko": "전학" } },
+    { "name": { "th": "โรงเรียนศิลปะการแสดงโซล (SOPA)", "en": "School of Performing Arts Seoul", "ko": "서울공연예술고등학교" }, "note": { "th": "สาขาดนตรีประยุกต์ / จบการศึกษา", "en": "Applied Music / Graduated", "ko": "실용음악과 / 졸업" } },
+    { "name": { "th": "มหาวิทยาลัยคอนกุก", "en": "Konkuk University", "ko": "건국대학교 예술디자인대학" }, "note": { "th": "สาขาภาพยนตร์ / ปริญญาตรี", "en": "Film Studies / Bachelor's degree", "ko": "영화학 / 학사" } }
+  ],
+  "family": {
+    "th": "คุณพ่อ คุณแม่ และน้องสาว 1 คน (อี ฮเยริม เกิดปี 1996)",
+    "en": "Father, mother and one younger sister (Lee Hye-rim, born 1996)",
+    "ko": "아버지, 어머니, 여동생 이혜림 (1996년생)"
+  },
+  "nicknames": [
+    { "name": { "th": "ด็อกซอน", "en": "Deok-sun", "ko": "덕선이" }, "desc": { "th": "จากบท ซองด็อกซอน ใน Reply 1988", "en": "From her iconic role Sung Deok-sun in Reply 1988", "ko": "《응답하라 1988》 성덕선 역에서" } },
+    { "name": { "th": "พาวเวอร์เซเลบ", "en": "Power Celebrity", "ko": "파워 연예인" }, "desc": { "th": "อันจียองตั้งให้ตอนมาเป็นแขกใน Amazing Saturday", "en": "Coined by guest Ahn Ji-young on Amazing Saturday", "ko": "《놀라운 토요일》 게스트 안지영이 붙인 별명" } },
+    { "name": { "th": "ปโปรี", "en": "Ppori", "ko": "뽀리" }, "desc": { "th": "เพราะชอบแอบ ‘ฉก’ ขนมคนอื่นในรายการ Amazing Saturday", "en": "For sneakily snatching other people's snacks on Amazing Saturday", "ko": "도레미마켓에서 남의 간식을 자주 '뽀려서'" } },
+    { "name": { "th": "ฮเยริคลีส", "en": "Hyericles", "ko": "혜리클레스" }, "desc": { "th": "จาก Weekly Idol ปี 2012 ที่เธอแบกเดฟคอนและจองฮยองดนขึ้นหลังได้", "en": "From Weekly Idol (2012), where she piggybacked both Defconn and Jeong Hyeong-don", "ko": "2012년 《주간 아이돌》에서 데프콘과 정형돈을 업어서" } },
+    { "name": { "th": "ฮเยรีเคน", "en": "Hyeri-cane", "ko": "혜리케인" }, "desc": { "th": "พลังความสดใสที่พัดทุกอย่างเหมือนพายุ", "en": "Her energy hits like a hurricane", "ko": "허리케인 같은 에너지" } },
+    { "name": { "th": "ฮเยร์ไมโอนี่", "en": "Hyermione", "ko": "혜르미온느" }, "desc": { "th": "ฉายาสาวฉลาดแบบเฮอร์ไมโอนี่", "en": "A Hermione-style nickname for her quick wits", "ko": "헤르미온느처럼 똑똑해서" } },
+    { "name": { "th": "โคบงอี", "en": "Kobong-i", "ko": "코봉이" }, "desc": { "th": "ฉายาน่ารัก ๆ จากแฟน ๆ", "en": "A cute nickname from fans", "ko": "팬들이 부르는 귀여운 별명" } },
+    { "name": { "th": "โคกดัส", "en": "Coke-das", "ko": "코크다스" }, "desc": { "th": "ได้รับการ ‘รับรอง’ ในรายการ Knowing Bros", "en": "Officially ‘certified’ on Knowing Bros", "ko": "《아는 형님》 공식 인증" } },
+    { "name": { "th": "ฮเยริโดซา", "en": "Hyeri Dosa", "ko": "혜리도사" }, "desc": { "th": "ท่านเซียนฮเยริ", "en": "‘Master Hyeri’", "ko": "도사 혜리" } },
+    { "name": { "th": "นายพลฮเยล", "en": "General Hyel", "ko": "혤장군" }, "desc": { "th": "ความเท่และเป็นผู้นำ", "en": "For her bold, leader-like charisma", "ko": "장군 같은 카리스마" } },
+    { "name": { "th": "ฮเยริจอง", "en": "Hyeri-jeong", "ko": "혜리정" }, "desc": { "th": "อีกหนึ่งฉายาจากแฟน ๆ", "en": "Another fan favourite", "ko": "팬들이 부르는 별명" } },
+    { "name": { "th": "มัคซึดล", "en": "Marx-dol", "ko": "맑스돌" }, "desc": { "th": "ฉายาขำ ๆ ในโลกออนไลน์", "en": "A playful internet nickname", "ko": "인터넷 밈 별명" } }
+  ]
+}
