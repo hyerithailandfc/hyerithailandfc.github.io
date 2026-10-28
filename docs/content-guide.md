@@ -55,7 +55,8 @@ Matching keys come from `workKey()` in `assets/js/core.js`: `drama:<title.ko>`, 
 - `tmdb.json`: `person {id, name, profile, url, images[]}`, `works { <workKey>: {tmdbId, type, url, poster, backdrop, rating, votes, character, title{th,en,ko}, overview{th,en,ko}} }`, `unmatched[]` (TMDB credits not in works.json).
 - `youtube.json`: `channel {id, title, handle, url, thumbnail, subscribers, videos, views}`, `latest[] {id, title, channel, publishedAt, views}`, `mv { <workKey>: {id, pinned, title, channel, publishedAt, views} }`.
 Pages read them through `loadExternal()` and must still look complete when they are empty (before the first sync or without API keys).
-Sync settings live in `data/site.json → external` (`tmdbPersonId`, `tmdbPersonQueries`, `youtubeChannelHandle`).
+Sync settings live in `data/site.json → external` (`tmdbPersonId`, `tmdbPersonQueries`, `tmdbIgnore`, `youtubeChannelHandle`).
+`tmdbIgnore` = TMDB ids reviewed and rejected (variety/YouTube appearances, duplicates, wrong credits) so they stop appearing in the Admin "not on the site" list.
 
 `data/awards.json` — `items[]`: `year` (number), `ceremony`, `category`, optional `work`.
 

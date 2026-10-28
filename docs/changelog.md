@@ -2,6 +2,11 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-28 — First live sync reviewed
+- Pinned the 5 MV YouTube ids (all verified official uploads); C-Clown song title corrected to "Shaking Heart".
+- Added `external.tmdbIgnore` (6 reviewed TMDB credits: variety/YouTube appearances, Chinese duplicate of Reply 1988, a wrong 2007 credit).
+  "Treat Her with Caution (그녀는, 취급주의)" left visible — not yet confirmed by namu.wiki.
+
 ## 2026-10-28 — Girl's Day page, compact mobile logo, TMDB verified
 - New page `#/girlsday` (`data/girlsday.json`): intro, 4 members, 20 releases with 19 playable official MVs, album/single filter, "before Hyeri" tags.
   YouTube sync now also fetches view counts for these MVs (`mvTargets()` in tools/lib/external.mjs).

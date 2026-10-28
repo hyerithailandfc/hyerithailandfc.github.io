@@ -13,6 +13,7 @@
   "external": {
     "tmdbPersonId": 1413827,
     "tmdbPersonQueries": ["Lee Hye-ri", "Hyeri"],
+    "tmdbIgnore": [284884, 331530, 206726, 340004, 129512, 62915],
     "youtubeChannelHandle": "@IamLeeHyeri"
   },
   "pages": [

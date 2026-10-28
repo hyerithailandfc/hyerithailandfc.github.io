@@ -70,10 +70,10 @@
     { "year": "2022", "title": { "en": "2022 KBS Drama Awards", "ko": "2022 KBS 연기대상" }, "kind": "main", "cohosts": { "en": "Jun Hyun-moo, Jung Yong-hwa", "ko": "전현무, 정용화" } }
   ],
   "mv": [
-    { "year": 2013, "artist": { "en": "Wonder Boys", "ko": "원더 보이즈" }, "song": { "en": "Tarzan", "ko": "타잔" } },
-    { "year": 2013, "artist": { "en": "NC.A", "ko": "앤씨아" }, "song": { "en": "Student Teacher (Drama Ver.)", "ko": "교생쌤 (드라마 Ver.)" } },
-    { "year": 2013, "artist": { "en": "C-Clown", "ko": "씨클라운" }, "song": { "en": "Shaking", "ko": "흔들리고 있어" } },
-    { "year": 2023, "artist": { "en": "Tabber", "ko": "Tabber" }, "song": { "en": "Being (feat. Baek Yerin)", "ko": "Being (feat. 백예린)" } },
-    { "year": 2024, "artist": { "en": "John Park", "ko": "존박" }, "song": { "en": "Like a Dream", "ko": "꿈처럼" } }
+    { "year": 2013, "artist": { "en": "Wonder Boys", "ko": "원더 보이즈" }, "song": { "en": "Tarzan", "ko": "타잔" }, "youtubeId": "_WKkX-4HHP0" },
+    { "year": 2013, "artist": { "en": "NC.A", "ko": "앤씨아" }, "song": { "en": "Student Teacher (Drama Ver.)", "ko": "교생쌤 (드라마 Ver.)" }, "youtubeId": "xfLN-GR2JAY" },
+    { "year": 2013, "artist": { "en": "C-Clown", "ko": "씨클라운" }, "song": { "en": "Shaking Heart", "ko": "흔들리고 있어" }, "youtubeId": "0e56l-8K3jU" },
+    { "year": 2023, "artist": { "en": "Tabber", "ko": "Tabber" }, "song": { "en": "Being (feat. Baek Yerin)", "ko": "Being (feat. 백예린)" }, "youtubeId": "JWqb9mSTnD8" },
+    { "year": 2024, "artist": { "en": "John Park", "ko": "존박" }, "song": { "en": "Like a Dream", "ko": "꿈처럼" }, "youtubeId": "VmRleZXUJ9I" }
   ]
 }

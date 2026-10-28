@@ -113,8 +113,9 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
     }
   }
 
+  const ignore = new Set(config.tmdbIgnore || []); // credits the admin reviewed and decided not to add
   out.unmatched = cast
-    .filter((c) => !matched.has(`${c.media_type}:${c.id}`))
+    .filter((c) => !matched.has(`${c.media_type}:${c.id}`) && !ignore.has(c.id))
     .filter((c) => c.media_type === 'movie' || !(c.genre_ids || []).some((g) => NON_SCRIPTED_TV.has(g)))
     .map((c) => ({
       tmdbId: c.id, type: c.media_type, title: nameOf(c), original: c.original_title || c.original_name || '',
