@@ -2,6 +2,13 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-28 — Girl's Day page, compact mobile logo, TMDB verified
+- New page `#/girlsday` (`data/girlsday.json`): intro, 4 members, 20 releases with 19 playable official MVs, album/single filter, "before Hyeri" tags.
+  YouTube sync now also fetches view counts for these MVs (`mvTargets()` in tools/lib/external.mjs).
+- Header: compact two-line logo on phones ≤420px (mark only ≤340px); nav switches to the drawer below 1040px (8 items).
+- TMDB key verified: person id 1413827 pinned; all 18 dramas/films match. English titles fixed from TMDB: "My Punch-Drunk Boxer", "Night Fever".
+- Works: official Thai titles from TMDB shown in Thai mode; MV tab links to the Girl's Day page.
+
 ## 2026-10-28 — Fan base name "Hyeri Thailand FC"
 - Added `brand.name` to `data/site.json`; header logo now reads HYERI / THAILAND FC; tab titles, footer and admin use the name.
 - `ui()` fills `{brand}` in any UI string; home hero has a "บ้านเบส Hyeri Thailand FC" chip; About/footer texts now describe a Thai fan base (TH/EN/KR).

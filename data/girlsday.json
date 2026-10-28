@@ -1,0 +1,39 @@
+{
+  "debut": "2010-07-09",
+  "hyeriJoined": "2010-10-29",
+  "fandom": { "th": "DAI5Y (เดซี่)", "en": "DAI5Y", "ko": "DAI5Y (데이지)" },
+  "agency": { "th": "Dream T Entertainment (2010–2019)", "en": "Dream T Entertainment (2010–2019)", "ko": "드림티엔터테인먼트 (2010–2019)" },
+  "intro": {
+    "th": "Girl's Day เดบิวต์เมื่อ 9 กรกฎาคม 2010 กับค่าย Dream T Entertainment ทักทายแฟน ๆ ด้วยประโยค “Everyday, Girl's Day!” ฮเยริเข้าร่วมวงในเดือนตุลาคมปีเดียวกันกับซิงเกิล ‘Girl's Day Party #2’ หลังจากช่วงแรกที่ต้องสู้หนัก วงคว้าที่หนึ่งรายการเพลงครั้งแรกด้วยเพลง ‘Female President’ ในปี 2013 แล้วก้าวขึ้นเป็นเกิร์ลกรุ๊ประดับแถวหน้าด้วย ‘Something’ และ ‘Darling’ ในปี 2014 แม้สัญญากับต้นสังกัดจะสิ้นสุดในปี 2019 แต่วงไม่เคยประกาศยุบ ทั้งสี่คนยังคงสนิทกันและทำงานด้านการแสดงเป็นหลัก",
+    "en": "Girl's Day debuted on July 9, 2010 under Dream T Entertainment, greeting fans with “Everyday, Girl's Day!”. Hyeri joined that October with “Girl's Day Party #2”. After a hard-fought start, the group won its first music-show trophy with “Female President” in 2013, then became one of the top girl groups with “Something” and “Darling” in 2014. Their contracts ended in 2019, but the group never disbanded — the four members stay close and now mainly work as actresses.",
+    "ko": "걸스데이는 2010년 7월 9일 드림티엔터테인먼트에서 데뷔한 4인조 걸그룹으로, “Everyday, Girl's Day!”라는 인사로 사랑받았다. 혜리는 같은 해 10월 《Girl's Day Party #2》로 합류했다. 힘든 시기를 지나 2013년 〈여자 대통령〉으로 첫 음악방송 1위를 차지했고, 2014년 〈Something〉과 〈Darling〉으로 정상급 걸그룹이 되었다. 2019년 전속계약이 만료되었지만 해체를 선언하지 않았으며, 네 멤버는 지금도 끈끈한 우정을 이어가며 주로 배우로 활동하고 있다."
+  },
+  "members": [
+    { "name": { "th": "โซจิน", "en": "Sojin", "ko": "소진" }, "birthDate": "1986-05-21", "position": { "th": "ลีดเดอร์, ลีดโวคอล", "en": "Leader, lead vocalist", "ko": "리더, 리드보컬" } },
+    { "name": { "th": "ยูรา", "en": "Yura", "ko": "유라" }, "birthDate": "1992-11-06", "position": { "th": "เมนแร็ปเปอร์, เมนแดนเซอร์, ซับโวคอล", "en": "Main rapper, main dancer, sub vocalist", "ko": "메인래퍼, 메인댄서, 서브보컬" } },
+    { "name": { "th": "มินอา", "en": "Minah", "ko": "민아" }, "birthDate": "1993-05-13", "position": { "th": "เมนโวคอล", "en": "Main vocalist", "ko": "메인보컬" } },
+    { "name": { "th": "ฮเยริ", "en": "Hyeri", "ko": "혜리" }, "birthDate": "1994-06-09", "position": { "th": "ลีดแดนเซอร์, ซับโวคอล", "en": "Lead dancer, sub vocalist", "ko": "리드댄서, 서브보컬" }, "isHyeri": true }
+  ],
+  "releases": [
+    { "date": "2010-07-09", "type": "single", "album": { "en": "Girl's Day Party #1", "ko": "Girl's Day Party #1" }, "title": { "en": "Tilt My Head", "ko": "갸우뚱" }, "youtubeId": "jGec7pMBvsk", "withHyeri": false },
+    { "date": "2010-07-22", "type": "digital", "album": { "en": "How About Me?", "ko": "나 어때" }, "title": { "en": "How About Me?", "ko": "나 어때" }, "youtubeId": "7cT7FAkQZ2Q", "withHyeri": false },
+    { "date": "2010-10-29", "type": "single", "album": { "en": "Girl's Day Party #2", "ko": "Girl's Day Party #2" }, "title": { "en": "Nothing Lasts Forever", "ko": "잘해줘봐야" }, "youtubeId": "JE-FUZPic2E", "withHyeri": true },
+    { "date": "2011-03-18", "type": "single", "album": { "en": "Girl's Day Party #3", "ko": "Girl's Day Party #3" }, "title": { "en": "Twinkle Twinkle", "ko": "반짝반짝" }, "youtubeId": "DWpl2CaCnVA", "withHyeri": true },
+    { "date": "2011-07-07", "type": "mini", "album": { "en": "Everyday", "ko": "Everyday" }, "title": { "en": "Hug Me Once", "ko": "한번만 안아줘" }, "youtubeId": "yebXjZA60OQ", "withHyeri": true },
+    { "date": "2011-09-02", "type": "single", "album": { "en": "Girl's Day Party #4", "ko": "Girl's Day Party #4" }, "title": { "en": "Don't Flirt", "ko": "너, 한눈 팔지마!" }, "youtubeId": "QuOu31aIiKY", "withHyeri": true },
+    { "date": "2012-04-18", "type": "mini", "album": { "en": "Everyday II", "ko": "Everyday Ⅱ" }, "title": { "en": "Oh! My God", "ko": "Oh! My God" }, "youtubeId": "O-Ep0N5Eyeg", "withHyeri": true },
+    { "date": "2012-10-26", "type": "single", "album": { "en": "Girl's Day Party #5", "ko": "Girl's Day Party #5" }, "title": { "en": "Don't Forget Me", "ko": "나를 잊지마요" }, "youtubeId": "w2S7ljcA7NM", "withHyeri": true },
+    { "date": "2013-02-21", "type": "special", "album": { "en": "White Day", "ko": "White Day" }, "title": { "en": "White Day", "ko": "White Day" }, "youtubeId": "0gnk16ShL_g", "withHyeri": true },
+    { "date": "2013-03-14", "type": "album", "album": { "en": "Expectation", "ko": "기대" }, "title": { "en": "Expect", "ko": "기대해" }, "youtubeId": "iUtGJtyoIfg", "withHyeri": true },
+    { "date": "2013-06-24", "type": "repackage", "album": { "en": "Female President", "ko": "여자 대통령" }, "title": { "en": "Female President", "ko": "여자 대통령" }, "youtubeId": "xF3MC8PWgJE", "withHyeri": true },
+    { "date": "2013-07-30", "type": "single", "album": { "en": "Girl's Day Party #6", "ko": "Girl's Day Party #6" }, "title": { "en": "Please Tell Me", "ko": "말해줘요" }, "youtubeId": null, "withHyeri": true },
+    { "date": "2013-10-15", "type": "digital", "album": { "en": "Let's Go", "ko": "Let's Go" }, "title": { "en": "Let's Go", "ko": "Let's Go" }, "youtubeId": "7AhLCDUUBa8", "withHyeri": true },
+    { "date": "2014-01-03", "type": "mini", "album": { "en": "Everyday III", "ko": "Everyday III" }, "title": { "en": "Something", "ko": "Something" }, "youtubeId": "akPDKYwIoVk", "withHyeri": true },
+    { "date": "2014-07-14", "type": "mini", "album": { "en": "Everyday #4", "ko": "Everyday #4" }, "title": { "en": "Darling", "ko": "Darling" }, "youtubeId": "JP9NuaxhgcM", "withHyeri": true },
+    { "date": "2014-10-15", "type": "digital", "album": { "en": "I Miss You", "ko": "보고싶어" }, "title": { "en": "I Miss You", "ko": "보고싶어" }, "youtubeId": "EAc3QKoRll0", "withHyeri": true },
+    { "date": "2015-05-12", "type": "digital", "album": { "en": "Hello Bubble", "ko": "Hello Bubble" }, "title": { "en": "Hello Bubble", "ko": "Hello Bubble" }, "youtubeId": "6RSbj-_UG14", "withHyeri": true },
+    { "date": "2015-07-07", "type": "album", "album": { "en": "Love", "ko": "LOVE" }, "title": { "en": "Ring My Bell", "ko": "링마벨" }, "youtubeId": "WMu6TOJaqDE", "withHyeri": true },
+    { "date": "2015-09-30", "type": "japan", "album": { "en": "Darling (Japanese Version)", "ko": "Darling \"JPN Ver.\"" }, "title": { "en": "Darling (Japanese Version)", "ko": "Darling (JPN Ver.)" }, "youtubeId": "U8X2q-2h-GM", "withHyeri": true },
+    { "date": "2017-03-27", "type": "mini", "album": { "en": "Everyday #5", "ko": "Everyday #5" }, "title": { "en": "I'll Be Yours", "ko": "I'll Be Yours" }, "youtubeId": "orHXpvTG5zs", "withHyeri": true }
+  ]
+}

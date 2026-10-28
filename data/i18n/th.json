@@ -91,7 +91,10 @@
     "noOverview": "ยังไม่มีเรื่องย่อ",
     "tmdbRating": "TMDB",
     "viewOnTmdb": "ดูบน TMDB",
-    "views": "{n} ครั้ง"
+    "views": "{n} ครั้ง",
+    "gdLinkTitle": "MV ของ Girl's Day",
+    "gdLinkSub": "แท็บนี้คือ MV ที่ฮเยริไปร่วมแสดง ถ้าอยากดู MV ทั้ง 19 เพลงของ Girl's Day ไปที่หน้า Girl's Day",
+    "gdLinkCta": "ไปเลย"
   },
   "awards": {
     "title": "รางวัล",
@@ -128,6 +131,30 @@
     "lastSynced": "ซิงก์ล่าสุด",
     "externalTitle": "โปสเตอร์ เรื่องย่อ และมิวสิกวิดีโอ",
     "external": "โปสเตอร์ เรื่องย่อ และรูปภาพมาจาก TMDB (The Movie Database) ส่วนมิวสิกวิดีโอและสถิติช่องมาจาก YouTube Data API ทั้งหมดอัปเดตอัตโนมัติทุกสัปดาห์ เว็บนี้ใช้ TMDB API แต่ไม่ได้รับการรับรองจาก TMDB"
+  },
+  "gd": {
+    "title": "Girl's Day",
+    "sub": "เพลงและ MV ทั้งหมดของวงที่ฮเยริเป็นมักเน่",
+    "debut": "เดบิวต์",
+    "joined": "ฮเยริเข้าวง",
+    "fandom": "แฟนด้อม",
+    "members": "สมาชิก",
+    "ourHyeri": "ฮเยริของเรา",
+    "discography": "ผลงานเพลง & MV",
+    "discoSub": "{n} ผลงาน · {mv} MV กดเล่นได้ในหน้านี้เลย",
+    "album": "อัลบั้ม",
+    "noMv": "ไม่มี MV",
+    "beforeHyeri": "ก่อนฮเยริเข้าวง",
+    "filter": { "all": "ทั้งหมด", "albums": "อัลบั้ม", "singles": "ซิงเกิล" },
+    "type": {
+      "single": "ซิงเกิล",
+      "digital": "ดิจิทัลซิงเกิล",
+      "mini": "มินิอัลบั้ม",
+      "album": "อัลบั้มเต็ม",
+      "repackage": "รีแพ็กเกจ",
+      "special": "สเปเชียลซิงเกิล",
+      "japan": "ซิงเกิลญี่ปุ่น"
+    }
   },
   "footer": {
     "fansite": "บ้านเบสคนไทยของฮเยริ",

@@ -17,6 +17,9 @@ let onKey;
 /** Secondary title: Korean original when reading in TH/EN, English when reading in KR. */
 const altTitle = (v) => esc(state.lang === 'ko' ? v.en : v.ko);
 
+/** Main title: the official Thai title from TMDB when reading in Thai, else our own localized title. */
+const mainTitle = (w, m) => esc(state.lang === 'th' && m?.title?.th ? m.title.th : t(w.title));
+
 function typeTag(type) {
   const cls = { lead: 'tag-lead', support: 'tag-support', cameo: 'tag-cameo', special: 'tag-special' }[type] || 'tag-other';
   return `<span class="tag ${cls}">${esc(ui(`works.${type}`))}</span>`;
@@ -29,7 +32,8 @@ function kindLabel(item) {
 
 function matches(item) {
   if (!query) return true;
-  const hay = JSON.stringify([item.title, item.role, item.artist, item.song, item.network, item.year, item.cohosts]).toLowerCase();
+  const tmdbTitle = item.title && ext.tmdb.works[workKey(tab, item)]?.title;
+  const hay = JSON.stringify([item.title, tmdbTitle, item.role, item.artist, item.song, item.network, item.year, item.cohosts]).toLowerCase();
   return hay.includes(query);
 }
 
@@ -41,7 +45,7 @@ function screenCard(w, i) {
       ${m?.poster ? `<img class="work-poster" src="${esc(tmdbImg(m.poster, 'w185'))}" alt="" loading="lazy" width="92" height="138">` : ''}
       <div class="work-info">
         <div class="work-top"><span class="work-year">${esc(w.year)}</span>${w.network ? `<span class="work-net">${esc(w.network)}</span>` : ''}</div>
-        <h3 class="work-title">${tx(w.title)}</h3>
+        <h3 class="work-title">${mainTitle(w, m)}</h3>
         <div class="work-alt">${altTitle(w.title)}</div>
         <div class="work-role">${esc(ui('works.as'))} <b>${tx(w.role)}</b></div>
         <div class="row-tags">${typeTag(w.type)}${m?.rating ? `<span class="tag tag-other">★ ${m.rating}</span>` : ''}</div>
@@ -70,7 +74,14 @@ function renderList() {
   const items = (works[tab] || []).filter(matches).slice().reverse();
   if (!items.length) return `<div class="empty">${icon('search')}<p>${esc(ui('common.noResults'))}</p></div>`;
   if (tab === 'drama' || tab === 'movie') return `<div class="grid grid-3">${items.map(screenCard).join('')}</div>`;
-  if (tab === 'mv') return `<div class="grid grid-3">${items.map(mvCard).join('')}</div>`;
+  if (tab === 'mv') {
+    return `<a class="card hover channel-card reveal" href="#/girlsday">
+        <span class="social-icon si-web">${icon('music')}</span>
+        <span class="channel-main"><span class="channel-name">${esc(ui('works.gdLinkTitle'))}</span><span class="work-alt">${esc(ui('works.gdLinkSub'))}</span></span>
+        <span class="btn btn-primary btn-sm">${esc(ui('works.gdLinkCta'))} ${icon('arrowRight')}</span>
+      </a>
+      <div class="grid grid-3">${items.map(mvCard).join('')}</div>`;
+  }
 
   return `<div class="list-rows">${items.map((v, i) => `
     <article class="card row-card reveal" style="--d:${Math.min(i, 6) * 0.03}s">
@@ -113,7 +124,7 @@ function openModal(key) {
         ${m.poster ? `<img class="modal-poster" src="${esc(tmdbImg(m.poster, 'w342'))}" alt="" width="120" height="180">` : ''}
         <div class="modal-head">
           <div class="work-top" style="justify-content:flex-start;gap:10px"><span class="work-year">${esc(w.year)}</span>${w.network ? `<span class="work-net">${esc(w.network)}</span>` : ''}</div>
-          <h2 class="modal-title">${tx(w.title)}</h2>
+          <h2 class="modal-title">${mainTitle(w, m)}</h2>
           <div class="work-alt">${altTitle(w.title)}</div>
           <div class="work-role">${esc(ui('works.as'))} <b>${tx(w.role)}</b></div>
           <div class="row-tags">${typeTag(w.type)}${m.rating ? `<span class="tag tag-other">${esc(ui('works.tmdbRating'))} ★ ${m.rating}</span>` : ''}</div>

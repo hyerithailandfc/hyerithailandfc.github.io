@@ -144,7 +144,7 @@ p { margin: 0 0 1em; }
 
 .main-nav { display: flex; gap: 4px; margin-left: auto; }
 .nav-link {
-  position: relative; padding: 8px 14px; border-radius: var(--radius-pill);
+  position: relative; padding: 8px 14px; border-radius: var(--radius-pill); white-space: nowrap;
   color: var(--ink-2); font-weight: 700; font-size: .95rem; text-decoration: none !important;
   transition: color .2s, background-color .2s;
 }
@@ -160,14 +160,29 @@ p { margin: 0 0 1em; }
 .icon-btn svg { width: 20px; height: 20px; }
 .menu-btn { display: none; }
 
-@media (max-width: 960px) {
+/* 8 nav items need ~1040px; tighten spacing just above that, use the drawer below it. */
+@media (max-width: 1200px) {
+  .main-nav { gap: 2px; }
+  .nav-link { padding: 8px 10px; }
+}
+@media (max-width: 1040px) {
   .main-nav { display: none; }
   .menu-btn { display: grid; }
   .header-tools { margin-left: auto; }
 }
+/* Narrow phones: compact two-line logo (smaller mark, no heart) so the fan base name stays visible. */
 @media (max-width: 420px) {
+  .header-inner { gap: 10px; }
+  .header-tools { gap: 6px; }
+  .logo { gap: 6px; font-size: 1.08rem; }
+  .logo-mark { width: 30px; height: 30px; border-radius: 10px; font-size: .95rem; }
+  .logo-heart { display: none; }
+  .logo-sub { font-size: .48rem; letter-spacing: 1.2px; margin-top: 2px; }
+  .lang-btn { padding: 5px 7px; }
+  .icon-btn { width: 36px; height: 36px; }
+}
+@media (max-width: 340px) {
   .logo-text { display: none; }
-  .lang-btn { padding: 5px 8px; }
 }
 
 /* ---------- Drawer (mobile nav) ---------- */
@@ -451,6 +466,17 @@ p { margin: 0 0 1em; }
 .channel-avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px var(--surface), 0 0 0 7px var(--blue); }
 .channel-main { flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; }
 .channel-name { font-family: var(--font-display); font-size: 1.35rem; }
+
+/* Girl's Day page */
+.gd-intro p { color: var(--ink-2); font-size: 1.05rem; }
+.member-card { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.member-card.is-hyeri { box-shadow: 0 0 0 3px var(--blue), var(--shadow); }
+.member-avatar { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-family: "Fredoka", sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; box-shadow: 0 0 0 5px var(--surface), var(--shadow); transition: transform .5s var(--ease-pop); }
+.member-card:hover .member-avatar { transform: rotate(-8deg) scale(1.08); }
+.member-name { font-size: 1.35rem; margin: 0; }
+.member-pos { color: var(--ink-2); font-size: .92rem; margin: 6px 0 8px; }
+.gd-nomv { aspect-ratio: 16 / 9; display: grid; place-items: center; align-content: center; gap: 8px; background: var(--grad-hero); color: var(--accent); font-weight: 700; font-size: .9rem; }
+.gd-nomv svg { width: 40px; height: 40px; }
 
 /* Work detail modal */
 .modal { position: fixed; inset: 0; z-index: 90; background: rgba(8, 16, 32, .55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: grid; place-items: center; padding: 16px; animation: fade .3s ease; overflow-y: auto; }

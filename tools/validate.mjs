@@ -98,6 +98,16 @@ if (works) {
     if (m.youtubeId != null && !/^[\w-]{11}$/.test(m.youtubeId)) errors.push(`works.json mv "${m.song?.en}": bad youtubeId "${m.youtubeId}"`);
   }
 }
+const girlsday = data['data/girlsday.json'];
+if (girlsday) {
+  const TYPES = new Set(Object.keys(i18n.en?.gd?.type || {}));
+  for (const r of girlsday.releases || []) {
+    const where = `girlsday.json release "${r.title?.en}"`;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(r.date || '')) errors.push(`${where}: date must be YYYY-MM-DD`);
+    if (!TYPES.has(r.type)) errors.push(`${where}: type "${r.type}" has no gd.type.* UI string`);
+    if (r.youtubeId != null && !/^[\w-]{11}$/.test(r.youtubeId)) errors.push(`${where}: bad youtubeId "${r.youtubeId}"`);
+  }
+}
 
 // 5. Media files referenced by data/media.json must exist; YouTube ids must look valid.
 const media = data['data/media.json'];

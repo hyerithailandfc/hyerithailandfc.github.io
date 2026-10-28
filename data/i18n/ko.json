@@ -91,7 +91,10 @@
     "noOverview": "아직 줄거리가 없어요.",
     "tmdbRating": "TMDB",
     "viewOnTmdb": "TMDB에서 보기",
-    "views": "조회수 {n}회"
+    "views": "조회수 {n}회",
+    "gdLinkTitle": "걸스데이 뮤직비디오",
+    "gdLinkSub": "이 탭은 혜리가 출연한 뮤직비디오예요. 걸스데이 MV 19편은 걸스데이 페이지에서 볼 수 있어요.",
+    "gdLinkCta": "보러 가기"
   },
   "awards": {
     "title": "수상 경력",
@@ -128,6 +131,30 @@
     "lastSynced": "최근 동기화",
     "externalTitle": "포스터, 줄거리, 뮤직비디오",
     "external": "포스터, 줄거리, 사진은 TMDB(The Movie Database)에서, 뮤직비디오와 채널 통계는 YouTube Data API에서 가져오며 매주 자동으로 업데이트됩니다. 이 사이트는 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지 않았습니다."
+  },
+  "gd": {
+    "title": "걸스데이",
+    "sub": "혜리가 막내로 활동한 걸스데이의 모든 노래와 뮤직비디오.",
+    "debut": "데뷔",
+    "joined": "혜리 합류",
+    "fandom": "팬덤",
+    "members": "멤버",
+    "ourHyeri": "우리 혜리",
+    "discography": "음반 & 뮤직비디오",
+    "discoSub": "음반 {n}장 · 뮤직비디오 {mv}편을 바로 재생할 수 있어요",
+    "album": "음반",
+    "noMv": "MV 없음",
+    "beforeHyeri": "혜리 합류 전",
+    "filter": { "all": "전체", "albums": "앨범", "singles": "싱글" },
+    "type": {
+      "single": "싱글",
+      "digital": "디지털 싱글",
+      "mini": "미니 앨범",
+      "album": "정규 앨범",
+      "repackage": "리패키지",
+      "special": "스페셜 싱글",
+      "japan": "일본 싱글"
+    }
   },
   "footer": {
     "fansite": "혜리 태국 팬 베이스",

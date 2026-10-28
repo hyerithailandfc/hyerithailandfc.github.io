@@ -35,7 +35,8 @@ If you add a token, add it to **both** light and dark blocks.
 - Wrap content in `.container` (max 1180px, gutter `clamp(16px, 4vw, 32px)`).
 - Vertical rhythm: `.section` (responsive padding). First section after `.page-hero` uses `style="padding-top:12px"`.
 - Grids: `.grid.grid-2 | .grid-3 | .grid-4` (auto-fill, collapse to 1 column on phones).
-- Breakpoints used: 960px (nav → drawer), 860px (hero stacks), 760px (timeline single side), 560px/420px (tight phones).
+- Breakpoints used: 1200px (tighter nav spacing), 1040px (nav → drawer; sized for 8 nav items — re-measure if you add one),
+  860px (hero stacks), 760px (timeline single side), 560px, 420px (compact logo), 340px (logo mark only).
 - No horizontal scrolling at 320px. Tabs scroll horizontally inside themselves (`.tabs`).
 
 ## Components (reuse before inventing)

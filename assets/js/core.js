@@ -17,7 +17,9 @@ const cache = new Map();
  * Also imported by tools/lib/external.mjs — change both sides together.
  */
 export function workKey(kind, w) {
-  return kind === 'mv' ? `mv:${w.artist.en}|${w.song.en}` : `${kind}:${w.title.ko}`;
+  if (kind === 'mv') return `mv:${w.artist.en}|${w.song.en}`;
+  if (kind === 'gd') return `gd:${w.title.en}`; // Girl's Day release (data/girlsday.json)
+  return `${kind}:${w.title.ko}`;
 }
 
 /** Build a TMDB image URL. Local/absolute paths pass through unchanged. */

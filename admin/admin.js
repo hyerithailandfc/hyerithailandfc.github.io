@@ -261,7 +261,7 @@ async function dashboard(panel) {
       <p class="hint">ถ้าคลิปไม่ถูกต้อง ไปที่ “แก้ไขข้อความ” → ผลงาน → mv แล้วใส่ <code>youtubeId</code> ที่ถูกต้อง (11 ตัวอักษรท้ายลิงก์) ระบบจะใช้คลิปนั้นแทน</p>
       <div class="item-list">${mvs.map(([key, v]) => `
         <div class="card item">
-          <div class="item-main"><div class="item-title">${esc(key.replace(/^mv:/, '').replace('|', ' — '))}</div>
+          <div class="item-main"><div class="item-title">${esc(key.replace(/^(mv|gd):/, '').replace('|', ' — '))}</div>
           <div class="item-meta">${v.pinned ? '📌 ปักหมุดแล้ว' : '🔎 ค้นหาอัตโนมัติ'} · <a href="https://www.youtube.com/watch?v=${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a> · ${esc(v.channel || '')}</div></div>
         </div>`).join('')}</div>` : ''}
     </div>

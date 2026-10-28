@@ -47,7 +47,7 @@ Keep each list in chronological order (oldest first); the page shows newest firs
 Optional pins (set them when automatic matching picks the wrong thing — the Admin dashboard shows what was matched):
 - `drama[]` / `movie[]`: `"tmdbId": 64010` — the number in the TMDB URL (`themoviedb.org/tv/64010`).
 - `mv[]`: `"youtubeId": "xxxxxxxxxxx"` — the 11 characters after `watch?v=`.
-Matching keys come from `workKey()` in `assets/js/core.js`: `drama:<title.ko>`, `movie:<title.ko>`, `mv:<artist.en>|<song.en>`.
+Matching keys come from `workKey()` in `assets/js/core.js`: `drama:<title.ko>`, `movie:<title.ko>`, `mv:<artist.en>|<song.en>`, `gd:<title.en>`.
 **Changing those title fields changes the key** — the posters/MV reappear after the next sync.
 
 ## Generated files (don't hand-edit)
@@ -58,6 +58,13 @@ Pages read them through `loadExternal()` and must still look complete when they 
 Sync settings live in `data/site.json → external` (`tmdbPersonId`, `tmdbPersonQueries`, `youtubeChannelHandle`).
 
 `data/awards.json` — `items[]`: `year` (number), `ceremony`, `category`, optional `work`.
+
+`data/girlsday.json` — the group page (`#/girlsday`). Source: namu.wiki 걸스데이 article (discography + MV table).
+- `debut`, `hyeriJoined` (dates), `fandom`, `agency`, `intro` (localized prose)
+- `members[]`: `name`, `birthDate`, `position`, optional `isHyeri: true`
+- `releases[]` (oldest first): `date`, `type` (`single|digital|mini|album|repackage|special|japan` — new types need `gd.type.*` strings),
+  `album {en,ko}`, `title {en,ko}` (official English title per Wikipedia), `youtubeId` (official GIRL'S DAY channel upload, else 1theK; `null` if no MV),
+  `withHyeri` (false for the two 2010 releases before she joined). YouTube view counts come from the sync (`workKey('gd', r)` = `gd:<title.en>`).
 
 `data/media.json`
 - `channels[]`: `type` (`instagram|youtube|x|weibo|web`), `name`, `handle`, `url` — official accounts only.

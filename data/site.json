@@ -11,7 +11,7 @@
     "lastSynced": "2026-10-28"
   },
   "external": {
-    "tmdbPersonId": null,
+    "tmdbPersonId": 1413827,
     "tmdbPersonQueries": ["Lee Hye-ri", "Hyeri"],
     "youtubeChannelHandle": "@IamLeeHyeri"
   },
@@ -21,6 +21,7 @@
     { "id": "journey", "path": "/journey", "module": "journey.js", "label": { "th": "เส้นทาง",   "en": "Journey",  "ko": "발자취" } },
     { "id": "works",   "path": "/works",   "module": "works.js",   "label": { "th": "ผลงาน",     "en": "Works",    "ko": "출연작" } },
     { "id": "awards",  "path": "/awards",  "module": "awards.js",  "label": { "th": "รางวัล",     "en": "Awards",   "ko": "수상" } },
+    { "id": "girlsday", "path": "/girlsday", "module": "girlsday.js", "label": { "th": "Girl's Day", "en": "Girl's Day", "ko": "걸스데이" } },
     { "id": "media",   "path": "/media",   "module": "media.js",   "label": { "th": "มีเดีย",     "en": "Media",    "ko": "미디어" } },
     { "id": "about",   "path": "/about",   "module": "about.js",   "label": { "th": "เกี่ยวกับ",  "en": "About",    "ko": "소개" } }
   ]

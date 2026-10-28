@@ -137,10 +137,21 @@ export function ytClient(key, fetchImpl = fetch) {
 }
 
 /**
- * Quota per run (free tier = 10,000 units/day): 1 channel + 1 playlist + 100 per un-pinned MV search + 1 per 50 videos.
- * Pin an MV with "youtubeId" in works.json to skip its search.
+ * Every music video the site shows: MVs she appeared in (works.json → mv) and Girl's Day title tracks (girlsday.json).
+ * Returns [{ key, youtubeId?, query }]; entries without youtubeId are searched on YouTube.
  */
-export async function buildYoutube(yt, works, config, log = console.log) {
+export function mvTargets(works, girlsday) {
+  return [
+    ...(works?.mv || []).map((m) => ({ key: workKey('mv', m), youtubeId: m.youtubeId, query: `${m.artist.ko} ${m.song.ko} MV` })),
+    ...(girlsday?.releases || []).filter((r) => r.youtubeId).map((r) => ({ key: workKey('gd', r), youtubeId: r.youtubeId })),
+  ];
+}
+
+/**
+ * Quota per run (free tier = 10,000 units/day): 1 channel + 1 playlist + 100 per un-pinned MV search + 1 per 50 videos.
+ * Pin an MV with "youtubeId" to skip its search. `targets` comes from mvTargets().
+ */
+export async function buildYoutube(yt, targets, config, log = console.log) {
   const out = { channel: null, latest: [], mv: {} };
   let latestIds = [];
 
@@ -165,14 +176,13 @@ export async function buildYoutube(yt, works, config, log = console.log) {
   }
 
   const mvIds = {};
-  for (const m of works.mv || []) {
-    const key = workKey('mv', m);
-    if (m.youtubeId) { mvIds[key] = { id: m.youtubeId, pinned: true }; continue; }
-    const q = `${m.artist.ko} ${m.song.ko} MV`;
-    const r = await yt('search', { part: 'snippet', type: 'video', videoEmbeddable: 'true', maxResults: 1, q });
+  for (const { key, youtubeId, query } of targets) {
+    if (youtubeId) { mvIds[key] = { id: youtubeId, pinned: true }; continue; }
+    if (!query) continue;
+    const r = await yt('search', { part: 'snippet', type: 'video', videoEmbeddable: 'true', maxResults: 1, q: query });
     const id = r.items?.[0]?.id?.videoId;
     if (id) mvIds[key] = { id, pinned: false };
-    else log(`YouTube: no result for "${q}"`);
+    else log(`YouTube: no result for "${query}"`);
   }
 
   const ids = [...new Set([...latestIds, ...Object.values(mvIds).map((v) => v.id)])];

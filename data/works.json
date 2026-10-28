@@ -17,9 +17,9 @@
   ],
   "movie": [
     { "year": 2018, "title": { "en": "Monstrum", "ko": "물괴" }, "role": { "th": "ยุนมยอง", "en": "Yoon Myung", "ko": "윤명" }, "type": "lead" },
-    { "year": 2019, "title": { "en": "Pansori Boxer", "ko": "판소리 복서" }, "role": { "th": "มินจี", "en": "Min-ji", "ko": "민지" }, "type": "support" },
+    { "year": 2019, "title": { "en": "My Punch-Drunk Boxer", "ko": "판소리 복서" }, "role": { "th": "มินจี", "en": "Min-ji", "ko": "민지" }, "type": "support" },
     { "year": 2024, "title": { "en": "Victory", "ko": "빅토리" }, "role": { "th": "พิลซอน", "en": "Pil-seon", "ko": "필선" }, "type": "lead" },
-    { "year": 2026, "title": { "en": "Tropical Night", "ko": "열대야" }, "role": { "th": "อาริ", "en": "Ari", "ko": "아리" }, "type": "lead" }
+    { "year": 2026, "title": { "en": "Night Fever", "ko": "열대야" }, "role": { "th": "อาริ", "en": "Ari", "ko": "아리" }, "type": "lead" }
   ],
   "variety": [
     { "year": "2014", "title": { "en": "Departure Dream Team 2", "ko": "출발 드림팀 시즌2" }, "kind": "guest", "ep": "241" },

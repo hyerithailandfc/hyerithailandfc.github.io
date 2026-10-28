@@ -53,7 +53,8 @@ repo → **Settings → Actions → General → Workflow permissions**
 1. ไปที่ <https://console.cloud.google.com/> → สร้างโปรเจกต์ใหม่ (เช่น `hyeri-fansite`)
 2. เมนู **APIs & Services → Library** → ค้นหา **YouTube Data API v3** → Enable
 3. **APIs & Services → Credentials → Create credentials → API key** → คัดลอก key
-   (แนะนำ: กด Edit key → API restrictions → เลือกเฉพาะ YouTube Data API v3)
+   - กด Edit key → **Application restrictions: None** (ห้ามตั้งเป็น "Websites/HTTP referrers" เพราะ GitHub Actions เรียกจากเซิร์ฟเวอร์ ไม่มี referrer จะโดนบล็อก 403)
+   - **API restrictions: Restrict key** → เลือกเฉพาะ **YouTube Data API v3** (กันไม่ให้ key ถูกเอาไปใช้กับบริการอื่น)
 4. เพิ่ม secret ชื่อ `YOUTUBE_API_KEY`
 
 จากนั้นไปที่ repo → **Actions → Sync TMDB & YouTube → Run workflow** เพื่อดึงข้อมูลครั้งแรก (หรือกดปุ่มในหน้า Admin)

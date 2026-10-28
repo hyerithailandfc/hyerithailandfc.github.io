@@ -46,7 +46,7 @@ refers to earlier work ("like last time", "undo the change to…").
 | `assets/js/pages/*.js` | One module per page (`render()` + optional `mount()`/`unmount()`) |
 | `data/site.json` | Source info + **page registry** (adds pages to nav/router) |
 | `data/i18n/{th,en,ko}.json` | UI strings |
-| `data/profile.json`, `journey.json`, `works.json`, `awards.json`, `media.json` | Content |
+| `data/profile.json`, `journey.json`, `works.json`, `awards.json`, `media.json`, `girlsday.json` | Content |
 | `data/tmdb.json`, `data/youtube.json` | **Generated** posters/synopses/photos (TMDB) and MV/channel data (YouTube) |
 | `tools/sync-external.mjs` + `tools/lib/external.mjs` | TMDB/YouTube sync (runs in `.github/workflows/sync-external.yml`) |
 | `admin/` | Admin panel (GitHub-token login, editor, Claude requests) |

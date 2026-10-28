@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { tmdbClient, ytClient, buildTmdb, buildYoutube, changed } from './lib/external.mjs';
+import { tmdbClient, ytClient, buildTmdb, buildYoutube, mvTargets, changed } from './lib/external.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => (existsSync(join(root, rel)) ? JSON.parse(readFileSync(join(root, rel), 'utf8')) : null);
@@ -30,7 +30,7 @@ if (process.env.TMDB_API_KEY) {
 if (process.env.YOUTUBE_API_KEY) {
   try {
     const yt = ytClient(process.env.YOUTUBE_API_KEY.trim());
-    save('data/youtube.json', await buildYoutube(yt, works, config));
+    save('data/youtube.json', await buildYoutube(yt, mvTargets(works, read('data/girlsday.json')), config));
   } catch (e) { console.error(`YouTube sync failed: ${e.message}`); failed = true; }
 } else console.log('YOUTUBE_API_KEY not set — skipping YouTube');
 

@@ -91,7 +91,10 @@
     "noOverview": "No synopsis available yet.",
     "tmdbRating": "TMDB",
     "viewOnTmdb": "View on TMDB",
-    "views": "{n} views"
+    "views": "{n} views",
+    "gdLinkTitle": "Girl's Day music videos",
+    "gdLinkSub": "These are MVs she appeared in as an actress. For all 19 Girl's Day MVs, visit the Girl's Day page.",
+    "gdLinkCta": "Go"
   },
   "awards": {
     "title": "Awards",
@@ -128,6 +131,30 @@
     "lastSynced": "Last synced",
     "externalTitle": "Posters, synopses & music videos",
     "external": "Posters, synopses and photos come from TMDB (The Movie Database). Music videos and channel stats come from the YouTube Data API. Both are refreshed automatically every week. This product uses the TMDB API but is not endorsed or certified by TMDB."
+  },
+  "gd": {
+    "title": "Girl's Day",
+    "sub": "Every song and music video from the group where Hyeri is the maknae.",
+    "debut": "Debut",
+    "joined": "Hyeri joined",
+    "fandom": "Fandom",
+    "members": "Members",
+    "ourHyeri": "Our Hyeri",
+    "discography": "Discography & MVs",
+    "discoSub": "{n} releases · {mv} music videos you can play right here",
+    "album": "Album",
+    "noMv": "No MV",
+    "beforeHyeri": "Before Hyeri joined",
+    "filter": { "all": "All", "albums": "Albums", "singles": "Singles" },
+    "type": {
+      "single": "Single",
+      "digital": "Digital single",
+      "mini": "Mini album",
+      "album": "Studio album",
+      "repackage": "Repackage",
+      "special": "Special single",
+      "japan": "Japanese single"
+    }
   },
   "footer": {
     "fansite": "Hyeri's Thai fan base",
