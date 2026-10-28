@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T11:13:48.423Z",
+  "updatedAt": "2026-10-28T23:46:46.123Z",
   "person": {
     "id": 1413827,
     "name": "Lee Hye-ri",
@@ -30,11 +30,6 @@
         "path": "/9GVVhuZ2e7BTj9WR3WyenVfIDRw.jpg",
         "width": 556,
         "height": 834
-      },
-      {
-        "path": "/rCzan8eMTJ6LKtJ1Y3UN3jsXMb3.jpg",
-        "width": 1580,
-        "height": 2360
       },
       {
         "path": "/t6lIPQkFakLSE0sFWoaGRcQRhnH.jpg",
@@ -110,18 +105,7 @@
         "en": "Two ambitious women navigate the competitive fashion world by launching an online shopping mall, turning their dreams into a daring entrepreneurial adventure.",
         "ko": ""
       },
-      "stills": [
-        {
-          "path": "/vRTT7cTws6OaCVjRKT943pCsrLU.jpg",
-          "width": 3840,
-          "height": 2160
-        },
-        {
-          "path": "/dgBGOSDm20usPborZesxvOqryI1.jpg",
-          "width": 1280,
-          "height": 720
-        }
-      ]
+      "stills": []
     },
     "drama:선암여고 탐정단": {
       "tmdbId": 61730,
@@ -169,28 +153,7 @@
         "en": "A chaebol executive with a split personality spars with a circus leader determined to save her troupe, which he’s trying to eject from his theme park.",
         "ko": "한 남자의 전혀 다른 두 인격과 사랑에 빠진 한 여자의 삼각로맨스를 다룬 로맨틱코미디"
       },
-      "stills": [
-        {
-          "path": "/1fEfkzGzRMtRxJL6VJfzKBgyAYh.jpg",
-          "width": 3840,
-          "height": 2160
-        },
-        {
-          "path": "/ojsYDgPwQei5bVKkZzIsknli7od.jpg",
-          "width": 2365,
-          "height": 1330
-        },
-        {
-          "path": "/sclcYRgfas5kqJuueEh0EMdfrca.jpg",
-          "width": 1920,
-          "height": 1080
-        },
-        {
-          "path": "/lhrn6vUNQbJ1pMEp3yTjcirKh5c.jpg",
-          "width": 3840,
-          "height": 2160
-        }
-      ]
+      "stills": []
     },
     "drama:응답하라 1988": {
       "tmdbId": 64010,
@@ -221,11 +184,6 @@
           "path": "/sZH7lGs06skRKkrqp1LRi57VVMb.jpg",
           "width": 1999,
           "height": 1124
-        },
-        {
-          "path": "/xBzmVfyrFmN1btbyLOK26b0zNEL.jpg",
-          "width": 1280,
-          "height": 720
         },
         {
           "path": "/8YJvXg4VYDKVK71i2GDohe4fsAS.jpg",
@@ -290,11 +248,6 @@
           "path": "/mwcAW8zbugAURLik6aA0Y4o2bQc.jpg",
           "width": 3840,
           "height": 2160
-        },
-        {
-          "path": "/8I7ijkwrUUluaInC9KtFy4C4FKp.jpg",
-          "width": 3840,
-          "height": 2160
         }
       ]
     },
@@ -346,21 +299,6 @@
       },
       "stills": [
         {
-          "path": "/18ypvPahjmmue1iR4N4YgTBrO8N.jpg",
-          "width": 2048,
-          "height": 1152
-        },
-        {
-          "path": "/uTy5KpNqeiFkQ8YXBq8rckXkZqk.jpg",
-          "width": 1920,
-          "height": 1080
-        },
-        {
-          "path": "/py6QcsQ23YmwNO37QdIImiDxmlf.jpg",
-          "width": 1920,
-          "height": 1080
-        },
-        {
           "path": "/nOFwimzgJpQ7Or0koOsz3yDdrFd.jpg",
           "width": 3840,
           "height": 2160
@@ -401,11 +339,6 @@
           "path": "/SzDxajTesjhIsV3Zh7YrRti5yB.jpg",
           "width": 3840,
           "height": 2160
-        },
-        {
-          "path": "/68WpKil2CwUAEx5iqjNhInKFDRM.jpg",
-          "width": 3840,
-          "height": 2160
         }
       ]
     },
@@ -429,11 +362,6 @@
         "ko": "역사상 가장 강력한 금주령의 시대, 밀주꾼을 단속하는 원칙주의 감찰과 술을 빚어 인생을 바꿔보려는 밀주꾼 여인의 아술아술 추격 로맨스"
       },
       "stills": [
-        {
-          "path": "/1jjaCQLUYZdvlBhTcNy09Ue0Ghw.jpg",
-          "width": 3840,
-          "height": 2160
-        },
         {
           "path": "/3LisR6YIfXvglbUd0d58KATHZyC.jpg",
           "width": 2160,
@@ -482,11 +410,6 @@
           "height": 1080
         },
         {
-          "path": "/gxrxipSZFWvTi2EwJ3ykeJ0iLJz.jpg",
-          "width": 1391,
-          "height": 782
-        },
-        {
           "path": "/gsLSigo0eZG0U8d5zuzQ3hE1IFg.jpg",
           "width": 3840,
           "height": 2160
@@ -524,11 +447,6 @@
           "height": 2160
         },
         {
-          "path": "/n3qhrNE6oHFyfDgTYXbiju7jIbm.jpg",
-          "width": 1920,
-          "height": 1080
-        },
-        {
           "path": "/lNULiVZRYxNnRpA4Td5bnwN9gqQ.jpg",
           "width": 1280,
           "height": 720
@@ -551,7 +469,7 @@
       },
       "overview": {
         "th": "อูซูบินเป็นผู้กำกับหนังดาวรุ่งที่ได้รับการยกย่อง เขาได้รับรางวัลที่งานประกาศรางวัลนานาชาติยุโรปและคว้าถึงสองรางวัล ซูบินยกเกียรตินี้ให้กับรักแรกที่เป็นคนมอบความฝันให้เขาในตอนที่กล่าวรับรางวัล ส่วนจูอีแจเป็นรักแรกสมัยม.ปลายของซูบินและเป็นคนที่เคยฝันอยากเป็นผู้กำกับ ปัจจุบันเธอได้เป็นผู้สื่อข่าว ซูบินคือคนที่ตั้งคำถามกับตัวเองว่าเขาประสบความสำเร็จในชีวิตที่ปรารถนาหรือไม่ ในขณะที่อีแจก็ตั้งคำถามกับตัวเองว่าชีวิตของเธอล้มเหลวหรือเปล่า หลังจากได้รางวัล ซูบินมาที่เกาหลีเป็นครั้งแรกในรอบหลายปีเพื่อเจออีแจและเสนอให้เธอมาเป็นโปรดิวเซอร์ร่วมในหนังของเขา แต่อีแจก็ปฏิเสธข้อเสนอเขาอย่างเด็ดขาดและเริ่มเปิดเผยว่าเขาทำร้ายเธอไว้หนักแค่ไหน มันเกิดอะไรขึ้นในตอนที่ทั้งคู่อยู่ม.ปลาย และทำไมความรู้สึกที่พวกเขามีต่อกันในตอนนี้ถึงต่างกันได้ขนาดนี้",
-        "en": "Two high school classmates bond over a shared love of filmmaking, turning a deep friendship into first love before an unexpected separation tears them apart. Years later, they reunite with their lives completely transformed—she’s lost her passion, while he’s become a celebrated director. Determined to reignite her dreams, he must first confront the hurt he left behind.",
+        "en": "Two high school classmates bond over a shared love of filmmaking, turning a deep friendship into first love before an unexpected separation tears them apart. Years later, they reunite with their lives completely transformed: she’s lost her passion, while he’s become a celebrated director. Determined to reignite her dreams, he must first confront the hurt he left behind.",
         "ko": "꿈 하나로 무서울 게 없었던 10대를 지나, 현실의 벽에 가로막혀 좌절한 20대를 지나, 그저 그런 어른이 되어버린 것만 같은 30대 리포터 이재와 부모가 설계해 놓은 세상에서만 살던 10대를 지나 알을 깨고 맹렬히 달린 20대를 넘어 마침내 꿈을 이룬 30대 영화감독 수빈의 이야기"
       },
       "stills": [
@@ -559,16 +477,6 @@
           "path": "/5AhL7NKa8UC6QOyzKiDohUM9VYT.jpg",
           "width": 3840,
           "height": 2160
-        },
-        {
-          "path": "/bSDxiFyHMB3RC4dioTDdiA3cTEb.jpg",
-          "width": 3840,
-          "height": 2160
-        },
-        {
-          "path": "/4ZcDJcjEBPuKI2P77HPJDReOGu3.jpg",
-          "width": 3556,
-          "height": 2000
         },
         {
           "path": "/f4VCBWxQd2EkeYqzLYFu2zbs2mZ.jpg",
@@ -606,16 +514,6 @@
           "path": "/xuxXXh2s4tD4W5xtf8t0zTGhIE0.jpg",
           "width": 1280,
           "height": 720
-        },
-        {
-          "path": "/4xYjo3hpb5wN5bSBrtcbOWfc1GN.jpg",
-          "width": 3840,
-          "height": 2160
-        },
-        {
-          "path": "/8xIip5lsN8NENFV6B1fubWLPb0U.jpg",
-          "width": 3840,
-          "height": 2160
         }
       ]
     },
@@ -640,24 +538,9 @@
       },
       "stills": [
         {
-          "path": "/ttrd2GDw4ULDukbSJOAAhG5AZf1.jpg",
-          "width": 2000,
-          "height": 1124
-        },
-        {
           "path": "/tDjfKoLPLWX0KYF4cO0rxGvsCSq.jpg",
           "width": 2000,
           "height": 1126
-        },
-        {
-          "path": "/7QkKj4LgFvJuJGD6XFhOi7o1PzP.jpg",
-          "width": 2000,
-          "height": 1125
-        },
-        {
-          "path": "/qcMk1nLKAGsEp2tdfDbWfLGl1gg.jpg",
-          "width": 2000,
-          "height": 1124
         }
       ]
     },
@@ -677,7 +560,7 @@
       },
       "overview": {
         "th": "ณ เมืองจอเจ ในปี 1999 เด็กนักเรียน ม.ปลาย อย่าง พิลซน กับ มีนา เพื่อนซี้ของเธอ ต่างหลงใหลในการเต้น แต่น่าเสียดายที่โรงเรียนของพวกเธอไม่ได้มีห้องและสถานที่ที่รองรับให้พวกเขาได้วาดลวดลายการเต้นได้อย่างเต็มที่ จนกระทั่งมาเห็น เซฮยอน นักเรียนใหม่ที่ย้ายมาจากโซล  กับออกลีลาเต้นเชียร์ลีดเดอร์ในห้องเรียน ทำให้พิลซนเกิดไอเดียที่มุ่งมั่น ก่อตั้งชมรสเชียร์ลีดเดอร์โรงเรียนขึ้นมา เพื่อหวังจะได้มีห้องชมรมเป็นของตัวเอง  จุดเริ่มต้นของทีมเชียร์ลีดเดอร์ มิลเลนเนียม เกิร์ลส์ จึงได้เริ่มต้นขึ้น กับสมาชิกทั้ง 9 คนในชมรม พวกเธอเริ่มต้นจากการเป็นทีมเชียร์ให้กับทีมฟุตบอลของโรงเรียน ที่มี ชีฮยอง เพื่อนนักเรียนชายร่วมอยู่ในทีมนี้ด้วย และทีมฟุตบอลทีมนี้ก็แทบจะเป็นทีมที่ห่วยที่สุด อาจจะห่วยมาก ๆ ในระดับจังหวะเลยก็ว่าได้",
-        "en": "In 1999, a dance duo teams up with a cheerleader to create a cheerleading club. Together with seven other members, they form the 'Millennium Girls.' Their mission: to lead the struggling Geoje Commercial High School soccer team—known for always finishing last—to victory.",
+        "en": "In 1999, a dance duo teams up with a cheerleader to create a cheerleading club. Together with seven other members, they form the 'Millennium Girls.' Their mission: to lead the struggling Geoje Commercial High School soccer team: known for always finishing last: to victory.",
         "ko": "1999년 세기말, 거제의 댄스 콤비 필선과 미나는 댄스 연습실을 마련하기 위해  서울에서 전학온 치어리더 세현을 내세워 치어리딩 동아리를 만든다. 그렇게 9명의 멤버들이 모여 얼렁뚱땅 탄생한 밀레니엄 걸즈. 치형의 만년 꼴찌 거제상고 축구부를 우승으로 이끌어야만 하는데… 오직 열정만큼은 충만한 생판 초짜 치어리딩 동아리  밀레니엄 걸즈의 모두를 향한 신나는 응원이 펼쳐진다!"
       },
       "stills": [
@@ -722,13 +605,127 @@
         "en": "Asian Games silver medalist boxer Tae-gang and former K-pop star A-ri struggle to make ends meet in the boiling city of Bangkok while dreaming of a fresh start in Alaska. However, Tae-gang is swept up in a murder and arrested by Interpol agent Do-joon and Bangkok police. Imprisoned for something he did not do and cut off from the outside world, Tae-gang devises a plan to overturn his wrongful conviction and get even with those responsible.",
         "ko": "한밤중에도 열기가 식지 않는 도시 방콕에서 살아남기 위해 온 몸을 던진 이들의 가장 뜨거운 24시간을 그린 하드보일드 액션 영화"
       },
-      "stills": [
-        {
-          "path": "/dLlCi3O4ApT2CSxb2vMLTAh7F1Z.jpg",
-          "width": 2048,
-          "height": 1152
-        }
-      ]
+      "stills": []
+    },
+    "variety:위기탈출 넘버원": {
+      "tmdbId": 65269,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/65269",
+      "poster": "/9tSHtp0k1OG4xjHFYhEgRWyiRio.jpg"
+    },
+    "variety:마녀사냥": {
+      "tmdbId": 66725,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/66725",
+      "poster": "/pDmrywBe17rhmUsyxDRDuid3wT9.jpg"
+    },
+    "variety:슈퍼맨이 돌아왔다": {
+      "tmdbId": 64356,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/64356",
+      "poster": "/iP2OjFhiiMnowebltmXgAxJowKP.jpg"
+    },
+    "variety:런닝맨": {
+      "tmdbId": 33238,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/33238",
+      "poster": "/2Wmmu1MkqxJ48J7aySET9EKEjXz.jpg"
+    },
+    "variety:내 귀에 캔디": {
+      "tmdbId": 133674,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/133674",
+      "poster": "/lbBMPCxqzZVSkeUB1inoqEhpHDI.jpg"
+    },
+    "variety:놀라운 토요일": {
+      "tmdbId": 78648,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/78648",
+      "poster": "/pnibkuL74C33GoKLTXAmF4nl3a6.jpg"
+    },
+    "variety:나 혼자 산다": {
+      "tmdbId": 65282,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/65282",
+      "poster": "/1hqGagr94soBq70Lq7tPHvNmmxy.jpg"
+    },
+    "variety:섹션TV 연예통신": {
+      "tmdbId": 84546,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/84546",
+      "poster": "/3wyqJqy8uqhJ4SLYrVxnzayvCWI.jpg"
+    },
+    "variety:맛있는 녀석들": {
+      "tmdbId": 63942,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/63942",
+      "poster": "/c2a1brhbBrYkAu9JPSXAHG8h7rj.jpg"
+    },
+    "variety:바퀴 달린 집": {
+      "tmdbId": 104691,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/104691",
+      "poster": "/1OUaAilNPBBwDSuwlMMcMngsD7t.jpg"
+    },
+    "variety:1박 2일": {
+      "tmdbId": 30801,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/30801",
+      "poster": "/qezeCEkIKHQM5iwyVeYBuXmYA2h.jpg"
+    },
+    "variety:유 퀴즈 온 더 블럭": {
+      "tmdbId": 81978,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/81978",
+      "poster": "/4zAQgKWGP2bJk11OKvwY1GCJjQR.jpg"
+    },
+    "variety:혜미리예채파": {
+      "tmdbId": 219667,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/219667",
+      "poster": "/tQqyUaC8bLmxOW6J8m4WIhq24I1.jpg"
+    },
+    "variety:미스터리 수사단 1": {
+      "tmdbId": 240114,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/240114",
+      "poster": "/4aRvU4bKWWH3sAhC3NweoNFte7Q.jpg"
+    },
+    "variety:우리동네 털뭉치들": {
+      "tmdbId": 259258,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/259258",
+      "poster": "/9hYKloXxWk8Gf9u2ZyaELgiYOPj.jpg"
+    },
+    "variety:직장인들": {
+      "tmdbId": 284884,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/284884",
+      "poster": "/qCFutqGTCcX9SvfmBfhCwBQ086h.jpg"
+    },
+    "variety:응답하라 1988 10주년": {
+      "tmdbId": 308201,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/308201",
+      "poster": "/v2V8c3Qey8w24WhASFGRMHjX6zS.jpg"
+    },
+    "hosting:더 쇼": {
+      "tmdbId": 128094,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/128094",
+      "poster": "/hO1l5Oorw1KJA9b7U8MN9mB7IGF.jpg"
+    },
+    "hosting:쇼! 음악중심": {
+      "tmdbId": 35024,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/35024",
+      "poster": "/nEDZnlxvRN6n09ltAnKj9unckCe.jpg"
+    },
+    "hosting:SBS 인기가요": {
+      "tmdbId": 65278,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/65278",
+      "poster": "/tiJQs4euOHdIPc7tTnB0eonQvqV.jpg"
     }
   },
   "unmatched": [
