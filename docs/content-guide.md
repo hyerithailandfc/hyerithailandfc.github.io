@@ -52,13 +52,19 @@ Matching keys come from `workKey()` in `assets/js/core.js`: `drama:<title.ko>`, 
 
 ## Generated files (don't hand-edit)
 `data/tmdb.json` and `data/youtube.json` are rewritten by `tools/sync-external.mjs` (weekly, or "ดึงข้อมูลใหม่ตอนนี้" on the Admin page).
-- `tmdb.json`: `person {id, name, profile, url, images[]}`, `works { <workKey>: {tmdbId, type, url, poster, backdrop, rating, votes, character, title{th,en,ko}, overview{th,en,ko}} }`, `unmatched[]` (TMDB credits not in works.json).
+- `tmdb.json`: `person {id, name, profile, url, images[]}`, `works { <workKey>: {tmdbId, type, url, poster, backdrop, rating, votes, character, title{th,en,ko}, overview{th,en,ko}, stills[]} }` (stills = up to 4 text-free backdrops, shown in the Media gallery under "From her works"), `unmatched[]` (TMDB credits not in works.json).
 - `youtube.json`: `channel {id, title, handle, url, thumbnail, subscribers, videos, views}`, `latest[] {id, title, channel, publishedAt, views}`, `mv { <workKey>: {id, pinned, title, channel, publishedAt, views} }`.
 Pages read them through `loadExternal()` and must still look complete when they are empty (before the first sync or without API keys).
 Sync settings live in `data/site.json → external` (`tmdbPersonId`, `tmdbPersonQueries`, `tmdbIgnore`, `youtubeChannelHandle`).
 `tmdbIgnore` = TMDB ids reviewed and rejected (variety/YouTube appearances, duplicates, wrong credits) so they stop appearing in the Admin "not on the site" list.
 
 `data/awards.json` — `items[]`: `year` (number), `ceremony`, `category`, optional `work`.
+
+`data/stories.json` — "Deep dives" on the Journey page (`#/journey#deep-dives`), one per namu.wiki sub-page
+(Real Men, Amazing Saturday, YouTube, fan meetings, ads, persona, trivia). `items[]`: `id`, `icon` (name from `ICONS` in core.js),
+`years` (string, may be empty), `source` (namu.wiki URL), `title`, `teaser`, `body[]` (1–3 localized paragraphs), `facts[]` (localized bullets).
+**Summaries only, in our own words** — never paste or translate namu.wiki text sentence by sentence; keep each topic much shorter than the source.
+Skip the controversies sub-page and private relationships unless the admin explicitly asks.
 
 `data/girlsday.json` — the group page (`#/girlsday`). Source: namu.wiki 걸스데이 article (discography + MV table).
 - `debut`, `hyeriJoined` (dates), `fandom`, `agency`, `intro` (localized prose)

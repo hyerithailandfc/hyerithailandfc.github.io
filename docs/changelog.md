@@ -2,6 +2,11 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-28 — Deep dives + photos from her works
+- Journey page: new "Deep dives" section (`data/stories.json`) — 7 expandable topics summarized in TH/EN/KR from namu.wiki sub-pages
+  (Real Men, Amazing Saturday, YouTube, fan meetings, ads & magazines, persona, trivia), each linking to the original.
+- TMDB sync saves up to 4 text-free stills per work; the Media gallery is split into "Hyeri" and "From her works".
+
 ## 2026-10-28 — Brand text clean-up
 - Hero chip shows only the fan base name (no "บ้านเบส" / "Thai fan base" prefix); hero intro no longer uses an em dash (TH/EN/KR).
 - Removed the ♡ from the browser tab title and the header logo (admin too). The footer heart stays.
