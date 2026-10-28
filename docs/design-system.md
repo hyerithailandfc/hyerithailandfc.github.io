@@ -45,6 +45,7 @@ If you add a token, add it to **both** light and dark blocks.
 | `.card` (+ `.hover`) | White rounded panel; `.hover` lifts and tilts slightly |
 | `.btn.btn-primary / .btn-ghost / .btn-sm` | Pill buttons |
 | `.chip`, `.chip-pink`, `.chips` | Small pills (tags, quick facts) |
+| `a.chip.chip-link` / `.text-link` | Clickable chip (lift + arrow nudge on hover) / inline accent text link (underline on hover) |
 | `.tag.tag-lead / .tag-support / .tag-cameo / .tag-special / .tag-other` | Role badges |
 | `.tabs > .tab[aria-selected]` (+ `.count`) | Pill tab bar |
 | `.search` | Rounded search input with icon |

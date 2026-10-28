@@ -21,7 +21,7 @@ export async function render() {
     ['drop', 'profile.blood', esc(p.bloodType)],
     ['brain', 'profile.mbti', esc(p.mbti)],
     ['building', 'profile.agency', tx(p.agency)],
-    ['music', 'profile.group', tx(p.group)],
+    ['music', 'profile.group', `<a class="text-link" href="#/girlsday">${tx(p.group)}</a>`],
     ['mic', 'profile.position', tx(p.position)],
     ['heart', 'profile.fandom', tx(p.fandom)],
     ['star', 'profile.debutSinger', `${esc(formatDate(p.debutSinger.date))}<br><span class="edu-note">${tx(p.debutSinger.work)}</span>`],
@@ -44,7 +44,7 @@ export async function render() {
         <h2 style="font-size:2rem;margin:0">${tx(p.stageName)}</h2>
         <p style="color:var(--muted);margin:0 0 14px">${tx(p.realName)}</p>
         <div class="chips" style="justify-content:center">
-          <span class="chip chip-pink">${tx(p.group)}</span>
+          <a class="chip chip-pink chip-link" href="#/girlsday">${tx(p.group)} ${icon('arrowRight')}</a>
           <span class="chip">${esc(p.mbti)}</span>
           <span class="chip">${p.heightCm} cm</span>
         </div>
