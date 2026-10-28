@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T09:28:05.748Z",
+  "updatedAt": "2026-10-28T09:34:32.102Z",
   "channel": {
     "id": "UC2tfQfxl_wmAosF4ES_zULw",
     "title": "혜리",
@@ -30,7 +30,7 @@
       "title": "아이고 성사장~! 반갑구만🤝🏻 반가워요🤝🏻 I 혤's club🍸 ep83 성한빈",
       "channel": "혜리",
       "publishedAt": "2026-10-16T09:00:03Z",
-      "views": 377476
+      "views": 377493
     },
     {
       "id": "iV_l7ZX-e54",
@@ -44,7 +44,7 @@
       "title": "위기에 처한 NF 경혜를 도와주세요!!!!!",
       "channel": "혜리",
       "publishedAt": "2026-10-09T09:00:22Z",
-      "views": 229249
+      "views": 229236
     },
     {
       "id": "kUpQ95dFVyM",
@@ -58,21 +58,21 @@
       "title": "누가 밴쿠버를 계획 없이 가? 안녕하세요 누입니다 🇨🇦",
       "channel": "혜리",
       "publishedAt": "2026-10-02T12:27:14Z",
-      "views": 453713
+      "views": 453705
     },
     {
       "id": "DkbqkRIdHL8",
       "title": "화장실 창문을 보는 N",
       "channel": "혜리",
       "publishedAt": "2026-09-27T03:00:03Z",
-      "views": 144974
+      "views": 144972
     },
     {
       "id": "YMrOT7C7RyQ",
       "title": "수빈이 따라갔다가 결국 체력 방전된 영광.. 나를 충전해줘 🥲 I 혤's club🍸 ep82 김영광 채수빈",
       "channel": "혜리",
       "publishedAt": "2026-09-25T09:00:18Z",
-      "views": 1456000
+      "views": 1456028
     },
     {
       "id": "0gi3Onj-SKs",
@@ -86,7 +86,7 @@
       "title": "재밌는 사람만이 살아남을 수 있는 \"이 바닥\"",
       "channel": "혜리",
       "publishedAt": "2026-09-18T09:00:23Z",
-      "views": 320467
+      "views": 320463
     },
     {
       "id": "kOatzIaOG6Y",
@@ -99,43 +99,43 @@
   "mv": {
     "mv:Wonder Boys|Tarzan": {
       "id": "_WKkX-4HHP0",
-      "pinned": false,
+      "pinned": true,
       "title": "원더보이즈 (WonderBoyz) - 타잔 (Tarzan) MV",
       "channel": "STONE MUSIC",
       "publishedAt": "2013-05-14T03:06:45Z",
-      "views": 1335790
+      "views": 1335788
     },
     "mv:NC.A|Student Teacher (Drama Ver.)": {
       "id": "xfLN-GR2JAY",
-      "pinned": false,
+      "pinned": true,
       "title": "NC.A(앤씨아)_교생쌤(My student teacher) Official Music Video.(Drama ver.)",
       "channel": "앤씨아",
       "publishedAt": "2013-08-14T03:02:09Z",
-      "views": 645011
+      "views": 645010
     },
-    "mv:C-Clown|Shaking": {
+    "mv:C-Clown|Shaking Heart": {
       "id": "0e56l-8K3jU",
-      "pinned": false,
+      "pinned": true,
       "title": "[MV] C-CLOWN(씨클라운) _ Shaking Heart(흔들리고 있어)",
       "channel": "1theK (원더케이)",
       "publishedAt": "2013-04-18T03:00:12Z",
-      "views": 4452952
+      "views": 4452954
     },
     "mv:Tabber|Being (feat. Baek Yerin)": {
       "id": "JWqb9mSTnD8",
-      "pinned": false,
+      "pinned": true,
       "title": "Tabber - Being (feat. 백예린) (Official Video)",
       "channel": "you.will.knovv",
       "publishedAt": "2023-10-25T09:00:54Z",
-      "views": 2197995
+      "views": 2197997
     },
     "mv:John Park|Like a Dream": {
       "id": "VmRleZXUJ9I",
-      "pinned": false,
+      "pinned": true,
       "title": "존박 (John Park) - '꿈처럼 (Like A Dream)' Official M/V",
       "channel": "존박 John Park",
       "publishedAt": "2024-10-30T09:00:01Z",
-      "views": 928407
+      "views": 928411
     },
     "gd:Tilt My Head": {
       "id": "jGec7pMBvsk",
@@ -151,7 +151,7 @@
       "title": "Girl's Day(걸스데이) 'How About Me(나어때)' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2010-07-21T09:04:46Z",
-      "views": 737792
+      "views": 737796
     },
     "gd:Nothing Lasts Forever": {
       "id": "JE-FUZPic2E",
@@ -167,7 +167,7 @@
       "title": "Girl's Day(걸스데이) '반짝반짝' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2011-03-15T17:07:54Z",
-      "views": 21447096
+      "views": 21447122
     },
     "gd:Hug Me Once": {
       "id": "yebXjZA60OQ",
@@ -191,7 +191,7 @@
       "title": "Girl's Day(걸스데이) 'Oh! my god' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2012-04-17T15:00:55Z",
-      "views": 7891709
+      "views": 7891757
     },
     "gd:Don't Forget Me": {
       "id": "w2S7ljcA7NM",
@@ -215,7 +215,7 @@
       "title": "Girl's Day(걸스데이) 'Expectation(기대해)' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2013-03-14T02:59:58Z",
-      "views": 15968843
+      "views": 15968852
     },
     "gd:Female President": {
       "id": "xF3MC8PWgJE",
@@ -223,7 +223,7 @@
       "title": "Girl's Day(걸스데이) 'Female President(여자대통령)' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2013-06-24T03:00:40Z",
-      "views": 34846080
+      "views": 34846087
     },
     "gd:Let's Go": {
       "id": "7AhLCDUUBa8",
@@ -231,7 +231,7 @@
       "title": "[MV] GIRL'S DAY(걸스데이) _ Let's Go(렛츠 고)",
       "channel": "1theK (원더케이)",
       "publishedAt": "2013-10-15T03:37:28Z",
-      "views": 1598248
+      "views": 1598250
     },
     "gd:Something": {
       "id": "akPDKYwIoVk",
@@ -247,7 +247,7 @@
       "title": "Girl's Day(걸스데이) 'Darling(달링)' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2014-07-13T15:00:04Z",
-      "views": 6414236
+      "views": 6414289
     },
     "gd:I Miss You": {
       "id": "EAc3QKoRll0",
@@ -263,7 +263,7 @@
       "title": "Girl's Day(걸스데이) 'Hello bubble(헬로버블)' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2015-05-12T03:00:00Z",
-      "views": 3237366
+      "views": 3237374
     },
     "gd:Ring My Bell": {
       "id": "WMu6TOJaqDE",
@@ -271,7 +271,7 @@
       "title": "Girl's Day(걸스데이) 'Ring my bell(링마벨)' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2015-07-06T15:00:01Z",
-      "views": 3788292
+      "views": 3788294
     },
     "gd:Darling (Japanese Version)": {
       "id": "U8X2q-2h-GM",
@@ -279,7 +279,7 @@
       "title": "[MV] Girl's Day(걸스데이)_Darling JPN ver.",
       "channel": "GIRL'S DAY",
       "publishedAt": "2015-10-27T05:34:52Z",
-      "views": 406244
+      "views": 406246
     },
     "gd:I'll Be Yours": {
       "id": "orHXpvTG5zs",
@@ -287,7 +287,7 @@
       "title": "Girl's Day(걸스데이) 'I'll be yours' Official MV",
       "channel": "GIRL'S DAY",
       "publishedAt": "2017-03-27T03:00:01Z",
-      "views": 2163683
+      "views": 2163681
     }
   }
 }

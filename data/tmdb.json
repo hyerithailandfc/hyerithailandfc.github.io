@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T09:28:03.809Z",
+  "updatedAt": "2026-10-28T09:34:31.710Z",
   "person": {
     "id": 1413827,
     "name": "Lee Hye-ri",
@@ -426,60 +426,6 @@
     }
   },
   "unmatched": [
-    {
-      "tmdbId": 284884,
-      "type": "tv",
-      "title": "Office Workers",
-      "original": "직장인들",
-      "year": 2025,
-      "character": "Self",
-      "poster": "/qCFutqGTCcX9SvfmBfhCwBQ086h.jpg"
-    },
-    {
-      "tmdbId": 331530,
-      "type": "tv",
-      "title": "Hyell's Club",
-      "original": "혤's club🍸",
-      "year": 2024,
-      "character": null,
-      "poster": "/47qJGkbxroYnWU4WiNcAjaNZWy3.jpg"
-    },
-    {
-      "tmdbId": 206726,
-      "type": "tv",
-      "title": "2015 Idol Star Athletics Championships Chuseok Special",
-      "original": "2015 Idol Star Athletics Championships Chuseok Special",
-      "year": 2015,
-      "character": "Self",
-      "poster": null
-    },
-    {
-      "tmdbId": 340004,
-      "type": "tv",
-      "title": "请回答1988",
-      "original": "请回答1988",
-      "year": 2015,
-      "character": "成德善",
-      "poster": "/xyxQ1AzfsfjxKeCswkhA6Qg7J6F.jpg"
-    },
-    {
-      "tmdbId": 129512,
-      "type": "tv",
-      "title": "Lee Juck Show",
-      "original": "방송의 적",
-      "year": 2013,
-      "character": "Self",
-      "poster": "/fKZhPwqz5Us8ulx3Oh7Fzil14wa.jpg"
-    },
-    {
-      "tmdbId": 62915,
-      "type": "tv",
-      "title": "Hometown Over the Hill",
-      "original": "산너머 남촌에는",
-      "year": 2007,
-      "character": "Ma Dong Sook",
-      "poster": "/wKwEQ2sfHCGLGKTVneau5wGfEmX.jpg"
-    },
     {
       "tmdbId": 318877,
       "type": "tv",
