@@ -144,7 +144,7 @@ async function route() {
     void main.offsetWidth;
     main.classList.add('page-enter');
     current = { page, mod };
-    document.title = page.path === '/' ? `${brandName()} ♡` : `${t(page.label)} · ${brandName()}`;
+    document.title = page.path === '/' ? brandName() : `${t(page.label)} · ${brandName()}`;
     mod.mount?.(main, ctx);
     reveal(main);
   } catch (err) {

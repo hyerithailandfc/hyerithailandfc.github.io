@@ -2,6 +2,11 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-28 — Brand text clean-up
+- Hero chip shows only the fan base name (no "บ้านเบส" / "Thai fan base" prefix); hero intro no longer uses an em dash (TH/EN/KR).
+- Removed the ♡ from the browser tab title and the header logo (admin too). The footer heart stays.
+- tools/serve.ps1 no longer crashes when the browser drops a connection.
+
 ## 2026-10-28 — #1 Profile: Girl's Day chip and Group fact link to #/girlsday
 - `profile.js`: the "Girl's Day" chip and the "Group" fact value are now links to `#/girlsday` (all 3 languages, text comes from `profile.json`).
 - `main.css`: new reusable `a.chip-link` (small lift + arrow nudge on hover) and `.text-link` (accent text, underline on hover) with focus-visible ring.

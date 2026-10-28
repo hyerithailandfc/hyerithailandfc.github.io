@@ -35,7 +35,7 @@ try {
     } catch {
       Write-Host "Error serving ${path}: $_"
     } finally {
-      $res.Close()
+      try { $res.Close() } catch { } # the browser may already have dropped the connection
     }
   }
 } finally {
