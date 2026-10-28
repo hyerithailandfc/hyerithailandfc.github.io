@@ -38,15 +38,15 @@
   "nicknames": [
     { "name": { "th": "ด็อกซอน", "en": "Deok-sun", "ko": "덕선이" }, "desc": { "th": "จากบท ซองด็อกซอน ใน Reply 1988", "en": "From her iconic role Sung Deok-sun in Reply 1988", "ko": "《응답하라 1988》 성덕선 역에서" } },
     { "name": { "th": "พาวเวอร์เซเลบ", "en": "Power Celebrity", "ko": "파워 연예인" }, "desc": { "th": "อันจียองตั้งให้ตอนมาเป็นแขกใน Amazing Saturday", "en": "Coined by guest Ahn Ji-young on Amazing Saturday", "ko": "《놀라운 토요일》 게스트 안지영이 붙인 별명" } },
-    { "name": { "th": "ปโปรี", "en": "Ppori", "ko": "뽀리" }, "desc": { "th": "เพราะชอบแอบ ‘ฉก’ ขนมคนอื่นในรายการ Amazing Saturday", "en": "For sneakily snatching other people's snacks on Amazing Saturday", "ko": "도레미마켓에서 남의 간식을 자주 '뽀려서'" } },
-    { "name": { "th": "ฮเยริคลีส", "en": "Hyericles", "ko": "혜리클레스" }, "desc": { "th": "จาก Weekly Idol ปี 2012 ที่เธอแบกเดฟคอนและจองฮยองดนขึ้นหลังได้", "en": "From Weekly Idol (2012), where she piggybacked both Defconn and Jeong Hyeong-don", "ko": "2012년 《주간 아이돌》에서 데프콘과 정형돈을 업어서" } },
-    { "name": { "th": "ฮเยรีเคน", "en": "Hyeri-cane", "ko": "혜리케인" }, "desc": { "th": "พลังความสดใสที่พัดทุกอย่างเหมือนพายุ", "en": "Her energy hits like a hurricane", "ko": "허리케인 같은 에너지" } },
-    { "name": { "th": "ฮเยร์ไมโอนี่", "en": "Hyermione", "ko": "혜르미온느" }, "desc": { "th": "ฉายาสาวฉลาดแบบเฮอร์ไมโอนี่", "en": "A Hermione-style nickname for her quick wits", "ko": "헤르미온느처럼 똑똑해서" } },
-    { "name": { "th": "โคบงอี", "en": "Kobong-i", "ko": "코봉이" }, "desc": { "th": "ฉายาน่ารัก ๆ จากแฟน ๆ", "en": "A cute nickname from fans", "ko": "팬들이 부르는 귀여운 별명" } },
-    { "name": { "th": "โคกดัส", "en": "Coke-das", "ko": "코크다스" }, "desc": { "th": "ได้รับการ ‘รับรอง’ ในรายการ Knowing Bros", "en": "Officially ‘certified’ on Knowing Bros", "ko": "《아는 형님》 공식 인증" } },
-    { "name": { "th": "ฮเยริโดซา", "en": "Hyeri Dosa", "ko": "혜리도사" }, "desc": { "th": "ท่านเซียนฮเยริ", "en": "‘Master Hyeri’", "ko": "도사 혜리" } },
-    { "name": { "th": "นายพลฮเยล", "en": "General Hyel", "ko": "혤장군" }, "desc": { "th": "ความเท่และเป็นผู้นำ", "en": "For her bold, leader-like charisma", "ko": "장군 같은 카리스마" } },
-    { "name": { "th": "ฮเยริจอง", "en": "Hyeri-jeong", "ko": "혜리정" }, "desc": { "th": "อีกหนึ่งฉายาจากแฟน ๆ", "en": "Another fan favourite", "ko": "팬들이 부르는 별명" } },
-    { "name": { "th": "มัคซึดล", "en": "Marx-dol", "ko": "맑스돌" }, "desc": { "th": "ฉายาขำ ๆ ในโลกออนไลน์", "en": "A playful internet nickname", "ko": "인터넷 밈 별명" } }
+    { "name": { "th": "ปโปรี", "en": "Ppori", "ko": "뽀리" }, "desc": { "th": "เพราะชอบแอบ ‘ฉก’ ขนมคนอื่นกินใน Doremi Market (Amazing Saturday)", "en": "For often sneaking other people's snacks at Doremi Market (Amazing Saturday)", "ko": "도레미마켓에서 남의 간식을 자주 훔쳐 먹어서" } },
+    { "name": { "th": "ฮเยริคลีส", "en": "Hyericles", "ko": "혜리클레스" }, "desc": { "th": "ทีมงาน Weekly Idol ตั้งให้ในปี 2012 หลังเธอแบกเดฟคอนและจองฮยองดนขึ้นหลังได้ทั้งคู่", "en": "Given by the Weekly Idol staff in 2012 after she piggybacked both Defconn and Jeong Hyeong-don", "ko": "2012년 《주간 아이돌》에서 데프콘과 정형돈을 업자 제작진이 붙여 준 별명" } },
+    { "name": { "th": "ฮเยร์ไมโอนี่", "en": "Hyermione", "ko": "혜르미온느" }, "desc": { "th": "namu.wiki อ้างอิงคลิปรายการวิทยุ ‘Shindong's Simsim Tapa’ ที่ Girl's Day ไปออกเมื่อ 21 มี.ค. 2012", "en": "namu.wiki points to Girl's Day's guest spot on the radio show “Shindong's Simsim Tapa” (Mar 21, 2012)", "ko": "나무위키 출처: 2012년 3월 21일 걸스데이가 출연한 라디오 《신동의 심심타파》" } },
+    { "name": { "th": "โคบงอี", "en": "Kobong-i", "ko": "코봉이" }, "desc": { "th": "มาจากคำว่า ‘โค’ (코) ที่แปลว่าจมูก namu.wiki ใช้ภาพจมูกของเธอเป็นที่มา", "en": "From 코 (‘nose’): namu.wiki cites a GIF of her nose as the origin", "ko": "코(nose)에서 온 별명. 나무위키는 혜리의 코 움짤을 출처로 든다" } },
+    { "name": { "th": "โคกดัส", "en": "Coke-das", "ko": "코크다스" }, "desc": { "th": "ได้รับการ ‘รับรอง’ ฉายานี้ในรายการ Knowing Bros", "en": "‘Certified’ on the show Knowing Bros", "ko": "《아는 형님》에서 인증받은 별명" } },
+    { "name": { "th": "ฮเยรีเคน", "en": "Hyeri-cane", "ko": "혜리케인" }, "desc": { "th": "namu.wiki ไม่ได้ระบุที่มาของฉายานี้", "en": "namu.wiki doesn't say where this one came from", "ko": "나무위키에 유래가 적혀 있지 않아요" }, "unknown": true },
+    { "name": { "th": "ฮเยริโดซา", "en": "Hyeri Dosa", "ko": "혜리도사" }, "desc": { "th": "namu.wiki ไม่ได้ระบุที่มาของฉายานี้", "en": "namu.wiki doesn't say where this one came from", "ko": "나무위키에 유래가 적혀 있지 않아요" }, "unknown": true },
+    { "name": { "th": "นายพลฮเยล", "en": "General Hyel", "ko": "혤장군" }, "desc": { "th": "namu.wiki ไม่ได้ระบุที่มาของฉายานี้", "en": "namu.wiki doesn't say where this one came from", "ko": "나무위키에 유래가 적혀 있지 않아요" }, "unknown": true },
+    { "name": { "th": "ฮเยริจอง", "en": "Hyeri-jeong", "ko": "혜리정" }, "desc": { "th": "namu.wiki ไม่ได้ระบุที่มาของฉายานี้", "en": "namu.wiki doesn't say where this one came from", "ko": "나무위키에 유래가 적혀 있지 않아요" }, "unknown": true },
+    { "name": { "th": "มัคซึดล", "en": "Marx-dol", "ko": "맑스돌" }, "desc": { "th": "namu.wiki ไม่ได้ระบุที่มาของฉายานี้", "en": "namu.wiki doesn't say where this one came from", "ko": "나무위키에 유래가 적혀 있지 않아요" }, "unknown": true }
   ]
 }

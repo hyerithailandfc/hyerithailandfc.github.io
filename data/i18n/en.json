@@ -23,7 +23,7 @@
     "ctaJourney": "Follow her journey",
     "polaroidCaption": "Hyeri ♡ since 2010",
     "countersTitle": "Counting the days",
-    "countersSub": "Live counters in Korea time — they tick over every midnight in Seoul.",
+    "countersSub": "Every day is one more day of loving Hyeri. The numbers tick up at midnight in Seoul!",
     "sinceDebut": "days since Girl's Day debut",
     "sinceActing": "days since acting debut",
     "toBirthday": "days until her birthday",
@@ -31,6 +31,7 @@
     "highlightsTitle": "Signature moments",
     "highlightsSub": "The roles and shows that made the whole country fall for her.",
     "nicknamesTitle": "So many nicknames",
+    "nickOrigins": "See where each nickname came from",
     "fandomTitle": "Fandom",
     "statsWorks": "dramas & films",
     "statsAwards": "awards",
@@ -38,7 +39,7 @@
   },
   "profile": {
     "title": "Profile",
-    "sub": "The essentials — in one cute card.",
+    "sub": "The essentials: in one cute card.",
     "realName": "Real name",
     "birth": "Birthday",
     "birthplace": "Hometown",
@@ -54,6 +55,7 @@
     "education": "Education",
     "family": "Family",
     "nicknames": "Nicknames",
+    "nicknamesSub": "Where each nickname came from, according to namu.wiki.",
     "age": "{age} years old"
   },
   "journey": {
@@ -66,7 +68,7 @@
   },
   "works": {
     "title": "Works",
-    "sub": "Dramas, films, shows and music videos — all in one place.",
+    "sub": "Dramas, films, shows and music videos: all in one place.",
     "drama": "Dramas",
     "movie": "Films",
     "variety": "TV shows",
@@ -115,7 +117,7 @@
     "galleryHyeri": "Hyeri",
     "galleryWorks": "From her works",
     "channels": "Official channels",
-    "noVideos": "Videos are coming soon — admins can add them from the Admin page.",
+    "noVideos": "Videos are coming soon: admins can add them from the Admin page.",
     "noPhotos": "The photo gallery is waiting for its first picture ♡",
     "play": "Play video",
     "subscribers": "{n} subscribers",
@@ -124,7 +126,7 @@
   },
   "about": {
     "title": "About this site",
-    "sub": "Hyeri's Thai fan base — built by fans, for fans.",
+    "sub": "Hyeri's Thai fan base: built by fans, for fans.",
     "whatTitle": "What is this?",
     "what": "{brand} is an unofficial Thai fan base for Hyeri (Lee Hye-ri), run by Thai fans. It is not affiliated with Hyeri, her agency Sublime, or any broadcaster.",
     "sourceTitle": "Where the information comes from",
@@ -167,8 +169,8 @@
     "disclaimer": "Unofficial fan-made fan base. Not affiliated with Hyeri or Sublime.",
     "source": "Source:",
     "synced": "synced",
-    "madeBy": "{brand} — made with love by Thai HYEROOMY",
+    "madeBy": "{brand}: made with love by Thai HYEROOMY",
     "admin": "Admin",
-    "tmdb": "Posters & synopses from TMDB — this product uses the TMDB API but is not endorsed or certified by TMDB."
+    "tmdb": "Posters & synopses from TMDB: this product uses the TMDB API but is not endorsed or certified by TMDB."
   }
 }

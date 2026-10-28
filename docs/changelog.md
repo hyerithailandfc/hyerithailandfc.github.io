@@ -2,6 +2,15 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-28 — Polish: wording, links, nicknames, duplicates
+- Cute caption under the D-day counters; every em dash in site text replaced with ": " (TMDB synopses too, at sync time).
+- "บ้านเบส" → "บ้านแฟนคลับ" everywhere; footer heart removed.
+- Home highlight cards open `#/journey?item=<n>` and scroll to / flash that timeline entry.
+- Nicknames: origins re-checked against namu.wiki footnotes (Hyericles, Ppori, Power Celebrity, Kobong-i, Coke-das, Hyermione);
+  5 with no documented origin are marked `unknown` instead of guessed. Home chips link to `#/profile?section=nicknames` and show the origin on hover.
+- Nickname marquee repeats 4× so there is no empty gap on wide screens.
+- Hidden a duplicate TMDB profile photo via `external.tmdbImageIgnore`.
+
 ## 2026-10-28 — Deep dives + photos from her works
 - Journey page: new "Deep dives" section (`data/stories.json`) — 7 expandable topics summarized in TH/EN/KR from namu.wiki sub-pages
   (Real Men, Amazing Saturday, YouTube, fan meetings, ads & magazines, persona, trivia), each linking to the original.

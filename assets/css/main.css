@@ -336,7 +336,7 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 
 /* ---------- Marquee ---------- */
 .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee-track { display: flex; gap: 12px; width: max-content; animation: marquee 40s linear infinite; padding: 6px 0; }
+.marquee-track { display: flex; gap: 12px; width: max-content; animation: marquee 80s linear infinite; padding: 6px 0; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
@@ -360,7 +360,7 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .edu-list li::after { content: ""; position: absolute; left: 8px; top: 22px; bottom: 0; width: 2px; background: var(--line); }
 .edu-list li:last-child::after { display: none; }
 .edu-note { color: var(--muted); font-size: .9rem; }
-.nick { cursor: default; transition: transform .3s var(--ease-pop); }
+.nick { cursor: pointer; text-decoration: none !important; transition: transform .3s var(--ease-pop); }
 .nick:hover { transform: translateY(-3px) rotate(-2deg); }
 .nick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 12px; }
 .nick-card { padding: 16px 18px; }
@@ -378,6 +378,8 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .tl-year { display: inline-block; font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 1.05rem; color: #fff; background: var(--grad-pop); padding: 4px 14px; border-radius: var(--radius-pill); margin-bottom: 10px; }
 .tl-item:nth-child(even) .tl-year { background: var(--grad-dream); }
 .tl-card h3 { font-size: 1.3rem; }
+.tl-card.flash { animation: flash-ring 2.4s var(--ease-out) .4s 1 both; }
+@keyframes flash-ring { 0% { box-shadow: 0 0 0 0 var(--glow), var(--shadow-sm); } 30% { box-shadow: 0 0 0 6px var(--glow), var(--shadow); } 100% { box-shadow: 0 0 0 0 transparent, var(--shadow-sm); } }
 .tl-card p { color: var(--ink-2); margin: 0; }
 .tl-card .chips { margin-top: 12px; }
 @media (max-width: 760px) {
@@ -581,3 +583,7 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
   .reveal { opacity: 1; transform: none; }
   .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
 }
+
+/* Nickname cards whose origin isn't documented in the source */
+.nick-card.is-unknown .nick-desc { color: var(--muted); font-style: italic; display: flex; gap: 6px; align-items: flex-start; }
+.nick-card.is-unknown .nick-desc svg { flex: none; width: 15px; height: 15px; margin-top: 3px; }

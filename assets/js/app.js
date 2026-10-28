@@ -73,7 +73,7 @@ function renderChrome() {
   $('#site-footer').innerHTML = `
     <div class="container footer-inner">
       <div>
-        <div class="footer-brand">${esc(brandName())} <span class="logo-heart">♡</span></div>
+        <div class="footer-brand">${esc(brandName())}</div>
         <p class="footer-small" style="margin-bottom:.4em">${esc(ui('footer.fansite'))}</p>
         <p class="footer-small">${esc(ui('footer.disclaimer'))}</p>
         <p class="footer-small">${esc(ui('footer.source'))} <a href="${esc(s.source.url)}" target="_blank" rel="noopener">${esc(s.source.name)}</a> · ${esc(s.source.license)} · ${esc(ui('footer.synced'))} ${esc(s.source.lastSynced)}</p>

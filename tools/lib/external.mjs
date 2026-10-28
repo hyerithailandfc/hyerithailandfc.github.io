@@ -7,6 +7,8 @@ const NON_SCRIPTED_TV = new Set([10763, 10764, 10767]); // TMDB genres: news, re
 export const norm = (s) => String(s || '').toLowerCase().normalize('NFKC').replace(/[\s\p{P}\p{S}]/gu, '');
 const yearOf = (c) => Number((c.release_date || c.first_air_date || '').slice(0, 4)) || 0;
 const nameOf = (d = {}) => d.title || d.name || '';
+/** Site style: no em dashes (owner's request), use ": " instead. */
+const noDash = (s) => String(s || '').replace(/\s*—\s*/g, ': ');
 
 /* ---------------- TMDB ---------------- */
 
@@ -77,6 +79,7 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
       profile: person.profile_path || null,
       url: `https://www.themoviedb.org/person/${personId}`,
       images: (images.profiles || [])
+        .filter((i) => !(config.tmdbImageIgnore || []).includes(i.file_path)) // duplicates the admin chose to hide
         .sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0))
         .slice(0, 12)
         .map((i) => ({ path: i.file_path, width: i.width, height: i.height })),
@@ -109,10 +112,12 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
         votes: detail.vote_count || 0,
         character: c.character || null,
         title: { th: nameOf(th), en: nameOf(en) || nameOf(detail), ko: nameOf(ko) },
-        overview: { th: th.overview || '', en: en.overview || detail.overview || '', ko: ko.overview || '' },
+        overview: {
+          th: noDash(th.overview), en: noDash(en.overview || detail.overview), ko: noDash(ko.overview),
+        },
         // Up to 4 text-free stills/backdrops for the Media gallery ("From her works").
         stills: (imgs.backdrops || [])
-          .filter((b) => !b.iso_639_1)
+          .filter((b) => !b.iso_639_1 && !(config.tmdbImageIgnore || []).includes(b.file_path))
           .sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0))
           .slice(0, 4)
           .map((b) => ({ path: b.file_path, width: b.width, height: b.height })),

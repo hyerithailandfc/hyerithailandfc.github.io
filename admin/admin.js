@@ -120,7 +120,7 @@ function renderLogin(msg = '') {
   <div class="card login-card page-enter">
     <div class="counter-icon">${icon('lock')}</div>
     <h1 class="admin-title" style="text-align:center">เข้าสู่ระบบแอดมิน</h1>
-    <p class="admin-sub" style="text-align:center">ใช้ GitHub token ของคุณ — เฉพาะคนที่มีสิทธิ์เขียน repo นี้เท่านั้นที่แก้เว็บได้</p>
+    <p class="admin-sub" style="text-align:center">ใช้ GitHub token ของคุณ: เฉพาะคนที่มีสิทธิ์เขียน repo นี้เท่านั้นที่แก้เว็บได้</p>
     ${msg ? `<p class="note-box" style="margin-bottom:14px">${esc(msg)}</p>` : ''}
     <form id="login-form">
       <div class="row" style="gap:10px">
@@ -156,7 +156,7 @@ async function verify() {
   try {
     const [repo, user] = await Promise.all([api(repoPath()), api('/user')]);
     if (!repo.permissions?.push) {
-      renderLogin('Token นี้ไม่มีสิทธิ์เขียน repo — ต้องเป็นเจ้าของหรือ collaborator');
+      renderLogin('Token นี้ไม่มีสิทธิ์เขียน repo: ต้องเป็นเจ้าของหรือ collaborator');
       return false;
     }
     cfg.branch = repo.default_branch || 'main';
@@ -252,7 +252,7 @@ async function dashboard(panel) {
       <div class="item-list">${unmatched.map((u) => `
         <div class="card item">
           <div class="item-main"><div class="item-title">${esc(u.title)}${u.original && u.original !== u.title ? ` · ${esc(u.original)}` : ''}</div>
-          <div class="item-meta">${u.year || '—'} · ${u.type === 'movie' ? 'ภาพยนตร์' : 'ซีรีส์/รายการ'}${u.character ? ` · รับบท ${esc(u.character)}` : ''} · <a href="https://www.themoviedb.org/${esc(u.type)}/${u.tmdbId}" target="_blank" rel="noopener">TMDB</a></div></div>
+          <div class="item-meta">${u.year || '-'} · ${u.type === 'movie' ? 'ภาพยนตร์' : 'ซีรีส์/รายการ'}${u.character ? ` · รับบท ${esc(u.character)}` : ''} · <a href="https://www.themoviedb.org/${esc(u.type)}/${u.tmdbId}" target="_blank" rel="noopener">TMDB</a></div></div>
           <button class="btn btn-ghost btn-sm" type="button" data-add-credit="${esc(u.type)}:${u.tmdbId}">ขอให้ Claude เพิ่ม</button>
         </div>`).join('')}</div>` : ''}
 
@@ -261,7 +261,7 @@ async function dashboard(panel) {
       <p class="hint">ถ้าคลิปไม่ถูกต้อง ไปที่ “แก้ไขข้อความ” → ผลงาน → mv แล้วใส่ <code>youtubeId</code> ที่ถูกต้อง (11 ตัวอักษรท้ายลิงก์) ระบบจะใช้คลิปนั้นแทน</p>
       <div class="item-list">${mvs.map(([key, v]) => `
         <div class="card item">
-          <div class="item-main"><div class="item-title">${esc(key.replace(/^(mv|gd):/, '').replace('|', ' — '))}</div>
+          <div class="item-main"><div class="item-title">${esc(key.replace(/^(mv|gd):/, '').replace('|', ': '))}</div>
           <div class="item-meta">${v.pinned ? '📌 ปักหมุดแล้ว' : '🔎 ค้นหาอัตโนมัติ'} · <a href="https://www.youtube.com/watch?v=${esc(v.id)}" target="_blank" rel="noopener">${esc(v.title)}</a> · ${esc(v.channel || '')}</div></div>
         </div>`).join('')}</div>` : ''}
     </div>
@@ -333,7 +333,7 @@ async function dashboard(panel) {
       } else if (m && confirm(`เผยแพร่ PR #${m.dataset.merge} ขึ้นเว็บจริง?`)) {
         m.disabled = true;
         await api(repoPath(`/pulls/${m.dataset.merge}/merge`), { method: 'PUT', body: JSON.stringify({ merge_method: 'squash' }) });
-        toast('เผยแพร่แล้ว — เว็บจะอัปเดตภายใน 1–2 นาที', 'ok');
+        toast('เผยแพร่แล้ว: เว็บจะอัปเดตภายใน 1–2 นาที', 'ok');
         renderPanel();
       } else if (c && confirm(`ทิ้งการเปลี่ยนแปลงใน PR #${c.dataset.closePr}?`)) {
         await api(repoPath(`/pulls/${c.dataset.closePr}`), { method: 'PATCH', body: JSON.stringify({ state: 'closed' }) });
@@ -396,7 +396,7 @@ async function refresh(panel) {
       '`````',
     ].join('\n');
     try {
-      const issue = await createClaudeIssue(`[Refresh] ${f.get('section')} — ${f.get('modified')}`, body);
+      const issue = await createClaudeIssue(`[Refresh] ${f.get('section')}: ${f.get('modified')}`, body);
       toast(`ส่งแล้ว (#${issue.number}) Claude กำลังทำงาน`, 'ok');
       tab = 'dashboard';
       renderShell();
@@ -593,7 +593,7 @@ async function content(panel) {
   panel.innerHTML = `
   <div class="card page-enter">
     <h2 style="font-size:1.4rem">แก้ไขข้อความ</h2>
-    <p class="hint">แก้ข้อความได้ทันทีโดยไม่ต้องใช้ Claude — กดบันทึกแล้วเว็บจะอัปเดตใน 1–2 นาที ช่อง TH ว่างได้ (จะแสดงภาษาอังกฤษแทน)</p>
+    <p class="hint">แก้ข้อความได้ทันทีโดยไม่ต้องใช้ Claude: กดบันทึกแล้วเว็บจะอัปเดตใน 1–2 นาที ช่อง TH ว่างได้ (จะแสดงภาษาอังกฤษแทน)</p>
     <label class="field" style="max-width:420px"><span>เลือกไฟล์ข้อมูล</span>
       <select class="select" id="file-pick">${DATA_FILES.map(([p, l]) => `<option value="${p}">${l}</option>`).join('')}</select></label>
     <div id="editor"></div>
@@ -670,7 +670,7 @@ async function media(panel) {
 
     <div class="card">
       <h2 style="font-size:1.3rem">${icon('image').replace('<svg', '<svg width="22" height="22" style="display:inline;vertical-align:-4px;color:var(--accent)"')} อัปโหลดรูป</h2>
-      <p class="hint">รูปจะถูกย่อเป็น WebP ไม่เกิน 1600px อัตโนมัติ — อัปโหลดเฉพาะรูปที่มีสิทธิ์เผยแพร่ (เช่น รูปจากช่องทางการที่อนุญาตให้แชร์ หรือรูปที่ถ่ายเอง)</p>
+      <p class="hint">รูปจะถูกย่อเป็น WebP ไม่เกิน 1600px อัตโนมัติ: อัปโหลดเฉพาะรูปที่มีสิทธิ์เผยแพร่ (เช่น รูปจากช่องทางการที่อนุญาตให้แชร์ หรือรูปที่ถ่ายเอง)</p>
       <form id="img-form">
         <label class="field"><span>ไฟล์รูป</span><input class="input" type="file" name="file" accept="image/*" required></label>
         <div class="field"><span class="field-label">คำบรรยาย</span>${langInputs('cap')}</div>

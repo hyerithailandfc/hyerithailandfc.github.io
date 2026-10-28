@@ -3,7 +3,7 @@
     "name": "Hyeri Thailand FC"
   },
   "source": {
-    "name": "namu.wiki — 혜리",
+    "name": "namu.wiki: 혜리",
     "url": "https://namu.wiki/w/%ED%98%9C%EB%A6%AC",
     "license": "CC BY-NC-SA 2.0 KR",
     "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/2.0/kr/",
@@ -14,6 +14,7 @@
     "tmdbPersonId": 1413827,
     "tmdbPersonQueries": ["Lee Hye-ri", "Hyeri"],
     "tmdbIgnore": [284884, 331530, 206726, 340004, 129512, 62915],
+    "tmdbImageIgnore": ["/rCzan8eMTJ6LKtJ1Y3UN3jsXMb3.jpg"],
     "youtubeChannelHandle": "@IamLeeHyeri"
   },
   "pages": [

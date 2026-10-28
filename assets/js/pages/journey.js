@@ -1,4 +1,4 @@
-import { loadJSON, tx, ui, esc, icon } from '../core.js';
+import { loadJSON, tx, ui, esc, icon, routeQuery } from '../core.js';
 
 export async function render() {
   const [{ items }, stories] = await Promise.all([loadJSON('data/journey.json'), loadJSON('data/stories.json')]);
@@ -13,8 +13,8 @@ export async function render() {
   <section class="section" style="padding-top:20px">
     <div class="container">
       <ol class="timeline list-clean">
-        ${items.map((it) => `
-          <li class="tl-item reveal">
+        ${items.map((it, idx) => `
+          <li class="tl-item reveal" id="j-${idx}">
             <span class="tl-dot" aria-hidden="true"></span>
             <span class="tl-year">${it.yearLabel ? tx(it.yearLabel) : esc(it.year)}</span>
             <article class="card hover tl-card">
@@ -56,4 +56,18 @@ export async function render() {
       </div>
     </div>
   </section>`;
+}
+
+/** #/journey?item=<index> (from the home page highlight cards) scrolls to that timeline entry and flashes it. */
+export function mount(root) {
+  const { item } = routeQuery();
+  const target = item != null && root.querySelector(`#j-${CSS.escape(item)}`);
+  if (!target) return;
+  // Wait for the router's scroll-to-top after navigation, then jump to the entry.
+  setTimeout(() => {
+    target.classList.add('in');
+    const y = target.getBoundingClientRect().top + window.scrollY - (document.getElementById('site-header')?.offsetHeight || 0) - 24;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    target.querySelector('.tl-card')?.classList.add('flash');
+  }, 120);
 }

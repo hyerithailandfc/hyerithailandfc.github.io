@@ -1,4 +1,4 @@
-import { loadJSON, loadExternal, tmdbImg, tx, ui, esc, icon, formatDate, seoulToday } from '../core.js';
+import { loadJSON, loadExternal, tmdbImg, tx, ui, esc, icon, formatDate, seoulToday, routeQuery } from '../core.js';
 
 function age(iso) {
   const [y, m, d] = iso.split('-').map(Number);
@@ -75,19 +75,30 @@ export async function render() {
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
+  <section class="section" id="nicknames" style="padding-top:0">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">${icon('smile')} Nicknames</span>
         <h2 class="section-title">${esc(ui('profile.nicknames'))}</h2>
+        <p class="section-sub">${esc(ui('profile.nicknamesSub'))}</p>
       </div>
       <div class="nick-grid">
         ${p.nicknames.map((n, i) => `
-          <div class="card hover nick-card reveal" style="--d:${(i % 3) * 0.06}s">
+          <div class="card hover nick-card ${n.unknown ? 'is-unknown' : ''} reveal" style="--d:${(i % 3) * 0.06}s">
             <div class="nick-name">${tx(n.name)}</div>
-            <p class="nick-desc">${tx(n.desc)}</p>
+            <p class="nick-desc">${n.unknown ? icon('info') : ''}${tx(n.desc)}</p>
           </div>`).join('')}
       </div>
     </div>
   </section>`;
+}
+
+/** #/profile?section=nicknames (from the home page nickname strip) scrolls to the nickname cards. */
+export function mount(root) {
+  if (routeQuery().section !== 'nicknames') return;
+  const target = root.querySelector('#nicknames');
+  setTimeout(() => {
+    const y = target.getBoundingClientRect().top + window.scrollY - (document.getElementById('site-header')?.offsetHeight || 0) - 8;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }, 120);
 }

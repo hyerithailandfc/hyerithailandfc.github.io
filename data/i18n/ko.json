@@ -23,7 +23,7 @@
     "ctaJourney": "발자취 따라가기",
     "polaroidCaption": "혜리 ♡ since 2010",
     "countersTitle": "함께 세는 날들",
-    "countersSub": "한국 시간 기준 실시간 카운터 — 서울의 자정마다 하루씩 늘어나요.",
+    "countersSub": "혜리를 좋아한 날이 하루하루 쌓여요. 서울의 자정마다 하나씩 늘어나요!",
     "sinceDebut": "걸스데이 데뷔 후",
     "sinceActing": "배우 데뷔 후",
     "toBirthday": "생일까지",
@@ -31,6 +31,7 @@
     "highlightsTitle": "대표 모먼트",
     "highlightsSub": "온 국민이 혜리에게 반한 작품과 예능들.",
     "nicknamesTitle": "별명 부자",
+    "nickOrigins": "별명 유래 보기",
     "fandomTitle": "팬덤",
     "statsWorks": "드라마 & 영화",
     "statsAwards": "수상",
@@ -54,6 +55,7 @@
     "education": "학력",
     "family": "가족",
     "nicknames": "별명",
+    "nicknamesSub": "나무위키에 정리된 별명의 유래.",
     "age": "만 {age}세"
   },
   "journey": {
@@ -115,7 +117,7 @@
     "galleryHyeri": "혜리",
     "galleryWorks": "출연작 스틸",
     "channels": "공식 채널",
-    "noVideos": "영상은 곧 추가될 예정이에요 — 관리자 페이지에서 추가할 수 있어요.",
+    "noVideos": "영상은 곧 추가될 예정이에요: 관리자 페이지에서 추가할 수 있어요.",
     "noPhotos": "갤러리가 첫 사진을 기다리고 있어요 ♡",
     "play": "영상 재생",
     "subscribers": "구독자 {n}명",
@@ -124,7 +126,7 @@
   },
   "about": {
     "title": "사이트 소개",
-    "sub": "혜리의 태국 팬 베이스 — 팬이 팬을 위해 만든 공간.",
+    "sub": "혜리의 태국 팬 베이스: 팬이 팬을 위해 만든 공간.",
     "whatTitle": "이 사이트는?",
     "what": "{brand}는 태국 팬들이 운영하는 혜리(이혜리)의 비공식 팬 베이스입니다. 혜리 본인, 소속사 써브라임, 방송사와는 관련이 없습니다.",
     "sourceTitle": "정보 출처",
@@ -167,8 +169,8 @@
     "disclaimer": "팬이 만든 비공식 팬 베이스입니다. 혜리 및 써브라임과 관련이 없습니다.",
     "source": "출처:",
     "synced": "동기화",
-    "madeBy": "{brand} — 태국 혜루미의 사랑으로 만들었어요",
+    "madeBy": "{brand}: 태국 혜루미의 사랑으로 만들었어요",
     "admin": "관리자",
-    "tmdb": "포스터·줄거리 출처 TMDB — 이 사이트는 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지 않았습니다."
+    "tmdb": "포스터·줄거리 출처 TMDB: 이 사이트는 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지 않았습니다."
   }
 }

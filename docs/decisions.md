@@ -29,6 +29,6 @@ Add new entries at the bottom: `D-<n> (YYYY-MM-DD): decision — reason`.
   (`TMDB_API_KEY`, `YOUTUBE_API_KEY`) and writes `data/tmdb.json` + `data/youtube.json`. Keys never reach the browser.
   `works.json` stays the curated source of truth (facts, roles, Thai text); TMDB adds posters, synopses, ratings and photos;
   YouTube adds MV videos/views, channel stats and latest uploads. TMDB credits missing from works.json are shown to the admin, not auto-added.
-- **D-13 (2026-10-28): Fan base name = "Hyeri Thailand FC"** (Thai: บ้านเบส). Stored once in `data/site.json → brand.name`.
+- **D-13 (2026-10-28): Fan base name = "Hyeri Thailand FC"** (Thai: บ้านแฟนคลับ). Stored once in `data/site.json → brand.name`.
   Logo = "H" mark + first word large ("HYERI") + rest as a small second line ("THAILAND FC"). The site presents itself as a Thai fan base
   (not a generic fansite) in all three languages.

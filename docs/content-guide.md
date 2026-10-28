@@ -5,7 +5,7 @@
 - **`en` and `ko` are required. `th` is required for sentences/descriptions**; for titles and proper nouns it may be omitted
   (the site falls back to English). `tools/validate.mjs` enforces this.
 - UI strings (buttons, headings, labels) go in `data/i18n/{th,en,ko}.json` — same keys in all three files. Use `ui('section.key')`.
-  Write the fan base name as `{brand}` (e.g. `"บ้านเบส {brand}"`) — `ui()` fills it from `site.json → brand.name`.
+  Write the fan base name as `{brand}` (e.g. `"บ้านแฟนคลับ {brand}"`) — `ui()` fills it from `site.json → brand.name`.
 
 ## Translation style
 - **Thai:** friendly fan voice, natural Thai (not word-for-word). Use Thai fan spellings: ฮเยริ, อี ฮเยริ, Girl's Day, ด็อกซอน.
@@ -15,6 +15,9 @@
 - **Korean:** neutral, encyclopedic-but-warm. Use the original Korean titles (《응답하라 1988》).
 - Always refer to Hyeri as **she/her** (the machine-translated en.namu.wiki often says "he" — that's wrong).
 - Keep it positive and factual. Skip controversies/rumors unless the admin explicitly asks; never include private info about non-celebrities.
+- **No em dashes (—) anywhere in site text** (owner's style rule). Use ": " instead, e.g. "Reply 1988: Sung Deok-sun". En dashes in ranges (2018–2020) are fine.
+- Thai name for the fan base is **บ้านแฟนคลับ** (never "บ้านเบส").
+- Nickname origins (`profile.json → nicknames[].desc`) must come from the source. If namu.wiki gives no origin, say so and set `"unknown": true`; never guess.
 
 ## Sourcing
 - Source of truth: Korean namu.wiki article <https://namu.wiki/w/혜리> — text pasted by the admin in the request issue.
@@ -55,7 +58,8 @@ Matching keys come from `workKey()` in `assets/js/core.js`: `drama:<title.ko>`, 
 - `tmdb.json`: `person {id, name, profile, url, images[]}`, `works { <workKey>: {tmdbId, type, url, poster, backdrop, rating, votes, character, title{th,en,ko}, overview{th,en,ko}, stills[]} }` (stills = up to 4 text-free backdrops, shown in the Media gallery under "From her works"), `unmatched[]` (TMDB credits not in works.json).
 - `youtube.json`: `channel {id, title, handle, url, thumbnail, subscribers, videos, views}`, `latest[] {id, title, channel, publishedAt, views}`, `mv { <workKey>: {id, pinned, title, channel, publishedAt, views} }`.
 Pages read them through `loadExternal()` and must still look complete when they are empty (before the first sync or without API keys).
-Sync settings live in `data/site.json → external` (`tmdbPersonId`, `tmdbPersonQueries`, `tmdbIgnore`, `youtubeChannelHandle`).
+Sync settings live in `data/site.json → external` (`tmdbPersonId`, `tmdbPersonQueries`, `tmdbIgnore`, `tmdbImageIgnore`, `youtubeChannelHandle`).
+`tmdbImageIgnore` = TMDB image paths to hide (e.g. the same photo uploaded twice). The Media page hides them immediately; the sync also skips them.
 `tmdbIgnore` = TMDB ids reviewed and rejected (variety/YouTube appearances, duplicates, wrong credits) so they stop appearing in the Admin "not on the site" list.
 
 `data/awards.json` — `items[]`: `year` (number), `ceremony`, `category`, optional `work`.

@@ -4,7 +4,7 @@ const SOCIAL_ICON = { instagram: 'instagram', youtube: 'youtube', x: 'x', weibo:
 let photos = [];
 let onKey;
 
-export async function render() {
+export async function render({ site }) {
   const [media, ext] = await Promise.all([loadJSON('data/media.json'), loadExternal()]);
   const { channel } = ext.yt;
 
@@ -17,13 +17,14 @@ export async function render() {
 
   // Group 1: admin uploads, then TMDB profile photos. Group 2: stills from her works (TMDB).
   const person = ext.tmdb.person;
+  const hidden = new Set(site.external?.tmdbImageIgnore || []); // duplicate TMDB photos the admin hid
   const portraits = [
     ...media.gallery,
-    ...(person?.images || []).map((img) => ({
+    ...(person?.images || []).filter((img) => !hidden.has(img.path)).map((img) => ({
       src: tmdbImg(img.path, 'h632'), width: img.width, height: img.height, caption: person.name, credit: 'TMDB',
     })),
   ];
-  const stills = Object.values(ext.tmdb.works).flatMap((w) => (w.stills || []).map((img) => ({
+  const stills = Object.values(ext.tmdb.works).flatMap((w) => (w.stills || []).filter((img) => !hidden.has(img.path)).map((img) => ({
     src: tmdbImg(img.path, 'w780'), width: img.width, height: img.height, caption: w.title, credit: 'TMDB',
   })));
   photos = [...portraits, ...stills];

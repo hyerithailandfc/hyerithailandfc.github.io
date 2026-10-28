@@ -3,7 +3,7 @@
 > 🇹🇭 ไฟล์นี้คือ "กฎการสร้าง" ของเว็บ Claude อ่านไฟล์นี้ทุกครั้งก่อนทำงาน
 > ถ้าต้องการเปลี่ยนธีม/กฎ ให้แก้ไฟล์นี้หรือไฟล์ใน `docs/` แล้ว Claude จะทำตามในงานถัดไป
 
-**Hyeri Thailand FC** — an unofficial Thai fan base (บ้านเบส) website about **Hyeri (혜리 / Lee Hye-ri)**, singer (Girl's Day) and actress.
+**Hyeri Thailand FC** — an unofficial Thai fan base (บ้านแฟนคลับ) website about **Hyeri (혜리 / Lee Hye-ri)**, singer (Girl's Day) and actress.
 The name lives only in `data/site.json → brand.name`; in UI strings write `{brand}` (filled in by `ui()`), in JS use `brandName()`.
 Never hard-code the name elsewhere (static fallbacks in `index.html` / `admin/index.html` excepted).
 Static site on **GitHub Pages** — free, no server, no build step. Content comes from the Korean

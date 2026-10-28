@@ -20,8 +20,9 @@ export async function render() {
   const featured = media.gallery.find((g) => g.featured) || media.gallery[0] || tmdbPhoto;
   const letters = 'HYERI'.split('').map((c, i) => `<span style="--i:${i}">${c}</span>`).join('');
   const bday = daysToBirthday(profile.birthDate);
-  const highlights = journey.items.filter((j) => j.highlight);
-  const nicks = profile.nicknames.map((n) => `<span class="chip nick">${icon('heart')}${tx(n.name)}</span>`).join('');
+  const highlights = journey.items.map((j, idx) => ({ ...j, idx })).filter((j) => j.highlight); // idx links the card to its timeline entry
+  const nicks = profile.nicknames.map((n) => `<a class="chip nick" href="#/profile?section=nicknames" title="${tx(n.desc)}">${icon('heart')}${tx(n.name)}</a>`).join('');
+  const nicksHidden = nicks.replace(/class="chip nick"/g, 'class="chip nick" aria-hidden="true" tabindex="-1"');
   const sparkles = [[8, 18], [46, 6], [88, 30], [70, 84], [18, 78]]
     .map(([x, y], i) => `<span class="sparkle" style="left:${x}%;top:${y}%;animation-delay:${i * 0.45}s">${icon('sparkle')}</span>`).join('');
 
@@ -89,7 +90,7 @@ export async function render() {
       </div>
       <div class="grid grid-3">
         ${highlights.map((h, i) => `
-          <a class="card hover highlight reveal" style="--d:${(i % 3) * 0.08}s;text-decoration:none;color:inherit" href="#/journey">
+          <a class="card hover highlight reveal" style="--d:${(i % 3) * 0.08}s;text-decoration:none;color:inherit" href="#/journey?item=${h.idx}">
             <div class="highlight-top g-${i % 4}">
               <div class="highlight-year">${esc(h.year)}</div>
               <h3 class="highlight-title">${tx(h.title)}</h3>
@@ -107,9 +108,9 @@ export async function render() {
         <h2 class="section-title">${esc(ui('home.nicknamesTitle'))}</h2>
       </div>
     </div>
-    <div class="marquee reveal"><div class="marquee-track">${nicks}${nicks.replace(/class="chip nick"/g, 'class="chip nick" aria-hidden="true"')}</div></div>
+    <div class="marquee reveal"><div class="marquee-track">${nicks}${nicksHidden}${nicksHidden}${nicksHidden}</div></div>
     <div class="container" style="text-align:center;margin-top:24px">
-      <a class="btn btn-ghost" href="#/profile">${esc(ui('profile.title'))} ${icon('arrowRight')}</a>
+      <a class="btn btn-ghost" href="#/profile?section=nicknames">${esc(ui('home.nickOrigins'))} ${icon('arrowRight')}</a>
     </div>
   </section>`;
 }
