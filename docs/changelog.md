@@ -2,6 +2,12 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-29 — TMDB posters for more TV shows
+- First sync with TV matching found 20 of 41 variety/hosting posters. Pinned `tmdbId` on 16 more (checked on themoviedb.org):
+  Radio Star, Real Men (×2), Eco Village, I Live Alone special, Knowing Bros, Agents of Mystery 2, The Show (×2), We Got Married,
+  MBC Gayo Daejejeon, Idol Star Athletics (×2), KBS/MBC year-end awards (show-level posters).
+- Not on TMDB (or no poster there): Dream Team 2, 1 vs 100 (KBS), God of the Table, Hidden Camera Battle, Gaon Chart Awards 2015.
+
 ## 2026-10-29 — Owner feedback round: wording, Thai line breaks, photos, more detail
 - Wording: new Profile subtitle; polaroid caption uses "·"; Deep-dives subtitle no longer mentions namu.wiki sub-pages; all dates in CE (no พ.ศ.).
 - Thai line breaking: Korean names no longer split mid-word ("คยอ|งกี"): `data/site.json → thaiNoBreak` + word joiners in `t()`/`ui()`;
