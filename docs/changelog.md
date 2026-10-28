@@ -2,6 +2,11 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-28 — Admin: edit deep dives and Girl's Day
+- Admin "แก้ไขข้อความ" can now open `data/stories.json` and `data/girlsday.json`.
+- "+ เพิ่มรายการ" on an empty list (e.g. a new story's `body[]`) now adds a TH/EN/KR item instead of a plain text field.
+- Empty `…Id` fields (`youtubeId`, `tmdbId`) are saved as `null`; list rows show `date` when there is no `year`.
+
 ## 2026-10-28 — Polish: wording, links, nicknames, duplicates
 - Cute caption under the D-day counters; every em dash in site text replaced with ": " (TMDB synopses too, at sync time).
 - "บ้านเบส" → "บ้านแฟนคลับ" everywhere; footer heart removed.

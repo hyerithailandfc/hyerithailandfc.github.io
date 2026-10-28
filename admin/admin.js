@@ -6,8 +6,10 @@ const LABEL = 'claude-request';
 const DATA_FILES = [
   ['data/profile.json', 'โปรไฟล์ (Profile)'],
   ['data/journey.json', 'เส้นทาง (Journey)'],
+  ['data/stories.json', 'เรื่องเล่าเจาะลึก (Journey: Deep dives)'],
   ['data/works.json', 'ผลงาน (Works)'],
   ['data/awards.json', 'รางวัล (Awards)'],
+  ['data/girlsday.json', "Girl's Day (สมาชิก / ผลงานเพลง)"],
   ['data/media.json', 'มีเดีย (Media)'],
   ['data/site.json', 'ตั้งค่าเว็บ / รายการหน้า (Site)'],
   ['data/i18n/th.json', 'ข้อความ UI ภาษาไทย'],
@@ -459,17 +461,30 @@ const isLangObj = (v) => v && typeof v === 'object' && !Array.isArray(v)
   && Object.keys(v).length > 0 && Object.keys(v).every((k) => LANG_KEYS.includes(k)) && Object.values(v).every((x) => typeof x === 'string');
 
 function blankLike(v) {
-  if (Array.isArray(v)) return [];
+  if (Array.isArray(v)) {
+    // Remember the item shape, so "+ เพิ่มรายการ" on the emptied list still adds the right kind of item
+    // (e.g. a TH/EN/KR paragraph in a new story's body[]). Non-index props are not saved by JSON.stringify.
+    const out = [];
+    const shape = v.__tpl ?? v[0];
+    if (shape !== undefined) Object.defineProperty(out, '__tpl', { value: blankLike(shape) });
+    return out;
+  }
   if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, blankLike(x)]));
-  if (typeof v === 'number') return null;
+  if (typeof v === 'number' || v === null) return null;
   if (typeof v === 'boolean') return false;
   return '';
+}
+/** Empty id fields (youtubeId, tmdbId…) are saved as null = "none", which the site and validator expect. */
+function cleanForSave(v, key = '') {
+  if (Array.isArray(v)) return v.map((x) => cleanForSave(x));
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, cleanForSave(x, k)]));
+  return v === '' && /Id$/.test(key) ? null : v;
 }
 function summarize(item) {
   if (item == null || typeof item !== 'object') return String(item ?? '');
   const pick = item.title || item.name || item.category || item.song || item.label || item.caption || item.handle || item.id;
   const label = pick && typeof pick === 'object' ? (pick.th || pick.en || pick.ko) : pick;
-  return [item.year, label].filter(Boolean).join(' · ') || '(รายการ)';
+  return [item.year || item.date, label].filter(Boolean).join(' · ') || '(รายการ)';
 }
 
 function editorNode(value, set, key) {
@@ -535,7 +550,7 @@ function editorNode(value, set, key) {
       add.className = 'btn btn-ghost btn-sm';
       add.textContent = '+ เพิ่มรายการ';
       add.onclick = () => {
-        const tpl = value.length ? blankLike(value[value.length - 1]) : '';
+        const tpl = value.length ? blankLike(value[value.length - 1]) : (value.__tpl !== undefined ? blankLike(value.__tpl) : '');
         if (tpl && typeof tpl === 'object') tpl.__new = true;
         value.push(tpl);
         draw();
@@ -617,7 +632,7 @@ async function content(panel) {
       if (gaps && !confirm(`มีช่อง EN/KR ว่างอยู่ ${gaps} จุด (เว็บจะแสดงข้อความว่าง) บันทึกต่อไหม?`)) return;
       e.target.disabled = true;
       try {
-        await putFile(path, b64encode(JSON.stringify(data, null, 2) + '\n'), `content: update ${path} via admin`, file.sha);
+        await putFile(path, b64encode(JSON.stringify(cleanForSave(data), null, 2) + '\n'), `content: update ${path} via admin`, file.sha);
         toast('บันทึกแล้ว ✨ เว็บจะอัปเดตใน 1–2 นาที', 'ok');
         load();
       } catch (err) {
