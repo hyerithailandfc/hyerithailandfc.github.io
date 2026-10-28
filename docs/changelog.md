@@ -13,7 +13,7 @@ Newest first. Claude adds an entry for every change it makes.
 - Girl's Day: releases from before Hyeri joined are hidden (also skipped by the YouTube sync).
 - Media: 18 stills the owner crossed out + 5 duplicates hidden; the sync keeps each work's stills instead of refilling them.
   New official channels: Weverse and RedNote (小红书).
-- Home: Hyeri's signature "signed" on the polaroid.
+- Home: Hyeri's signature "signed" on the polaroid (dark ink + white halo, readable on light and dark photos).
 
 ## 2026-10-28 — Admin: edit deep dives and Girl's Day
 - Admin "แก้ไขข้อความ" can now open `data/stories.json` and `data/girlsday.json`.

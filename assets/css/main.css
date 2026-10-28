@@ -301,8 +301,8 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .polaroid-img { width: 100%; height: 100%; border-radius: 12px; background: var(--grad-hero); display: grid; place-items: center; overflow: hidden; position: relative; }
 .polaroid-img img { width: 100%; height: 100%; object-fit: cover; }
 .polaroid-mono { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(5rem, 16vw, 9rem); background: var(--grad-pop); -webkit-background-clip: text; background-clip: text; color: transparent; }
-/* Hyeri's real signature (white PNG, public domain) "signed" on the photo; the shadow keeps it readable on light photos. */
-.polaroid-img .polaroid-sign { position: absolute; right: 6%; bottom: 4%; width: 46%; height: auto; object-fit: contain; transform: rotate(-8deg); filter: drop-shadow(0 1px 2px rgba(20, 40, 90, .55)) drop-shadow(0 0 8px rgba(20, 40, 90, .25)); pointer-events: none; }
+/* Hyeri's real signature (white PNG, public domain) "signed" on the photo in dark ink; the white halo keeps it readable on any photo. */
+.polaroid-img .polaroid-sign { position: absolute; right: 6%; bottom: 4%; width: 46%; height: auto; object-fit: contain; transform: rotate(-8deg); filter: brightness(0) drop-shadow(0 0 1.5px rgba(255, 255, 255, .95)) drop-shadow(0 0 6px rgba(255, 255, 255, .7)); opacity: .85; pointer-events: none; }
 .polaroid-cap { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: var(--font-display); color: var(--ink-2); font-size: 1.05rem; }
 .sticker { position: absolute; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; box-shadow: var(--shadow); font-size: 1.6rem; animation: float 5s ease-in-out infinite; z-index: 2; }
 .sticker svg { width: 30px; height: 30px; color: #fff; }
