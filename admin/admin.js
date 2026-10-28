@@ -227,7 +227,7 @@ async function dashboard(panel) {
   ]);
   const claudePulls = pulls.filter((p) => p.head.ref.startsWith('claude/'));
   const reqs = issues.filter((i) => !i.pull_request);
-  const when = (iso) => (iso ? `${new Date(iso).toLocaleString('th-TH')} (${ago(iso)})` : 'ยังไม่เคยดึง');
+  const when = (iso) => (iso ? `${new Date(iso).toLocaleString('th-TH-u-ca-gregory')} (${ago(iso)})` : 'ยังไม่เคยดึง');
   const unmatched = (tmdb?.unmatched || []).slice(0, 12);
   const mvs = Object.entries(yt?.mv || {});
 

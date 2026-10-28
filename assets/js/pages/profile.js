@@ -20,7 +20,7 @@ export async function render() {
     ['ruler', 'profile.height', `${p.heightCm} cm`],
     ['drop', 'profile.blood', esc(p.bloodType)],
     ['brain', 'profile.mbti', esc(p.mbti)],
-    ['building', 'profile.agency', tx(p.agency)],
+    ['building', 'profile.agency', p.agencyUrl ? `<a class="text-link" href="${esc(p.agencyUrl)}" target="_blank" rel="noopener">${tx(p.agency)}</a>` : tx(p.agency)],
     ['music', 'profile.group', `<a class="text-link" href="#/girlsday">${tx(p.group)}</a>`],
     ['mic', 'profile.position', tx(p.position)],
     ['heart', 'profile.fandom', tx(p.fandom)],
@@ -87,6 +87,10 @@ export async function render() {
           <div class="card hover nick-card ${n.unknown ? 'is-unknown' : ''} reveal" style="--d:${(i % 3) * 0.06}s">
             <div class="nick-name">${tx(n.name)}</div>
             <p class="nick-desc">${n.unknown ? icon('info') : ''}${tx(n.desc)}</p>
+            ${n.clip ? `
+              <button class="yt nick-clip" type="button" data-yt="${esc(n.clip)}" aria-label="${esc(ui('media.play'))}: ${tx(n.name)}">
+                <img src="https://i.ytimg.com/vi/${esc(n.clip)}/mqdefault.jpg" alt="" loading="lazy"><span class="play">${icon('play')}</span>
+              </button>` : ''}
           </div>`).join('')}
       </div>
     </div>
@@ -95,6 +99,13 @@ export async function render() {
 
 /** #/profile?section=nicknames (from the home page nickname strip) scrolls to the nickname cards. */
 export function mount(root) {
+  // Nickname clips: thumbnail first, YouTube player on click (same pattern as the Works/Media pages).
+  root.querySelector('#nicknames').addEventListener('click', (e) => {
+    const yt = e.target.closest('[data-yt]');
+    if (!yt) return;
+    yt.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(yt.dataset.yt)}?autoplay=1&rel=0" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    yt.removeAttribute('data-yt');
+  });
   if (routeQuery().section !== 'nicknames') return;
   const target = root.querySelector('#nicknames');
   setTimeout(() => {

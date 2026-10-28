@@ -52,6 +52,7 @@ export async function render() {
         <div class="polaroid">
           <div class="polaroid-img">
             ${featured ? `<img src="${esc(featured.src)}" alt="${tx(featured.caption)}" loading="eager">` : '<span class="polaroid-mono">H</span>'}
+            <img class="polaroid-sign" src="images/signature.png" alt="${esc(ui('home.signatureAlt'))}" width="251" height="191">
           </div>
           <div class="polaroid-cap">${esc(ui('home.polaroidCaption'))}</div>
         </div>

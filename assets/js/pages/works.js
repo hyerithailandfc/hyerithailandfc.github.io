@@ -18,7 +18,7 @@ let onKey;
 const altTitle = (v) => esc(state.lang === 'ko' ? v.en : v.ko);
 
 /** Main title: the official Thai title from TMDB when reading in Thai, else our own localized title. */
-const mainTitle = (w, m) => esc(state.lang === 'th' && m?.title?.th ? m.title.th : t(w.title));
+const mainTitle = (w, m) => esc(state.lang === 'th' && m?.title?.th ? t(m.title.th) : t(w.title));
 
 function typeTag(type) {
   const cls = { lead: 'tag-lead', support: 'tag-support', cameo: 'tag-cameo', special: 'tag-special' }[type] || 'tag-other';
@@ -83,15 +83,19 @@ function renderList() {
       <div class="grid grid-3">${items.map(mvCard).join('')}</div>`;
   }
 
-  return `<div class="list-rows">${items.map((v, i) => `
-    <article class="card row-card reveal" style="--d:${Math.min(i, 6) * 0.03}s">
+  return `<div class="list-rows">${items.map((v, i) => {
+    const m = ext.tmdb.works[workKey(tab, v)]; // TV-show posters (variety/hosting) synced from TMDB
+    return `
+    <article class="card row-card ${m?.poster ? 'has-poster' : ''} reveal" style="--d:${Math.min(i, 6) * 0.03}s">
+      ${m?.poster ? `<a class="row-poster" href="${esc(m.url)}" target="_blank" rel="noopener" aria-label="${esc(ui('works.viewOnTmdb'))}: ${tx(v.title)}"><img src="${esc(tmdbImg(m.poster, 'w92'))}" alt="" loading="lazy" width="46" height="69"></a>` : ''}
       <div class="row-year">${esc(v.year)}</div>
       <div>
         <div class="row-title">${tx(v.title)}</div>
         <div class="row-sub">${altTitle(v.title)}${v.cohosts ? ` · ${esc(ui('works.cohosts'))} ${tx(v.cohosts)}` : ''}</div>
       </div>
       <div><span class="tag ${v.kind === 'regular' || v.kind === 'main' ? 'tag-lead' : 'tag-support'}">${kindLabel(v)}</span></div>
-    </article>`).join('')}</div>`;
+    </article>`;
+  }).join('')}</div>`;
 }
 
 function renderTabs() {

@@ -1,6 +1,6 @@
 import { loadJSON, loadExternal, tmdbImg, t, tx, ui, esc, icon, formatDate, formatNumber } from '../core.js';
 
-const SOCIAL_ICON = { instagram: 'instagram', youtube: 'youtube', x: 'x', weibo: 'weibo', web: 'globe' };
+const SOCIAL_ICON = { instagram: 'instagram', youtube: 'youtube', x: 'x', weibo: 'weibo', weverse: 'weverse', rednote: 'rednote', web: 'globe' };
 let photos = [];
 let onKey;
 

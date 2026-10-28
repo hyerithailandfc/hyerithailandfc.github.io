@@ -10,11 +10,30 @@
     "sourceLastModified": "2026-10-04",
     "lastSynced": "2026-10-28"
   },
+  "thaiNoBreak": [
+    "ฮเยริ", "ฮเยริม", "ฮเยรูมี", "คยองกี", "ควังจู", "ซองด็อกซอน", "ด็อกซอน", "โซจิน", "ยูรา", "มินอา", "ฮงแด",
+    "เดฟคอน", "จองฮยองดน", "ชองอึนจี", "ชินวอนโฮ", "อีอูจอง", "จองกรีน", "ซงจีอัน", "อีซอนชิม", "จางกียง", "อีดัม",
+    "คังโรซอ", "แพ็กดงจู", "พิลซอน", "ยูเจอี", "จูอีแจ", "ชินดงยอบ", "พักนารี", "มุนเซยุน", "อีย็องจา", "ชเวคังชางมิน",
+    "ฮันแฮ", "ฮวาซา", "คิมมยองมิน", "พัคโบกอม", "ฮยอนบิน", "มินอูจอง", "อีเยฮี", "ยูแจซอก", "อีฮวีแจ", "แพยุนจอง",
+    "จียอน", "จองอุก", "ควอนอึนบี", "โรเซ่", "แทยอน", "ซองยูรี", "โฮดู", "ยุนอา", "อันจียอง", "ฮเยริคลีส",
+    "ฮเยร์ไมโอนี่", "โคบงอี", "โคกดัส", "ฮเยรีเคน", "ฮเยริโดซา", "ฮเยริจอง", "มัคซึดล", "ฮเยลมอนี", "ปโปรี",
+    "ซอนัม", "มยองดง", "อาซัน", "นอกูรี", "แทมง", "ซับโวคอล", "ลีดแดนเซอร์", "มยอง", "อาริ", "ฮเยล"
+  ],
   "external": {
     "tmdbPersonId": 1413827,
     "tmdbPersonQueries": ["Lee Hye-ri", "Hyeri"],
     "tmdbIgnore": [284884, 331530, 206726, 340004, 129512, 62915],
-    "tmdbImageIgnore": ["/rCzan8eMTJ6LKtJ1Y3UN3jsXMb3.jpg"],
+    "tmdbImageIgnore": [
+      "/rCzan8eMTJ6LKtJ1Y3UN3jsXMb3.jpg",
+      "/vRTT7cTws6OaCVjRKT943pCsrLU.jpg", "/dgBGOSDm20usPborZesxvOqryI1.jpg", "/1fEfkzGzRMtRxJL6VJfzKBgyAYh.jpg",
+      "/ojsYDgPwQei5bVKkZzIsknli7od.jpg", "/sclcYRgfas5kqJuueEh0EMdfrca.jpg", "/lhrn6vUNQbJ1pMEp3yTjcirKh5c.jpg",
+      "/8I7ijkwrUUluaInC9KtFy4C4FKp.jpg", "/18ypvPahjmmue1iR4N4YgTBrO8N.jpg", "/uTy5KpNqeiFkQ8YXBq8rckXkZqk.jpg",
+      "/py6QcsQ23YmwNO37QdIImiDxmlf.jpg", "/68WpKil2CwUAEx5iqjNhInKFDRM.jpg", "/1jjaCQLUYZdvlBhTcNy09Ue0Ghw.jpg",
+      "/4xYjo3hpb5wN5bSBrtcbOWfc1GN.jpg", "/8xIip5lsN8NENFV6B1fubWLPb0U.jpg", "/ttrd2GDw4ULDukbSJOAAhG5AZf1.jpg",
+      "/7QkKj4LgFvJuJGD6XFhOi7o1PzP.jpg", "/qcMk1nLKAGsEp2tdfDbWfLGl1gg.jpg", "/dLlCi3O4ApT2CSxb2vMLTAh7F1Z.jpg",
+      "/xBzmVfyrFmN1btbyLOK26b0zNEL.jpg", "/gxrxipSZFWvTi2EwJ3ykeJ0iLJz.jpg", "/n3qhrNE6oHFyfDgTYXbiju7jIbm.jpg",
+      "/bSDxiFyHMB3RC4dioTDdiA3cTEb.jpg", "/4ZcDJcjEBPuKI2P77HPJDReOGu3.jpg"
+    ],
     "youtubeChannelHandle": "@IamLeeHyeri"
   },
   "pages": [

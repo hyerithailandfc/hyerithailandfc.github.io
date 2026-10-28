@@ -51,11 +51,30 @@ export async function loadJSON(path) {
   return cache.get(path);
 }
 
+/**
+ * Thai has no spaces between words, so the browser breaks lines with a dictionary that doesn't know Korean names
+ * ("คยอ|งกี", "ยู|รา"). Words listed in data/site.json → thaiNoBreak get invisible word joiners (U+2060)
+ * so they always stay on one line. Joiners go only before base letters, never before combining vowel/tone marks.
+ */
+let glueRe = null;
+let glueFor = null;
+function thaiGlue(s) {
+  const words = state.site?.thaiNoBreak;
+  if (!words?.length || !/[฀-๿]/.test(s)) return s;
+  if (glueFor !== words) {
+    glueFor = words;
+    const escRe = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    glueRe = new RegExp([...words].sort((a, b) => b.length - a.length).map(escRe).join('|'), 'g');
+  }
+  return s.replace(glueRe, (w) => w.replace(/(?<=.)(?=[^ัิ-ฺ็-๎])/gu, '⁠'));
+}
+
 /** Pick the current language from a localized value {th, en, ko}. Falls back th → en → ko. */
 export function t(value) {
   if (value == null) return '';
-  if (typeof value !== 'object') return String(value);
-  return value[state.lang] || value.en || value.ko || value.th || '';
+  if (typeof value !== 'object') return state.lang === 'th' ? thaiGlue(String(value)) : String(value);
+  const s = value[state.lang] || value.en || value.ko || value.th || '';
+  return state.lang === 'th' ? thaiGlue(s) : s;
 }
 
 /**
@@ -65,7 +84,8 @@ export function t(value) {
 export function ui(key, vars) {
   const get = (obj) => key.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
   const all = { brand: state.site?.brand?.name || '', ...vars };
-  return String(get(state.strings) ?? get(state.fallback) ?? key).replace(/\{(\w+)\}/g, (m, k) => all[k] ?? m);
+  const s = String(get(state.strings) ?? get(state.fallback) ?? key).replace(/\{(\w+)\}/g, (m, k) => all[k] ?? m);
+  return state.lang === 'th' ? thaiGlue(s) : s;
 }
 
 /** Site/fan-base name, e.g. "Hyeri Thailand FC". */
@@ -80,7 +100,8 @@ export function esc(v) {
 export const tx = (v) => esc(t(v));
 
 export function formatDate(iso) {
-  const locale = { th: 'th-TH', en: 'en-US', ko: 'ko-KR' }[state.lang];
+  // Thai locale defaults to the Buddhist calendar; the site uses CE years everywhere (owner's request).
+  const locale = { th: 'th-TH-u-ca-gregory', en: 'en-US', ko: 'ko-KR' }[state.lang];
   return new Date(iso + 'T00:00:00').toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
@@ -172,6 +193,8 @@ const ICONS = {
   youtube: '<rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/>',
   x: '<path d="M4 4l16 16M20 4 4 20"/>',
   weibo: '<circle cx="10" cy="14" r="6"/><path d="M15 4a5 5 0 0 1 5 5M15 7a2 2 0 0 1 2 2"/>',
+  weverse: '<path d="M3 6l4 12 5-9 5 9 4-12"/>',
+  rednote: '<rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8 9h8M8 12h8M8 15h5"/>',
   lock: '<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
 };
 

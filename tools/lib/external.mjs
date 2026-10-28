@@ -72,6 +72,7 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
     tmdb(`/person/${personId}/images`),
   ]);
   const cast = credits.cast || [];
+  const hiddenImages = new Set(config.tmdbImageIgnore || []); // photos the admin hid (duplicates, not Hyeri…)
   const out = {
     person: {
       id: personId,
@@ -79,7 +80,7 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
       profile: person.profile_path || null,
       url: `https://www.themoviedb.org/person/${personId}`,
       images: (images.profiles || [])
-        .filter((i) => !(config.tmdbImageIgnore || []).includes(i.file_path)) // duplicates the admin chose to hide
+        .filter((i) => !hiddenImages.has(i.file_path)) // duplicates the admin chose to hide
         .sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0))
         .slice(0, 12)
         .map((i) => ({ path: i.file_path, width: i.width, height: i.height })),
@@ -102,7 +103,13 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
       const th = pickTranslation(tr.translations, 'th');
       const en = pickTranslation(tr.translations, 'en');
       const ko = pickTranslation(tr.translations, 'ko');
-      out.works[workKey(kind, w)] = {
+      const key = workKey(kind, w);
+      const freshStills = () => (imgs.backdrops || [])
+        .filter((b) => !b.iso_639_1 && !hiddenImages.has(b.file_path))
+        .sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0))
+        .slice(0, 4)
+        .map((b) => ({ path: b.file_path, width: b.width, height: b.height }));
+      out.works[key] = {
         tmdbId: c.id,
         type: c.media_type,
         url: `https://www.themoviedb.org/${c.media_type}/${c.id}`,
@@ -115,12 +122,31 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
         overview: {
           th: noDash(th.overview), en: noDash(en.overview || detail.overview), ko: noDash(ko.overview),
         },
-        // Up to 4 text-free stills/backdrops for the Media gallery ("From her works").
-        stills: (imgs.backdrops || [])
-          .filter((b) => !b.iso_639_1 && !(config.tmdbImageIgnore || []).includes(b.file_path))
-          .sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0))
-          .slice(0, 4)
-          .map((b) => ({ path: b.file_path, width: b.width, height: b.height })),
+        // Up to 4 text-free stills/backdrops for the Media gallery ("From her works"). Once a work has been synced,
+        // its picks are kept (minus hidden ones) so hiding a photo never pulls in a random replacement.
+        stills: previous?.works?.[key]
+          ? (previous.works[key].stills || []).filter((s) => !hiddenImages.has(s.path))
+          : freshStills(),
+      };
+    }
+  }
+
+  // TV shows (variety / hosting): poster + link only. Her TMDB credits first, else a TMDB search on the exact Korean title.
+  for (const kind of ['variety', 'hosting']) {
+    for (const w of works[kind] || []) {
+      const year = parseInt(w.year, 10) || 0;
+      let c = matchCredit(kind, { ...w, year }, cast);
+      if (!c) {
+        const res = await tmdb('/search/tv', { query: w.title.ko, language: 'ko-KR' }).catch(() => ({}));
+        c = (res.results || []).find((r) => norm(r.original_name) === norm(w.title.ko));
+        if (c) c = { ...c, media_type: 'tv' };
+      }
+      if (!c?.poster_path && !c?.pinned) continue;
+      matched.add(`tv:${c.id}`);
+      const detail = c.pinned ? await tmdb(`/tv/${c.id}`, { language: 'en-US' }) : c;
+      if (!detail.poster_path) continue;
+      out.works[workKey(kind, w)] = {
+        tmdbId: c.id, type: 'tv', url: `https://www.themoviedb.org/tv/${c.id}`, poster: detail.poster_path,
       };
     }
   }
@@ -156,7 +182,7 @@ export function ytClient(key, fetchImpl = fetch) {
 export function mvTargets(works, girlsday) {
   return [
     ...(works?.mv || []).map((m) => ({ key: workKey('mv', m), youtubeId: m.youtubeId, query: `${m.artist.ko} ${m.song.ko} MV` })),
-    ...(girlsday?.releases || []).filter((r) => r.youtubeId).map((r) => ({ key: workKey('gd', r), youtubeId: r.youtubeId })),
+    ...(girlsday?.releases || []).filter((r) => r.youtubeId && r.withHyeri !== false).map((r) => ({ key: workKey('gd', r), youtubeId: r.youtubeId })),
   ];
 }
 

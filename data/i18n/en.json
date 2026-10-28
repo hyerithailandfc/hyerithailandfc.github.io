@@ -21,7 +21,8 @@
     "lead": "From Girl's Day's sunny maknae to the face of Reply 1988 and beyond. {brand} is the Thai fans' home for everything Hyeri.",
     "ctaWorks": "Explore her works",
     "ctaJourney": "Follow her journey",
-    "polaroidCaption": "Hyeri ♡ since 2010",
+    "polaroidCaption": "Hyeri · since 2010",
+    "signatureAlt": "Hyeri's signature",
     "countersTitle": "Counting the days",
     "countersSub": "Every day is one more day of loving Hyeri. The numbers tick up at midnight in Seoul!",
     "sinceDebut": "days since Girl's Day debut",
@@ -39,7 +40,7 @@
   },
   "profile": {
     "title": "Profile",
-    "sub": "The essentials: in one cute card.",
+    "sub": "Everything a fan should know about Hyeri.",
     "realName": "Real name",
     "birth": "Birthday",
     "birthplace": "Hometown",
@@ -62,9 +63,11 @@
     "title": "Her journey",
     "sub": "From a class president with big dreams to an award-winning actress.",
     "deepTitle": "Deep dives",
-    "deepSub": "The stories behind the milestones, summarized from namu.wiki sub-pages.",
+    "deepSub": "The stories behind the milestones.",
     "keyFacts": "Key facts",
-    "readSource": "Read the original on namu.wiki"
+    "readSource": "Read the original on namu.wiki",
+    "readMore": "Read more",
+    "readLess": "Show less"
   },
   "works": {
     "title": "Works",

@@ -35,9 +35,17 @@
 
 `data/profile.json` — single object: `stageName`, `realName`, `birthDate`, `birthplace`, `heightCm`, `bloodType`, `mbti`, `agency`,
 `group`, `position`, `fandom`, `debutSinger {date, work}`, `debutActor {date, work}`, `education[] {name, note}`, `family`, `nicknames[] {name, desc}`.
+Optional: `agencyUrl` (makes the Agency fact a link), `nicknames[].unknown: true` (origin not documented), `nicknames[].clip` (YouTube id of an
+**official** broadcaster/agency upload showing where the nickname came from; shown as a player on the card).
 
 `data/journey.json` — `items[]`: `year` (string), optional `yearLabel` (localized, replaces year), `title`, `body`, `tags[]` (localized),
-optional `highlight: true` (shown on the home page "Signature moments"). Keep chronological order (oldest first).
+optional `highlight: true` (shown on the home page "Signature moments"), optional `more[]` (localized bullets behind a "Read more" toggle on the card:
+extra facts from namu.wiki, summarized in our own words). Keep chronological order (oldest first).
+
+`data/site.json → thaiNoBreak` — Thai proper nouns (Korean names, places, nicknames) that must never be split across lines.
+The Thai line-breaking dictionary doesn't know them ("คยอ|งกี"), so `t()`/`ui()` glue them with invisible word joiners.
+**When you add a new Thai transliterated name to any data file, add it here too.**
+Years are always CE (ค.ศ.) in every language: `formatDate()` forces the Gregorian calendar for Thai; never write พ.ศ. years in data.
 
 `data/works.json`
 - `drama[]`: `year` (number), `network`, `title {en,ko}`, `role {th,en,ko}`, `type` (`lead|support|cameo|special`), `rating` (peak %, number or `null`)
@@ -48,7 +56,7 @@ optional `highlight: true` (shown on the home page "Signature moments"). Keep ch
 Keep each list in chronological order (oldest first); the page shows newest first. New `type`/`kind` values need UI strings in `works.*`.
 
 Optional pins (set them when automatic matching picks the wrong thing — the Admin dashboard shows what was matched):
-- `drama[]` / `movie[]`: `"tmdbId": 64010` — the number in the TMDB URL (`themoviedb.org/tv/64010`).
+- `drama[]` / `movie[]` / `variety[]` / `hosting[]`: `"tmdbId": 64010` — the number in the TMDB URL (`themoviedb.org/tv/64010`).
 - `mv[]`: `"youtubeId": "xxxxxxxxxxx"` — the 11 characters after `watch?v=`.
 Matching keys come from `workKey()` in `assets/js/core.js`: `drama:<title.ko>`, `movie:<title.ko>`, `mv:<artist.en>|<song.en>`, `gd:<title.en>`.
 **Changing those title fields changes the key** — the posters/MV reappear after the next sync.
@@ -59,7 +67,11 @@ Matching keys come from `workKey()` in `assets/js/core.js`: `drama:<title.ko>`, 
 - `youtube.json`: `channel {id, title, handle, url, thumbnail, subscribers, videos, views}`, `latest[] {id, title, channel, publishedAt, views}`, `mv { <workKey>: {id, pinned, title, channel, publishedAt, views} }`.
 Pages read them through `loadExternal()` and must still look complete when they are empty (before the first sync or without API keys).
 Sync settings live in `data/site.json → external` (`tmdbPersonId`, `tmdbPersonQueries`, `tmdbIgnore`, `tmdbImageIgnore`, `youtubeChannelHandle`).
-`tmdbImageIgnore` = TMDB image paths to hide (e.g. the same photo uploaded twice). The Media page hides them immediately; the sync also skips them.
+`tmdbImageIgnore` = TMDB image paths to hide (duplicates, stills without Hyeri…). The Media page hides them immediately; the sync also skips them.
+Once a work has stills, later syncs keep that same set (minus hidden ones), so hiding a photo never pulls in a random replacement;
+only works synced for the first time get fresh stills.
+Variety / hosting shows get `{tmdbId, type, url, poster}` only (matched from her TMDB credits, else a TMDB search on the exact Korean title);
+pin a wrong or missing one with `"tmdbId"` like dramas.
 `tmdbIgnore` = TMDB ids reviewed and rejected (variety/YouTube appearances, duplicates, wrong credits) so they stop appearing in the Admin "not on the site" list.
 
 `data/awards.json` — `items[]`: `year` (number), `ceremony`, `category`, optional `work`.
@@ -75,10 +87,10 @@ Skip the controversies sub-page and private relationships unless the admin expli
 - `members[]`: `name`, `birthDate`, `position`, optional `isHyeri: true`
 - `releases[]` (oldest first): `date`, `type` (`single|digital|mini|album|repackage|special|japan` — new types need `gd.type.*` strings),
   `album {en,ko}`, `title {en,ko}` (official English title per Wikipedia), `youtubeId` (official GIRL'S DAY channel upload, else 1theK; `null` if no MV),
-  `withHyeri` (false for the two 2010 releases before she joined). YouTube view counts come from the sync (`workKey('gd', r)` = `gd:<title.en>`).
+  `withHyeri` (false for the two 2010 releases before she joined: kept in the file but **not shown** on the site, owner's request). YouTube view counts come from the sync (`workKey('gd', r)` = `gd:<title.en>`).
 
 `data/media.json`
-- `channels[]`: `type` (`instagram|youtube|x|weibo|web`), `name`, `handle`, `url` — official accounts only.
+- `channels[]`: `type` (`instagram|youtube|x|weibo|weverse|rednote|web`), `name`, `handle`, `url` — official accounts only.
 - `videos[]`: `id` (11-char YouTube id), `title`, optional `date`.
 - `gallery[]`: `src` (`images/gallery/…webp`), `width`, `height`, `caption`, `credit`, optional `featured` (home hero), `avatar` (profile).
 

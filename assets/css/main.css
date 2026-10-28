@@ -78,7 +78,9 @@
 :lang(th) { --font-display: "Mali", "Fredoka", sans-serif; --font-body: "Noto Sans Thai", "Nunito", sans-serif; }
 :lang(ko) { --font-display: "Jua", "Fredoka", sans-serif; --font-body: "Noto Sans KR", "Nunito", sans-serif; }
 :lang(th) body { line-height: 1.75; }
-:lang(ko) body { word-break: keep-all; }
+/* keep-all keeps Korean words whole (also Korean quoted inside TH/EN text); it does not change Thai line breaking.
+   Thai names the browser dictionary would split are glued in JS (data/site.json → thaiNoBreak, see core.js). */
+body { word-break: keep-all; overflow-wrap: break-word; }
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -299,6 +301,8 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .polaroid-img { width: 100%; height: 100%; border-radius: 12px; background: var(--grad-hero); display: grid; place-items: center; overflow: hidden; position: relative; }
 .polaroid-img img { width: 100%; height: 100%; object-fit: cover; }
 .polaroid-mono { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(5rem, 16vw, 9rem); background: var(--grad-pop); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* Hyeri's real signature (white PNG, public domain) "signed" on the photo; the shadow keeps it readable on light photos. */
+.polaroid-img .polaroid-sign { position: absolute; right: 6%; bottom: 4%; width: 46%; height: auto; object-fit: contain; transform: rotate(-8deg); filter: drop-shadow(0 1px 2px rgba(20, 40, 90, .55)) drop-shadow(0 0 8px rgba(20, 40, 90, .25)); pointer-events: none; }
 .polaroid-cap { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: var(--font-display); color: var(--ink-2); font-size: 1.05rem; }
 .sticker { position: absolute; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; box-shadow: var(--shadow); font-size: 1.6rem; animation: float 5s ease-in-out infinite; z-index: 2; }
 .sticker svg { width: 30px; height: 30px; color: #fff; }
@@ -382,6 +386,16 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 @keyframes flash-ring { 0% { box-shadow: 0 0 0 0 var(--glow), var(--shadow-sm); } 30% { box-shadow: 0 0 0 6px var(--glow), var(--shadow); } 100% { box-shadow: 0 0 0 0 transparent, var(--shadow-sm); } }
 .tl-card p { color: var(--ink-2); margin: 0; }
 .tl-card .chips { margin-top: 12px; }
+/* "Read more" bullets under a timeline card (journey.json → items[].more) */
+.tl-more { margin-top: 12px; }
+.tl-more summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; list-style: none; font-weight: 800; color: var(--accent); padding: 4px 12px; border-radius: var(--radius-pill); background: var(--accent-soft); }
+.tl-more summary::-webkit-details-marker { display: none; }
+.tl-more summary svg { width: 16px; height: 16px; transition: transform .3s var(--ease-pop); }
+.tl-more[open] summary svg { transform: rotate(90deg); }
+.tl-more .tl-more-close, .tl-more[open] .tl-more-open { display: none; }
+.tl-more[open] .tl-more-close { display: inline; }
+.tl-more summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.tl-more .story-facts { margin: 12px 0 0; }
 @media (max-width: 760px) {
   .timeline::before { left: 16px; }
   .tl-item, .tl-item:nth-child(even) { width: 100%; margin-left: 0; padding: 0 0 28px 48px; }
@@ -461,7 +475,12 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .row-year { font-family: "Fredoka", sans-serif; font-weight: 700; color: var(--accent); font-size: 1.05rem; }
 .row-title { font-weight: 800; }
 .row-sub { color: var(--muted); font-size: .88rem; }
+.row-card.has-poster { grid-template-columns: 46px 84px 1fr auto; }
+.row-poster { display: block; width: 46px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm); background: var(--grad-hero); transition: transform .4s var(--ease-pop); }
+.row-poster img { display: block; width: 100%; aspect-ratio: 2 / 3; height: auto; object-fit: cover; }
+.row-card:hover .row-poster { transform: rotate(-3deg) scale(1.06); }
 @media (max-width: 560px) { .row-card { grid-template-columns: 1fr; gap: 4px; } }
+@media (max-width: 560px) { .row-card.has-poster { grid-template-columns: 46px 1fr; column-gap: 12px; } .row-card.has-poster .row-poster { grid-row: span 3; align-self: start; } }
 .empty { text-align: center; padding: 48px 16px; color: var(--muted); }
 .empty svg { width: 56px; height: 56px; margin: 0 auto 12px; color: var(--blue); opacity: .7; }
 
@@ -555,6 +574,8 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .si-youtube { background: #FF3B3B; }
 .si-x { background: #222; }
 .si-weibo { background: #E6162D; }
+.si-weverse { background: linear-gradient(135deg, #12D8C9, #1B9CF2); }
+.si-rednote { background: #FF2442; }
 .si-web { background: var(--grad-dream); }
 
 /* ---------- Prose / About ---------- */
@@ -587,3 +608,7 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 /* Nickname cards whose origin isn't documented in the source */
 .nick-card.is-unknown .nick-desc { color: var(--muted); font-style: italic; display: flex; gap: 6px; align-items: flex-start; }
 .nick-card.is-unknown .nick-desc svg { flex: none; width: 15px; height: 15px; margin-top: 3px; }
+/* Optional clip showing where a nickname came from (profile.json → nicknames[].clip = YouTube id) */
+.nick-clip { margin-top: 12px; border-radius: 12px; overflow: hidden; }
+.nick-clip .play { width: 46px; height: 46px; }
+.nick-clip .play svg { width: 20px; height: 20px; }

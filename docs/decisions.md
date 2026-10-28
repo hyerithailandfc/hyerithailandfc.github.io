@@ -32,3 +32,9 @@ Add new entries at the bottom: `D-<n> (YYYY-MM-DD): decision — reason`.
 - **D-13 (2026-10-28): Fan base name = "Hyeri Thailand FC"** (Thai: บ้านแฟนคลับ). Stored once in `data/site.json → brand.name`.
   Logo = "H" mark + first word large ("HYERI") + rest as a small second line ("THAILAND FC"). The site presents itself as a Thai fan base
   (not a generic fansite) in all three languages.
+- **D-14 (2026-10-29): Years are CE (ค.ศ.) everywhere**, also in Thai (no พ.ศ.). `formatDate()` uses the Gregorian calendar for `th`.
+- **D-15 (2026-10-29): Girl's Day page shows only releases with Hyeri** (`withHyeri !== false`); the two 2010 releases stay in the data file.
+- **D-16 (2026-10-29): TMDB stills are curated once.** The admin hides unwanted/duplicate stills via `tmdbImageIgnore`; the sync keeps each work's
+  existing set instead of refilling it, so hidden photos are not replaced by random new ones.
+- **D-17 (2026-10-29): Hyeri's signature** (`images/signature.png`, public domain on Wikimedia Commons, supplied by the owner) is "signed"
+  on the home polaroid. It is the one image in the repo that is neither an admin upload nor TMDB.

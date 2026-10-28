@@ -20,6 +20,11 @@ export async function render() {
             <article class="card hover tl-card">
               <h3>${tx(it.title)}</h3>
               <p>${tx(it.body)}</p>
+              ${it.more?.length ? `
+                <details class="tl-more">
+                  <summary><span class="tl-more-open">${esc(ui('journey.readMore'))}</span><span class="tl-more-close">${esc(ui('journey.readLess'))}</span> ${icon('arrowRight')}</summary>
+                  <ul class="story-facts">${it.more.map((f) => `<li>${icon('sparkle')}<span>${tx(f)}</span></li>`).join('')}</ul>
+                </details>` : ''}
               ${it.tags?.length ? `<div class="chips">${it.tags.map((tg) => `<span class="chip chip-pink">${tx(tg)}</span>`).join('')}</div>` : ''}
             </article>
           </li>`).join('')}

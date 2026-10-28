@@ -29,7 +29,6 @@ function releaseCard(r, i) {
         <div class="work-role">${esc(ui('gd.album'))} <b>${tx(r.album)}</b></div>
         <div class="row-tags" style="margin-top:6px">
           <span class="tag tag-support">${esc(ui(`gd.type.${r.type}`))}</span>
-          ${r.withHyeri ? '' : `<span class="tag tag-other">${esc(ui('gd.beforeHyeri'))}</span>`}
         </div>
       </div>
     </article>`;
@@ -46,7 +45,10 @@ function renderReleases() {
 }
 
 export async function render() {
-  [gd, ext] = await Promise.all([loadJSON('data/girlsday.json'), loadExternal()]);
+  const [data, external] = await Promise.all([loadJSON('data/girlsday.json'), loadExternal()]);
+  // Releases from before Hyeri joined stay in the data file but are not shown (owner's request).
+  gd = { ...data, releases: data.releases.filter((r) => r.withHyeri !== false) };
+  ext = external;
   const q = routeQuery();
   filter = FILTERS[q.filter] ? q.filter : 'all';
   const mvCount = gd.releases.filter((r) => r.youtubeId).length;

@@ -21,7 +21,8 @@
     "lead": "걸스데이의 해맑은 막내에서 응답하라 1988의 덕선이, 그리고 그 이후까지. 태국 팬들이 모인 혜리의 집, {brand}.",
     "ctaWorks": "출연작 보기",
     "ctaJourney": "발자취 따라가기",
-    "polaroidCaption": "혜리 ♡ since 2010",
+    "polaroidCaption": "혜리 · since 2010",
+    "signatureAlt": "혜리 사인",
     "countersTitle": "함께 세는 날들",
     "countersSub": "혜리를 좋아한 날이 하루하루 쌓여요. 서울의 자정마다 하나씩 늘어나요!",
     "sinceDebut": "걸스데이 데뷔 후",
@@ -39,7 +40,7 @@
   },
   "profile": {
     "title": "프로필",
-    "sub": "꼭 알아야 할 정보를 한 장에.",
+    "sub": "팬이라면 알아야 할 혜리의 모든 것.",
     "realName": "본명",
     "birth": "생년월일",
     "birthplace": "출생지",
@@ -62,9 +63,11 @@
     "title": "혜리의 발자취",
     "sub": "대통령을 꿈꾸던 전교 회장에서 수상 배우가 되기까지.",
     "deepTitle": "깊이 보기",
-    "deepSub": "나무위키 하위 문서를 바탕으로 정리한 주요 순간의 뒷이야기.",
+    "deepSub": "주요 순간의 뒷이야기.",
     "keyFacts": "알아 두면 좋은 사실",
-    "readSource": "나무위키 원문 보기"
+    "readSource": "나무위키 원문 보기",
+    "readMore": "더 보기",
+    "readLess": "접기"
   },
   "works": {
     "title": "출연작",

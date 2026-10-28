@@ -25,10 +25,22 @@
       "url": "https://x.com/hyeriherihey"
     },
     {
+      "type": "weverse",
+      "name": "Weverse",
+      "handle": "HYERI",
+      "url": "https://weverse.io/hyeri"
+    },
+    {
       "type": "weibo",
       "name": "Weibo",
       "handle": "Hyeri",
       "url": "https://weibo.com/u/5985423938"
+    },
+    {
+      "type": "rednote",
+      "name": "RedNote (小红书)",
+      "handle": "HYERI__",
+      "url": "https://www.xiaohongshu.com/user/profile/67d9a1c5000000000d00832c"
     },
     {
       "type": "web",

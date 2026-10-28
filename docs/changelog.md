@@ -2,6 +2,19 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-29 — Owner feedback round: wording, Thai line breaks, photos, more detail
+- Wording: new Profile subtitle; polaroid caption uses "·"; Deep-dives subtitle no longer mentions namu.wiki sub-pages; all dates in CE (no พ.ศ.).
+- Thai line breaking: Korean names no longer split mid-word ("คยอ|งกี"): `data/site.json → thaiNoBreak` + word joiners in `t()`/`ui()`;
+  Korean words inside TH/EN text stay whole (`word-break: keep-all`).
+- Profile: Agency links to Sublime; nickname cards can play an official clip (4 added); new nickname "Hyel-meoni" with its origin.
+  The other 5 still have no documented origin (not found on namu.wiki or in Korean news).
+- Journey: every milestone card has a "Read more" list (`items[].more`); Fun facts deep dive grew from 7 to 27 items.
+- Works: variety/hosting rows show TMDB posters after the next sync (sync now matches TV shows too).
+- Girl's Day: releases from before Hyeri joined are hidden (also skipped by the YouTube sync).
+- Media: 18 stills the owner crossed out + 5 duplicates hidden; the sync keeps each work's stills instead of refilling them.
+  New official channels: Weverse and RedNote (小红书).
+- Home: Hyeri's signature "signed" on the polaroid.
+
 ## 2026-10-28 — Admin: edit deep dives and Girl's Day
 - Admin "แก้ไขข้อความ" can now open `data/stories.json` and `data/girlsday.json`.
 - "+ เพิ่มรายการ" on an empty list (e.g. a new story's `body[]`) now adds a TH/EN/KR item instead of a plain text field.
