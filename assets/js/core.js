@@ -22,10 +22,10 @@ export function workKey(kind, w) {
   return `${kind}:${w.title.ko}`;
 }
 
-/** Build a TMDB image URL. Local/absolute paths pass through unchanged. */
+/** Build a TMDB image URL from a TMDB path ("/abc.jpg"). Full URLs and repo files ("images/…") pass through unchanged. */
 export function tmdbImg(path, size = 'w342') {
   if (!path) return '';
-  return /^(https?:|data:|\/|images\/)/.test(path) ? path : `https://image.tmdb.org/t/p/${size}${path}`;
+  return /^(https?:|data:|images\/)/.test(path) ? path : `https://image.tmdb.org/t/p/${size}${path}`;
 }
 
 /** Synced data from TMDB and YouTube (written weekly by tools/sync-external.mjs). Never throws. */
