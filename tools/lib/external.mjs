@@ -91,9 +91,10 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
       const c = matchCredit(kind, w, cast);
       if (!c) { log(`TMDB: no match for ${kind} "${w.title.en}" (add "tmdbId" to pin it)`); continue; }
       matched.add(`${c.media_type}:${c.id}`);
-      const [tr, detail] = await Promise.all([
+      const [tr, detail, imgs] = await Promise.all([
         tmdb(`/${c.media_type}/${c.id}/translations`),
         c.pinned ? tmdb(`/${c.media_type}/${c.id}`, { language: 'en-US' }) : Promise.resolve(c),
+        tmdb(`/${c.media_type}/${c.id}/images`, { include_image_language: 'null' }).catch(() => ({})),
       ]);
       const th = pickTranslation(tr.translations, 'th');
       const en = pickTranslation(tr.translations, 'en');
@@ -109,6 +110,12 @@ export async function buildTmdb(tmdb, works, config, previous, log = console.log
         character: c.character || null,
         title: { th: nameOf(th), en: nameOf(en) || nameOf(detail), ko: nameOf(ko) },
         overview: { th: th.overview || '', en: en.overview || detail.overview || '', ko: ko.overview || '' },
+        // Up to 4 text-free stills/backdrops for the Media gallery ("From her works").
+        stills: (imgs.backdrops || [])
+          .filter((b) => !b.iso_639_1)
+          .sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0))
+          .slice(0, 4)
+          .map((b) => ({ path: b.file_path, width: b.width, height: b.height })),
       };
     }
   }

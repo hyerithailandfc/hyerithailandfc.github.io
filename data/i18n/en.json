@@ -58,7 +58,11 @@
   },
   "journey": {
     "title": "Her journey",
-    "sub": "From a class president with big dreams to an award-winning actress."
+    "sub": "From a class president with big dreams to an award-winning actress.",
+    "deepTitle": "Deep dives",
+    "deepSub": "The stories behind the milestones, summarized from namu.wiki sub-pages.",
+    "keyFacts": "Key facts",
+    "readSource": "Read the original on namu.wiki"
   },
   "works": {
     "title": "Works",
@@ -108,6 +112,8 @@
     "sub": "Videos, photos and official channels.",
     "videos": "Videos",
     "gallery": "Gallery",
+    "galleryHyeri": "Hyeri",
+    "galleryWorks": "From her works",
     "channels": "Official channels",
     "noVideos": "Videos are coming soon — admins can add them from the Admin page.",
     "noPhotos": "The photo gallery is waiting for its first picture ♡",

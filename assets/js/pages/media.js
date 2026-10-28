@@ -15,14 +15,23 @@ export async function render() {
     ...ext.yt.latest.filter((v) => !seen.has(v.id)).map((v) => ({ id: v.id, title: v.title, date: v.publishedAt?.slice(0, 10) })),
   ];
 
-  // Admin uploads first, then TMDB profile photos.
+  // Group 1: admin uploads, then TMDB profile photos. Group 2: stills from her works (TMDB).
   const person = ext.tmdb.person;
-  photos = [
+  const portraits = [
     ...media.gallery,
     ...(person?.images || []).map((img) => ({
       src: tmdbImg(img.path, 'h632'), width: img.width, height: img.height, caption: person.name, credit: 'TMDB',
     })),
   ];
+  const stills = Object.values(ext.tmdb.works).flatMap((w) => (w.stills || []).map((img) => ({
+    src: tmdbImg(img.path, 'w780'), width: img.width, height: img.height, caption: w.title, credit: 'TMDB',
+  })));
+  photos = [...portraits, ...stills];
+  const galleryHtml = (list, offset) => `<div class="gallery">${list.map((g, i) => `
+    <button class="gallery-item reveal" type="button" data-img="${offset + i}" style="--d:${(i % 3) * 0.05}s">
+      <img src="${esc(g.src)}" alt="${tx(g.caption)}" loading="lazy" ${g.width ? `width="${g.width}" height="${g.height}"` : ''}>
+      <span class="gallery-cap">${tx(g.caption)}${g.credit ? ` · © ${esc(g.credit)}` : ''}</span>
+    </button>`).join('')}</div>`;
 
   return `
   <section class="page-hero">
@@ -64,11 +73,9 @@ export async function render() {
   <section class="section" style="padding-top:0">
     <div class="container">
       <h2 class="reveal">${esc(ui('media.gallery'))}</h2>
-      ${photos.length ? `<div class="gallery">${photos.map((g, i) => `
-        <button class="gallery-item reveal" type="button" data-img="${i}" style="--d:${(i % 3) * 0.05}s">
-          <img src="${esc(g.src)}" alt="${tx(g.caption)}" loading="lazy" ${g.width ? `width="${g.width}" height="${g.height}"` : ''}>
-          <span class="gallery-cap">${tx(g.caption)}${g.credit ? ` · © ${esc(g.credit)}` : ''}</span>
-        </button>`).join('')}</div>`
+      ${photos.length ? `
+        ${portraits.length ? `<h3 class="gallery-group reveal">${icon('user')} ${esc(ui('media.galleryHyeri'))} <span class="count">${portraits.length}</span></h3>${galleryHtml(portraits, 0)}` : ''}
+        ${stills.length ? `<h3 class="gallery-group reveal">${icon('film')} ${esc(ui('media.galleryWorks'))} <span class="count">${stills.length}</span></h3>${galleryHtml(stills, portraits.length)}` : ''}`
       : `<div class="card empty reveal">${icon('image')}<p>${esc(ui('media.noPhotos'))}</p></div>`}
     </div>
   </section>
