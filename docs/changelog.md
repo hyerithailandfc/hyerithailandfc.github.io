@@ -2,6 +2,11 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-29 — Thai tone marks cut off in page titles
+- Gradient page titles (`.title-pop`) cut off stacked Thai marks (e.g. the ่ in "เกี่ยวกับ"): the gradient only paints inside the text box,
+  and Mali's marks reach ~0.35em above it. Added `.45em` padding. A scan of every page (TH/EN/KR, desktop + 360px, all details opened)
+  found no other clipped Thai or Korean text.
+
 ## 2026-10-29 — Works synopses, clickable show rows, award posters
 - Works: Be Arrogant (web) and Friendly Rivalry (U+ Mobile TV) are marked `online` and say "no TV ratings" instead of an empty space.
 - Details popup uses our own `synopsis {th,en,ko}` when set: added for the 6 works TMDB has no Thai overview for

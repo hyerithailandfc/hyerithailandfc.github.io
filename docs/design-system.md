@@ -27,7 +27,8 @@ If you add a token, add it to **both** light and dark blocks.
 
 ## Typography
 - Display: Fredoka (Latin) / Mali (Thai) / Jua (Korean). Body: Nunito / Noto Sans Thai / Noto Sans KR.
-- Page title: `.page-hero h1` with `<span class="title-pop">` gradient text.
+- Page title: `.page-hero h1` with `<span class="title-pop">` gradient text. Gradient text (`background-clip: text`) only paints inside its box:
+  `.title-pop` carries `.45em` padding so Thai stacked marks (เกี่ยว) aren't cut off. Keep that padding on any new gradient text with Thai.
 - Section title: `.section-head` → `.eyebrow` (small pill with icon) + `h2.section-title` + `p.section-sub`.
 - Korean uses `word-break: keep-all`; Thai uses taller line-height — don't override.
 
