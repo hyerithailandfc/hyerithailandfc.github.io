@@ -4,8 +4,10 @@
 ชื่อบ้านแฟนคลับตั้งค่าไว้ที่ `data/site.json` → `brand.name` (แก้ได้จากหน้า Admin → แก้ไขข้อความ → ตั้งค่าเว็บ แล้วโลโก้ ชื่อแท็บ และข้อความทุกภาษาจะเปลี่ยนตาม)
 โฮสต์ฟรีบน GitHub Pages ไม่ต้องเช่าเซิร์ฟเวอร์ และมีหน้า Admin ที่สั่งให้ Claude AI อัปเดตข้อมูลหรือสร้างหน้าใหม่ได้
 
-- หน้าเว็บ: `https://<ชื่อผู้ใช้>.github.io/<ชื่อ repo>/`
-- หน้าแอดมิน: `https://<ชื่อผู้ใช้>.github.io/<ชื่อ repo>/admin/`
+- หน้าเว็บ: <https://hyerithailandfc.github.io/>
+- หน้าแอดมิน: <https://hyerithailandfc.github.io/admin/>
+- repo: <https://github.com/hyerithailandfc/hyerithailandfc.github.io> (อยู่ใน GitHub Organization `hyerithailandfc`
+  ชื่อ repo ต้องเป็น `<ชื่อองค์กร>.github.io` ลิงก์เว็บถึงจะไม่มีชื่อ repo ต่อท้าย)
 - กฎการสร้าง/ธีมสำหรับ Claude: [CLAUDE.md](CLAUDE.md) และโฟลเดอร์ [docs/](docs/)
 
 ---
