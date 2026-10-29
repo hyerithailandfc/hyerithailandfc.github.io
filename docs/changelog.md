@@ -2,6 +2,11 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-29 — Works details popup fits phone screens
+- On phones the popup ran under the browser bar with no gap: `100vh` counts the hidden address-bar area. The panel now uses `100dvh`
+  (with a `100vh` fallback), keeps a 24px gap top and bottom and scrolls inside itself; the close button is sticky so it stays reachable.
+  The photo lightbox uses `dvh` too.
+
 ## 2026-10-29 — Thai tone marks cut off in page titles
 - Gradient page titles (`.title-pop`) cut off stacked Thai marks (e.g. the ่ in "เกี่ยวกับ"): the gradient only paints inside the text box,
   and Mali's marks reach ~0.35em above it. Added `.45em` padding. A scan of every page (TH/EN/KR, desktop + 360px, all details opened)
