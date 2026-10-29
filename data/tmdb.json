@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T23:46:46.123Z",
+  "updatedAt": "2026-10-29T00:31:14.830Z",
   "person": {
     "id": 1413827,
     "name": "Lee Hye-ri",
@@ -297,13 +297,7 @@
         "en": "In a cutthroat world where the life you’re born into decides your success, three aspiring youths are determined to change that perception as they fight for their dreams.",
         "ko": "현실의 벽에 절망하지 않고 스스로 꿈과 사랑을 이루기 위해 노력하는 청춘들의 성장 기록을 담은 드라마. 모델에서 배우라는 꿈을 향해 열심히 달려가고 있는 혜준. 하지만 그 길은 험난하기만 하다. 믿었던 에이전시 대표 태수에게 발등 찍히고, 같은 꿈을 꾸는 친구 해효와 비교당하기 일쑤. 그런 혜준 앞으로 입영통지서가 날아오는데..."
       },
-      "stills": [
-        {
-          "path": "/nOFwimzgJpQ7Or0koOsz3yDdrFd.jpg",
-          "width": 3840,
-          "height": 2160
-        }
-      ]
+      "stills": []
     },
     "drama:간 떨어지는 동거": {
       "tmdbId": 114118,
@@ -613,11 +607,35 @@
       "url": "https://www.themoviedb.org/tv/65269",
       "poster": "/9tSHtp0k1OG4xjHFYhEgRWyiRio.jpg"
     },
+    "variety:진짜 사나이 여군특집": {
+      "tmdbId": 101427,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/101427",
+      "poster": "/pGMPUBI3ZAr4HvZoIhUf8gcmNrm.jpg"
+    },
     "variety:마녀사냥": {
       "tmdbId": 66725,
       "type": "tv",
       "url": "https://www.themoviedb.org/tv/66725",
       "poster": "/pDmrywBe17rhmUsyxDRDuid3wT9.jpg"
+    },
+    "variety:라디오 스타": {
+      "tmdbId": 65270,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/65270",
+      "poster": "/uRUZDsvUfIP3JUEgOC8ReBlQQUU.jpg"
+    },
+    "variety:에코빌리지 즐거운 家!": {
+      "tmdbId": 134532,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/134532",
+      "poster": "/pttJzhlbBZ4AAdckvqlUW6qmEef.jpg"
+    },
+    "variety:진짜 사나이 시즌2": {
+      "tmdbId": 101427,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/101427",
+      "poster": "/pGMPUBI3ZAr4HvZoIhUf8gcmNrm.jpg"
     },
     "variety:슈퍼맨이 돌아왔다": {
       "tmdbId": 64356,
@@ -649,6 +667,12 @@
       "url": "https://www.themoviedb.org/tv/65282",
       "poster": "/1hqGagr94soBq70Lq7tPHvNmmxy.jpg"
     },
+    "variety:나 혼자 산다 운동회 특집": {
+      "tmdbId": 65282,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/65282",
+      "poster": "/1hqGagr94soBq70Lq7tPHvNmmxy.jpg"
+    },
     "variety:섹션TV 연예통신": {
       "tmdbId": 84546,
       "type": "tv",
@@ -666,6 +690,12 @@
       "type": "tv",
       "url": "https://www.themoviedb.org/tv/104691",
       "poster": "/1OUaAilNPBBwDSuwlMMcMngsD7t.jpg"
+    },
+    "variety:아는 형님 (with 로제)": {
+      "tmdbId": 70672,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/70672",
+      "poster": "/2jIi55JtYKJTL1km8qHMuUilOWo.jpg"
     },
     "variety:1박 2일": {
       "tmdbId": 30801,
@@ -709,7 +739,37 @@
       "url": "https://www.themoviedb.org/tv/308201",
       "poster": "/v2V8c3Qey8w24WhASFGRMHjX6zS.jpg"
     },
+    "variety:미스터리 수사단 2": {
+      "tmdbId": 240114,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/240114",
+      "poster": "/4aRvU4bKWWH3sAhC3NweoNFte7Q.jpg"
+    },
     "hosting:더 쇼": {
+      "tmdbId": 128094,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/128094",
+      "poster": "/hO1l5Oorw1KJA9b7U8MN9mB7IGF.jpg"
+    },
+    "hosting:더 쇼 : 올 어바웃 케이팝": {
+      "tmdbId": 128094,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/128094",
+      "poster": "/hO1l5Oorw1KJA9b7U8MN9mB7IGF.jpg"
+    },
+    "hosting:2014 MBC 가요대제전": {
+      "tmdbId": 96038,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/96038",
+      "poster": "/mmyb3wg5lwbhhoCLNPsP7v5iUt2.jpg"
+    },
+    "hosting:우리 결혼했어요 시즌4": {
+      "tmdbId": 7677,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/7677",
+      "poster": "/mRibuyUmOttydFuuiW3rmKhkldz.jpg"
+    },
+    "hosting:더쇼 시즌4": {
       "tmdbId": 128094,
       "type": "tv",
       "url": "https://www.themoviedb.org/tv/128094",
@@ -726,6 +786,36 @@
       "type": "tv",
       "url": "https://www.themoviedb.org/tv/65278",
       "poster": "/tiJQs4euOHdIPc7tTnB0eonQvqV.jpg"
+    },
+    "hosting:2016 설특집 아이돌스타 선수권대회": {
+      "tmdbId": 60767,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/60767",
+      "poster": "/j7lTFSKtlfCvV9ljzIA1wc8xukK.jpg"
+    },
+    "hosting:2016 추석특집 아이돌스타 선수권대회": {
+      "tmdbId": 60767,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/60767",
+      "poster": "/j7lTFSKtlfCvV9ljzIA1wc8xukK.jpg"
+    },
+    "hosting:2016 KBS 연예대상": {
+      "tmdbId": 54328,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/54328",
+      "poster": "/vSv5iM6dK8HkKAqr46wh7KmWuie.jpg"
+    },
+    "hosting:2018 MBC 방송연예대상": {
+      "tmdbId": 85506,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/85506",
+      "poster": "/5Ty2X0QKisLrlC5iBWISfBN4b2w.jpg"
+    },
+    "hosting:2022 KBS 연기대상": {
+      "tmdbId": 96054,
+      "type": "tv",
+      "url": "https://www.themoviedb.org/tv/96054",
+      "poster": "/zgtYqwcyA4XW5vGI4HofZZrqJun.jpg"
     }
   },
   "unmatched": [
