@@ -53,6 +53,8 @@ Years are always CE (ค.ศ.) in every language: `formatDate()` forces the Greg
 
 `data/works.json`
 - `drama[]`: `year` (number), `network`, `title {en,ko}`, `role {th,en,ko}`, `type` (`lead|support|cameo|special`), `rating` (peak %, number or `null`)
+  Optional: `online: true` (web/OTT release: shows "no TV ratings" instead of a rating bar), `synopsis {th,en,ko}`
+  (our own short synopsis; replaces the TMDB overview in the details popup: write one whenever TMDB has no Thai overview).
 - `movie[]`: `year`, `title`, `role`, `type`
 - `variety[]`: `year` (string, ranges like "2018–2020"), `title`, `kind` (`guest|regular|narration|surprise|voice|call`), optional `ep`
 - `hosting[]`: `year`, `title`, `kind` (`main|special`), optional `cohosts {en,ko}`

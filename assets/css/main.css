@@ -467,6 +467,8 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .rating-bar span { display: block; height: 100%; width: 0; border-radius: 8px; background: var(--grad-pop); transition: width 1.2s var(--ease-out); }
 .reveal.in .rating-bar span { width: var(--w); }
 .rating-text { font-size: .8rem; color: var(--muted); font-weight: 700; margin-top: 4px; }
+.rating-none { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+.rating-none svg { flex: none; width: 15px; height: 15px; }
 .work-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--grad-pop); opacity: 0; transition: opacity .3s; }
 .work-card:hover::before { opacity: 1; }
 
@@ -481,6 +483,11 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .row-card:hover .row-poster { transform: rotate(-3deg) scale(1.06); }
 @media (max-width: 560px) { .row-card { grid-template-columns: 1fr; gap: 4px; } }
 @media (max-width: 560px) { .row-card.has-poster { grid-template-columns: 46px 1fr; column-gap: 12px; } .row-card.has-poster .row-poster { grid-row: span 3; align-self: start; } }
+a.row-card { color: inherit; text-decoration: none; }
+.row-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.row-ext { display: inline-block; }
+.row-ext svg { display: inline-block; width: 14px; height: 14px; vertical-align: -1px; color: var(--accent); opacity: .7; transition: opacity .3s, transform .3s var(--ease-pop); }
+.row-link:hover .row-ext svg { opacity: 1; transform: translate(2px, -2px); }
 .empty { text-align: center; padding: 48px 16px; color: var(--muted); }
 .empty svg { width: 56px; height: 56px; margin: 0 auto 12px; color: var(--blue); opacity: .7; }
 
@@ -497,6 +504,14 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .award-cat { font-weight: 800; }
 .award-cer { color: var(--ink-2); font-size: .92rem; }
 .award-work { color: var(--accent); font-size: .88rem; font-weight: 700; margin-top: 2px; }
+/* Poster of the awarded work (TMDB) or her YouTube channel avatar, with a small trophy badge */
+.award-poster { flex: none; position: relative; width: 46px; }
+.award-poster img { display: block; width: 46px; aspect-ratio: 2 / 3; height: auto; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow-sm); background: var(--grad-hero); transition: transform .5s var(--ease-pop); }
+.award-poster.is-avatar img { aspect-ratio: 1; border-radius: 50%; }
+.award-card:hover .award-poster img { transform: rotate(-4deg) scale(1.06); }
+.award-poster .award-icon { position: absolute; right: -8px; bottom: -6px; width: 24px; height: 24px; border-radius: 8px; box-shadow: var(--shadow-sm); }
+.award-poster .award-icon svg { width: 14px; height: 14px; }
+.award-card:hover .award-poster .award-icon { transform: rotate(-12deg) scale(1.1); }
 
 /* ---------- Media ---------- */
 .video-card { padding: 0; }

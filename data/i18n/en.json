@@ -79,6 +79,7 @@
     "mv": "Music videos",
     "as": "as",
     "rating": "Peak rating",
+    "onlineNoRating": "Streamed online, so there are no TV ratings",
     "cohosts": "with",
     "lead": "Lead",
     "support": "Supporting",

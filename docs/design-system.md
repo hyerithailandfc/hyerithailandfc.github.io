@@ -52,9 +52,10 @@ If you add a token, add it to **both** light and dark blocks.
 | `.counter`, `.counter-num[data-count]` | Animated number tiles (call `countUp(root)` in `mount`) |
 | `.timeline > .tl-item` | Alternating vertical timeline |
 | `.highlight` + `.g-0..g-3` | Gradient-topped feature cards |
+| `.award-card` > `.award-poster` | Award with the poster of its work (or the YouTube avatar) + small trophy badge; plain `.award-icon` when no picture |
 | `.gallery` > `.gallery-item` | "Hyeri" photos: masonry columns, photos uncropped (owner prefers this look) |
 | `.gallery.gallery-works` | "From her works": row-by-row grid in the saved order, 16:9 tiles; lightbox shows the full still |
-| `.row-card` | Compact list row (year / title / badge) |
+| `.row-card` (`a.row-card.row-link` when it links out) | Compact list row (year / title / badge); the whole row is the link, never a nested link inside |
 | `.marquee > .marquee-track` | Infinite scrolling chip strip (duplicate the content once) |
 | `.work-card.has-poster` + `.work-poster` / `.work-info` | Work card with a TMDB poster on the left |
 | `.work-more` | "Details" button that makes the whole card clickable |

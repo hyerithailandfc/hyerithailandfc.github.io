@@ -79,6 +79,7 @@
     "mv": "뮤직비디오",
     "as": "역",
     "rating": "최고 시청률",
+    "onlineNoRating": "온라인 공개작이라 TV 시청률이 없어요",
     "cohosts": "공동 진행",
     "lead": "주연",
     "support": "조연",

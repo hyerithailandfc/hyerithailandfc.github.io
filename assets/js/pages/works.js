@@ -49,7 +49,8 @@ function screenCard(w, i) {
         <div class="work-alt">${altTitle(w.title)}</div>
         <div class="work-role">${esc(ui('works.as'))} <b>${tx(w.role)}</b></div>
         <div class="row-tags">${typeTag(w.type)}${m?.rating ? `<span class="tag tag-other">★ ${m.rating}</span>` : ''}</div>
-        ${w.rating ? `<div class="rating"><div class="rating-bar"><span style="--w:${Math.min(100, (w.rating / 20) * 100)}%"></span></div><div class="rating-text">${esc(ui('works.rating'))} ${w.rating}%</div></div>` : ''}
+        ${w.rating ? `<div class="rating"><div class="rating-bar"><span style="--w:${Math.min(100, (w.rating / 20) * 100)}%"></span></div><div class="rating-text">${esc(ui('works.rating'))} ${w.rating}%</div></div>`
+          : w.online ? `<div class="rating-text rating-none">${icon('info')} ${esc(ui('works.onlineNoRating'))}</div>` : ''}
         ${m ? `<button class="work-more" type="button" data-work="${esc(key)}">${esc(ui('works.details'))} ${icon('arrowRight')}</button>` : ''}
       </div>
     </article>`;
@@ -85,16 +86,19 @@ function renderList() {
 
   return `<div class="list-rows">${items.map((v, i) => {
     const m = ext.tmdb.works[workKey(tab, v)]; // TV-show posters (variety/hosting) synced from TMDB
+    // With a TMDB match the whole row is a link to the show's TMDB page.
+    const tag = m ? 'a' : 'article';
+    const link = m ? ` href="${esc(m.url)}" target="_blank" rel="noopener" aria-label="${tx(v.title)}: ${esc(ui('works.viewOnTmdb'))}"` : '';
     return `
-    <article class="card row-card ${m?.poster ? 'has-poster' : ''} reveal" style="--d:${Math.min(i, 6) * 0.03}s">
-      ${m?.poster ? `<a class="row-poster" href="${esc(m.url)}" target="_blank" rel="noopener" aria-label="${esc(ui('works.viewOnTmdb'))}: ${tx(v.title)}"><img src="${esc(tmdbImg(m.poster, 'w92'))}" alt="" loading="lazy" width="46" height="69"></a>` : ''}
+    <${tag} class="card row-card ${m ? 'hover row-link' : ''} ${m?.poster ? 'has-poster' : ''} reveal" style="--d:${Math.min(i, 6) * 0.03}s"${link}>
+      ${m?.poster ? `<span class="row-poster"><img src="${esc(tmdbImg(m.poster, 'w92'))}" alt="" loading="lazy" width="46" height="69"></span>` : ''}
       <div class="row-year">${esc(v.year)}</div>
       <div>
-        <div class="row-title">${tx(v.title)}</div>
+        <div class="row-title">${tx(v.title)}${m ? `&nbsp;<span class="row-ext">${icon('link')}</span>` : ''}</div>
         <div class="row-sub">${altTitle(v.title)}${v.cohosts ? ` · ${esc(ui('works.cohosts'))} ${tx(v.cohosts)}` : ''}</div>
       </div>
       <div><span class="tag ${v.kind === 'regular' || v.kind === 'main' ? 'tag-lead' : 'tag-support'}">${kindLabel(v)}</span></div>
-    </article>`;
+    </${tag}>`;
   }).join('')}</div>`;
 }
 
@@ -114,7 +118,8 @@ function openModal(key) {
   const w = works[tab].find((x) => workKey(tab, x) === key);
   const m = ext.tmdb.works[key];
   if (!w || !m) return;
-  const overview = t(m.overview);
+  // Our own synopsis (works.json) wins; TMDB has no Thai text for many older works.
+  const overview = w.synopsis ? t(w.synopsis) : t(m.overview);
   const box = document.createElement('div');
   box.className = 'modal';
   box.setAttribute('role', 'dialog');

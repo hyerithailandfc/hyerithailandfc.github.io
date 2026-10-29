@@ -2,6 +2,14 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-29 — Works synopses, clickable show rows, award posters
+- Works: Be Arrogant (web) and Friendly Rivalry (U+ Mobile TV) are marked `online` and say "no TV ratings" instead of an empty space.
+- Details popup uses our own `synopsis {th,en,ko}` when set: added for the 6 works TMDB has no Thai overview for
+  (Delicious Life, Be Arrogant, Hyde Jekyll Me, Entertainer, Miss Lee, Night Fever).
+- Variety / hosting rows with a TMDB match are now one big link (not only the poster).
+- Awards: each award with a work shows that work's poster (or her YouTube avatar for "I am Lee Hyeri") with a trophy badge.
+- Admin: a TMDB-still caption must have EN + KR (or stay empty) so the validator passes.
+
 ## 2026-10-29 — Owner feedback: photos, admin photo manager, tags, signature
 - Journey: links from the home cards no longer land under the header (`scrollToEl()` ignores the reveal slide-in); tags now describe only
   each card's title topic (removed "The Show MC", "YouTube", "Netflix" where they were side mentions).

@@ -838,6 +838,11 @@ async function media(panel) {
       if (e.submitter?.value !== 'save') return;
       const f = new FormData(form);
       const newCap = langVal(f, 'cap');
+      if (Object.keys(newCap).length && !(newCap.en && newCap.ko)) { // validate.mjs needs EN + KR in every caption
+        e.preventDefault();
+        toast('ใส่คำบรรยาย EN และ KR ด้วย หรือเว้นว่างทุกช่อง', 'err');
+        return;
+      }
       const credit = f.get('credit').trim();
       if (isTmdb) {
         if (Object.keys(newCap).length) r.stored.caption = newCap; else delete r.stored.caption;
