@@ -60,9 +60,101 @@
         "en": "Hyeri profile photo",
         "ko": "혜리 프로필 사진"
       },
-      "credit": "",
+      "credit": "namu.wiki",
       "featured": true,
       "avatar": true
+    }
+  ],
+  "workGallery": [
+    {
+      "tmdb": "/5AhL7NKa8UC6QOyzKiDohUM9VYT.jpg"
+    },
+    {
+      "tmdb": "/f4VCBWxQd2EkeYqzLYFu2zbs2mZ.jpg"
+    },
+    {
+      "tmdb": "/z1MKvQJVVMbt1svoV3zjh6cRUTv.jpg"
+    },
+    {
+      "tmdb": "/i5GDtCg3khpLa3lfQIro97QpslZ.jpg"
+    },
+    {
+      "tmdb": "/lNULiVZRYxNnRpA4Td5bnwN9gqQ.jpg"
+    },
+    {
+      "tmdb": "/ftNKfV64Z4tyEk6RWkCqQe2ZAVg.jpg"
+    },
+    {
+      "tmdb": "/55zoRZM35NguayaBT1oD7PAwcmI.jpg"
+    },
+    {
+      "tmdb": "/ySAGMTGqZpEON0VpE0bjyLerde.jpg"
+    },
+    {
+      "tmdb": "/zVoTOWnTFZyNpPDYPeVqEfR78p.jpg"
+    },
+    {
+      "tmdb": "/wDjoR40ues797wYVeJYB1Vx5pUC.jpg"
+    },
+    {
+      "tmdb": "/pjIfMcxnGELVLKVxVbLUyP4byAf.jpg"
+    },
+    {
+      "tmdb": "/gsLSigo0eZG0U8d5zuzQ3hE1IFg.jpg"
+    },
+    {
+      "tmdb": "/3LisR6YIfXvglbUd0d58KATHZyC.jpg"
+    },
+    {
+      "tmdb": "/7Wsq182suN0dHP9hoeyaUPnnXaR.jpg"
+    },
+    {
+      "tmdb": "/2qSO26CG1qwvcQegWqQaTSsKCyl.jpg"
+    },
+    {
+      "tmdb": "/bFjiFIVl8T3giKYQTweyr5Xp0QE.jpg"
+    },
+    {
+      "tmdb": "/gLJwXaHSau9ZN516wLwwP5fdp6D.jpg"
+    },
+    {
+      "tmdb": "/SzDxajTesjhIsV3Zh7YrRti5yB.jpg"
+    },
+    {
+      "tmdb": "/tDjfKoLPLWX0KYF4cO0rxGvsCSq.jpg"
+    },
+    {
+      "tmdb": "/eALXhpDgpqXxO9l87gvHAf1kdz8.jpg"
+    },
+    {
+      "tmdb": "/dogn5nhIzS1MsXy0yMIKUAAPO6H.jpg"
+    },
+    {
+      "tmdb": "/xuxXXh2s4tD4W5xtf8t0zTGhIE0.jpg"
+    },
+    {
+      "tmdb": "/w2eE1FKQm2xrLPU4lIugyRmu3yJ.jpg"
+    },
+    {
+      "tmdb": "/mwcAW8zbugAURLik6aA0Y4o2bQc.jpg"
+    },
+    {
+      "tmdb": "/52iQ6SrYenu9KjFfuv3wZYRL8Av.jpg"
+    },
+    {
+      "tmdb": "/wgmikRStgBbrzjxFVe5rhFlpL2R.jpg"
+    },
+    {
+      "tmdb": "/sZH7lGs06skRKkrqp1LRi57VVMb.jpg"
+    },
+    {
+      "tmdb": "/8YJvXg4VYDKVK71i2GDohe4fsAS.jpg"
+    },
+    {
+      "tmdb": "/ik7PAa9AlxoQPjU3GQonMjZm5Bh.jpg"
+    },
+    {
+      "tmdb": "/4Q1QW47ChzaczpJSzVh9E8c2nt5.jpg"
     }
   ]
 }
