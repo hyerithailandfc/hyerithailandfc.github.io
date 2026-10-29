@@ -5,7 +5,8 @@ Newest first. Claude adds an entry for every change it makes.
 ## 2026-10-29 — Owner feedback: photos, admin photo manager, tags, signature
 - Journey: links from the home cards no longer land under the header (`scrollToEl()` ignores the reveal slide-in); tags now describe only
   each card's title topic (removed "The Show MC", "YouTube", "Netflix" where they were side mentions).
-- Media: "From her works" sorted by work, newest first; gallery is a row-by-row grid (no more column-order jumble); Record of Youth still hidden.
+- Media: "From her works" sorted by work, newest first, in a row-by-row 16:9 grid (no more column-order jumble); Record of Youth still hidden.
+  The "Hyeri" group keeps its masonry layout (owner's choice).
 - Admin "รูป & วิดีโอ": reorder photos (drag or arrows), edit caption/credit/home/profile flags after upload, upload into "From her works",
   hide TMDB stills (also added to `tmdbImageIgnore`). Video form explains where videos appear.
 - Nicknames: "Marx-dol" origin found in Korean news (2015 Albamon minimum-wage ads); no more "namu.wiki" inside content text.
