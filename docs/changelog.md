@@ -2,6 +2,16 @@
 
 Newest first. Claude adds an entry for every change it makes.
 
+## 2026-10-29 — Owner feedback: photos, admin photo manager, tags, signature
+- Journey: links from the home cards no longer land under the header (`scrollToEl()` ignores the reveal slide-in); tags now describe only
+  each card's title topic (removed "The Show MC", "YouTube", "Netflix" where they were side mentions).
+- Media: "From her works" sorted by work, newest first; gallery is a row-by-row grid (no more column-order jumble); Record of Youth still hidden.
+- Admin "รูป & วิดีโอ": reorder photos (drag or arrows), edit caption/credit/home/profile flags after upload, upload into "From her works",
+  hide TMDB stills (also added to `tmdbImageIgnore`). Video form explains where videos appear.
+- Nicknames: "Marx-dol" origin found in Korean news (2015 Albamon minimum-wage ads); no more "namu.wiki" inside content text.
+  4 nicknames still have no documented origin anywhere online.
+- Home: signature is now the owner's SVG in black (`images/signature.svg`).
+
 ## 2026-10-29 — TMDB posters for more TV shows
 - First sync with TV matching found 20 of 41 variety/hosting posters. Pinned `tmdbId` on 16 more (checked on themoviedb.org):
   Radio Star, Real Men (×2), Eco Village, I Live Alone special, Knowing Bros, Agents of Mystery 2, The Show (×2), We Got Married,

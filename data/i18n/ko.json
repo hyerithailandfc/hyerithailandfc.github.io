@@ -56,7 +56,7 @@
     "education": "학력",
     "family": "가족",
     "nicknames": "별명",
-    "nicknamesSub": "나무위키에 정리된 별명의 유래.",
+    "nicknamesSub": "별명마다 붙은 유래.",
     "age": "만 {age}세"
   },
   "journey": {
@@ -65,7 +65,7 @@
     "deepTitle": "깊이 보기",
     "deepSub": "주요 순간의 뒷이야기.",
     "keyFacts": "알아 두면 좋은 사실",
-    "readSource": "나무위키 원문 보기",
+    "readSource": "원문 보기",
     "readMore": "더 보기",
     "readLess": "접기"
   },

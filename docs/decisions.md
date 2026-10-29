@@ -36,5 +36,7 @@ Add new entries at the bottom: `D-<n> (YYYY-MM-DD): decision — reason`.
 - **D-15 (2026-10-29): Girl's Day page shows only releases with Hyeri** (`withHyeri !== false`); the two 2010 releases stay in the data file.
 - **D-16 (2026-10-29): TMDB stills are curated once.** The admin hides unwanted/duplicate stills via `tmdbImageIgnore`; the sync keeps each work's
   existing set instead of refilling it, so hidden photos are not replaced by random new ones.
-- **D-17 (2026-10-29): Hyeri's signature** (`images/signature.png`, public domain on Wikimedia Commons, supplied by the owner) is "signed"
+- **D-17 (2026-10-29): Hyeri's signature** (`images/signature.svg`, black ink, public domain on Wikimedia Commons, supplied by the owner) is "signed"
   on the home polaroid. It is the one image in the repo that is neither an admin upload nor TMDB.
+- **D-18 (2026-10-29): "From her works" photos follow the works, newest first**, and the owner can reorder them, add their own photos to that
+  group and edit captions/credits in Admin (saved as `media.json → workGallery`). Journey tags only describe each card's title topic.

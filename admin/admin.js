@@ -1,6 +1,6 @@
 // Admin panel. All writes go through the GitHub REST API with the admin's own token,
 // so GitHub (not this page) decides who is allowed to change the site.
-import { esc, icon } from '../assets/js/core.js';
+import { esc, icon, workPhotos } from '../assets/js/core.js';
 
 const LABEL = 'claude-request';
 const DATA_FILES = [
@@ -664,15 +664,36 @@ async function resizeImage(file, max = 1600) {
 }
 
 async function media(panel) {
-  const file = await getFile('data/media.json');
+  const [file, worksF, tmdbF, siteF] = await Promise.all(
+    ['data/media.json', 'data/works.json', 'data/tmdb.json', 'data/site.json'].map((p) => getFile(p)),
+  );
   const data = JSON.parse(file.text);
+  const site = JSON.parse(siteF.text);
+  const hidden = new Set(site.external?.tmdbImageIgnore || []);
   const raw = `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/${cfg.branch}/`;
-  const langInputs = (name) => `<div class="je-lang">${LANG_KEYS.map((l) => `<label><b>${l === 'ko' ? 'KR' : l.toUpperCase()}</b><input class="input" name="${name}_${l}" ${l === 'th' ? '' : 'required'}></label>`).join('')}</div>`;
+  const srcOf = (src) => (/^https?:/.test(src) ? src : raw + src);
+  const capOf = (c) => (c && typeof c === 'object' ? c.th || c.en || c.ko || '' : c || '');
+  const langInputs = (name, req = true) => `<div class="je-lang">${LANG_KEYS.map((l) => `<label><b>${l === 'ko' ? 'KR' : l.toUpperCase()}</b><input class="input" name="${name}_${l}" ${l !== 'th' && req ? 'required' : ''}></label>`).join('')}</div>`;
+
+  // Two photo groups, each a list of { view: what the site shows, stored: what gets saved }.
+  // "works" mirrors the public "From her works" order (core.js → workPhotos); TMDB stills are stored as { tmdb: path }.
+  const curated = new Map((data.workGallery || []).filter((c) => c.tmdb).map((c) => [c.tmdb, c]));
+  const lists = {
+    hyeri: data.gallery.map((g) => ({ view: g, stored: g })),
+    works: workPhotos(data, JSON.parse(tmdbF.text), JSON.parse(worksF.text), hidden)
+      .map((v) => ({ view: v, stored: v.tmdb ? { ...(curated.get(v.tmdb) || { tmdb: v.tmdb }) } : { ...v } })),
+  };
+  const dirty = new Set();
+  const commit = () => {
+    data.gallery = lists.hyeri.map((r) => r.stored);
+    data.workGallery = lists.works.map((r) => r.stored);
+  };
 
   panel.innerHTML = `
   <div class="stack page-enter">
     <div class="card">
       <h2 style="font-size:1.3rem">${icon('youtube').replace('<svg', '<svg width="22" height="22" style="display:inline;vertical-align:-4px;color:#FF3B3B"')} เพิ่มวิดีโอ YouTube</h2>
+      <p class="hint">วิดีโอที่เพิ่มจะขึ้นในหน้า "มีเดีย" หัวข้อ "วิดีโอ" เท่านั้น: อันที่เพิ่มล่าสุดอยู่บนสุด ตามด้วยคลิปล่าสุดจากช่อง YouTube ของฮเยริ (ดึงอัตโนมัติ)</p>
       <form id="yt-form">
         <label class="field"><span>ลิงก์ YouTube (ควรเป็นช่องทางการ)</span><input class="input" name="url" required placeholder="https://www.youtube.com/watch?v=…"></label>
         <div class="field"><span class="field-label">ชื่อวิดีโอ</span>${langInputs('title')}</div>
@@ -688,23 +709,71 @@ async function media(panel) {
       <p class="hint">รูปจะถูกย่อเป็น WebP ไม่เกิน 1600px อัตโนมัติ: อัปโหลดเฉพาะรูปที่มีสิทธิ์เผยแพร่ (เช่น รูปจากช่องทางการที่อนุญาตให้แชร์ หรือรูปที่ถ่ายเอง)</p>
       <form id="img-form">
         <label class="field"><span>ไฟล์รูป</span><input class="input" type="file" name="file" accept="image/*" required></label>
+        <label class="field"><span>แสดงในหมวด</span><select class="select" name="group">
+          <option value="hyeri">ฮเยริ</option><option value="works">จากผลงานของเธอ (ขึ้นเป็นรูปแรก จัดลำดับใหม่ได้ด้านล่าง)</option></select></label>
         <div class="field"><span class="field-label">คำบรรยาย</span>${langInputs('cap')}</div>
         <label class="field"><span>เครดิต / ที่มา</span><input class="input" name="credit" placeholder="เช่น Sublime official / ถ่ายเองที่แฟนมีต 2025"></label>
-        <div class="row" style="margin-bottom:12px">
+        <div class="row" style="margin-bottom:12px" data-hyeri-only>
           <label class="check"><input type="checkbox" name="featured"> <span>ใช้เป็นรูปหลักหน้าแรก</span></label>
           <label class="check"><input type="checkbox" name="avatar"> <span>ใช้เป็นรูปโปรไฟล์</span></label>
         </div>
         <label class="check" style="margin-bottom:14px"><input type="checkbox" name="rights" required> <span>ฉันยืนยันว่ามีสิทธิ์เผยแพร่รูปนี้</span></label>
         <button class="btn btn-primary" type="submit">อัปโหลด</button>
       </form>
-      <div class="thumb-grid" style="margin-top:16px">${data.gallery.map((g, i) => `
-        <div class="thumb"><img src="${esc(raw + g.src)}" alt="" loading="lazy"><button class="btn btn-danger" type="button" data-del-img="${i}">ลบ</button></div>`).join('')}</div>
     </div>
-  </div>`;
+
+    <div class="card">
+      <h2 style="font-size:1.3rem">รูปหมวด "ฮเยริ"</h2>
+      <p class="hint">ลากรูปหรือกดลูกศรเพื่อเรียงลำดับ แล้วกด "บันทึกลำดับ": รูปโปรไฟล์จาก TMDB จะต่อท้ายให้อัตโนมัติ</p>
+      <div class="photo-grid" data-list="hyeri"></div>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size:1.3rem">รูปหมวด "จากผลงานของเธอ"</h2>
+      <p class="hint">เริ่มต้นเรียงตามผลงานจากใหม่ไปเก่า ลากหรือกดลูกศรเพื่อเรียงใหม่ได้ "ซ่อน" รูปจาก TMDB แล้วจะไม่กลับมาอีกแม้กด Sync ใหม่</p>
+      <div class="photo-grid photo-grid-wide" data-list="works"></div>
+    </div>
+
+    <div class="save-bar" data-order-bar hidden><span class="hint" style="margin-right:auto">ยังไม่ได้บันทึกลำดับรูป</span>
+      <button class="btn btn-ghost" type="button" data-order-reset>ยกเลิก</button><button class="btn btn-primary" type="button" data-order-save>บันทึกลำดับ</button></div>
+  </div>
+  <dialog class="card edit-dialog" id="photo-edit"></dialog>`;
+
+  const drawList = (group) => {
+    const rows = lists[group];
+    panel.querySelector(`[data-list="${group}"]`).innerHTML = rows.length ? rows.map((r, i) => `
+      <div class="photo" draggable="true" data-group="${group}" data-i="${i}">
+        <span class="photo-num">${i + 1}</span>
+        <img src="${esc(srcOf(r.view.src))}" alt="" loading="lazy" draggable="false">
+        <div class="photo-cap"><b>${esc(capOf(r.view.caption)) || '<i>ไม่มีคำบรรยาย</i>'}</b><span>${r.view.credit ? `© ${esc(r.view.credit)}` : '<i>ยังไม่ใส่เครดิต</i>'}</span></div>
+        <div class="photo-tools">
+          <button type="button" data-move="-1" aria-label="เลื่อนไปก่อนหน้า" ${i === 0 ? 'disabled' : ''}>←</button>
+          <button type="button" data-move="1" aria-label="เลื่อนไปถัดไป" ${i === rows.length - 1 ? 'disabled' : ''}>→</button>
+          <button type="button" data-edit>แก้ไข</button>
+          <button type="button" class="danger" data-del>${r.view.tmdb ? 'ซ่อน' : 'ลบ'}</button>
+        </div>
+      </div>`).join('') : '<p class="hint">ยังไม่มีรูป</p>';
+  };
+  const move = (group, from, to) => {
+    const rows = lists[group];
+    if (to < 0 || to >= rows.length || from === to) return;
+    rows.splice(to, 0, ...rows.splice(from, 1));
+    dirty.add(group);
+    panel.querySelector('[data-order-bar]').hidden = false;
+    drawList(group);
+  };
+  drawList('hyeri');
+  drawList('works');
 
   const save = async (msg) => {
     const fresh = await getFile('data/media.json');
     await putFile('data/media.json', b64encode(JSON.stringify(data, null, 2) + '\n'), msg, fresh.sha);
+  };
+  const deleteRepoFile = async (path) => {
+    try {
+      const meta = await api(repoPath(`/contents/${path}?ref=${cfg.branch}`));
+      await api(repoPath(`/contents/${path}`), { method: 'DELETE', body: JSON.stringify({ message: 'media: delete photo file', sha: meta.sha, branch: cfg.branch }) });
+    } catch { /* file may already be gone */ }
   };
   const langVal = (f, name) => Object.fromEntries(LANG_KEYS.map((l) => [l, (f.get(`${name}_${l}`) || '').trim()]).filter(([, v]) => v));
 
@@ -717,7 +786,9 @@ async function media(panel) {
     try { await save('media: add video via admin'); toast('เพิ่มวิดีโอแล้ว', 'ok'); renderPanel(); } catch (err) { toast(err.message, 'err'); }
   });
 
-  panel.querySelector('#img-form').addEventListener('submit', async (e) => {
+  const imgForm = panel.querySelector('#img-form');
+  imgForm.group.onchange = () => { imgForm.querySelector('[data-hyeri-only]').hidden = imgForm.group.value !== 'hyeri'; };
+  imgForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
     const btn = e.target.querySelector('button[type=submit]');
@@ -726,38 +797,135 @@ async function media(panel) {
       const { bytes, w, h } = await resizeImage(f.get('file'));
       const path = `images/gallery/${Date.now()}.webp`;
       await putFile(path, b64encode(bytes), 'media: upload photo via admin');
-      if (f.get('featured') === 'on') data.gallery.forEach((g) => delete g.featured);
-      if (f.get('avatar') === 'on') data.gallery.forEach((g) => delete g.avatar);
-      data.gallery.unshift({
-        src: path, width: w, height: h, caption: langVal(f, 'cap'), credit: f.get('credit').trim(),
-        ...(f.get('featured') === 'on' ? { featured: true } : {}),
-        ...(f.get('avatar') === 'on' ? { avatar: true } : {}),
-      });
+      const photo = { src: path, width: w, height: h, caption: langVal(f, 'cap'), credit: f.get('credit').trim() };
+      if (f.get('group') === 'works') {
+        lists.works.unshift({ view: photo, stored: photo });
+      } else {
+        if (f.get('featured') === 'on') data.gallery.forEach((g) => delete g.featured);
+        if (f.get('avatar') === 'on') data.gallery.forEach((g) => delete g.avatar);
+        lists.hyeri.unshift({ view: photo, stored: Object.assign(photo, f.get('featured') === 'on' ? { featured: true } : {}, f.get('avatar') === 'on' ? { avatar: true } : {}) });
+      }
+      commit();
       await save('media: add photo via admin');
       toast('อัปโหลดแล้ว ✨', 'ok');
       renderPanel();
     } catch (err) { toast(err.message, 'err'); btn.disabled = false; }
   });
 
+  // Edit caption / credit (and home/profile flags for "Hyeri" photos) after upload.
+  const dlg = panel.querySelector('#photo-edit');
+  const openEdit = (group, i) => {
+    const r = lists[group][i];
+    const isTmdb = !!r.view.tmdb;
+    dlg.innerHTML = `
+      <form method="dialog">
+        <h3 style="margin-top:0">แก้ไขรายละเอียดรูป</h3>
+        <img class="edit-preview" src="${esc(srcOf(r.view.src))}" alt="">
+        <div class="field"><span class="field-label">คำบรรยาย</span>${langInputs('cap', !isTmdb)}
+          ${isTmdb ? `<span class="hint">เว้นว่างไว้ = ใช้ชื่อผลงานจาก TMDB (${esc(capOf(r.view.caption))})</span>` : ''}</div>
+        <label class="field"><span>เครดิต / ที่มา</span><input class="input" name="credit" placeholder="${isTmdb ? 'TMDB' : 'เช่น Sublime official'}"></label>
+        ${group === 'hyeri' ? `<div class="row" style="margin-bottom:12px">
+          <label class="check"><input type="checkbox" name="featured"> <span>ใช้เป็นรูปหลักหน้าแรก</span></label>
+          <label class="check"><input type="checkbox" name="avatar"> <span>ใช้เป็นรูปโปรไฟล์</span></label></div>` : ''}
+        <div class="row" style="justify-content:flex-end"><button class="btn btn-ghost" value="cancel" formnovalidate>ยกเลิก</button><button class="btn btn-primary" value="save">บันทึก</button></div>
+      </form>`;
+    const form = dlg.querySelector('form');
+    const cap = r.stored.caption && typeof r.stored.caption === 'object' ? r.stored.caption : {};
+    LANG_KEYS.forEach((l) => { form[`cap_${l}`].value = cap[l] || ''; });
+    form.credit.value = r.stored.credit || '';
+    if (group === 'hyeri') { form.featured.checked = !!r.stored.featured; form.avatar.checked = !!r.stored.avatar; }
+    form.onsubmit = async (e) => { // method="dialog": the dialog closes itself after this
+      if (e.submitter?.value !== 'save') return;
+      const f = new FormData(form);
+      const newCap = langVal(f, 'cap');
+      const credit = f.get('credit').trim();
+      if (isTmdb) {
+        if (Object.keys(newCap).length) r.stored.caption = newCap; else delete r.stored.caption;
+        if (credit) r.stored.credit = credit; else delete r.stored.credit;
+      } else {
+        r.stored.caption = newCap;
+        r.stored.credit = credit;
+      }
+      if (group === 'hyeri') {
+        for (const flag of ['featured', 'avatar']) {
+          if (f.get(flag) === 'on') { lists.hyeri.forEach((x) => delete x.stored[flag]); r.stored[flag] = true; } else delete r.stored[flag];
+        }
+      }
+      commit();
+      try { await save('media: edit photo details via admin'); toast('บันทึกแล้ว ✨', 'ok'); renderPanel(); } catch (err) { toast(err.message, 'err'); }
+    };
+    dlg.showModal();
+  };
+
+  const removePhoto = async (group, i) => {
+    const r = lists[group][i];
+    if (r.view.tmdb) {
+      if (!confirm('ซ่อนรูปนี้จากเว็บ? (Sync ครั้งต่อไปจะไม่ดึงกลับมา)')) return;
+      lists[group].splice(i, 1);
+      commit();
+      await save('media: hide TMDB still via admin');
+      const fresh = await getFile('data/site.json');
+      const s = JSON.parse(fresh.text);
+      s.external = s.external || {};
+      s.external.tmdbImageIgnore = [...new Set([...(s.external.tmdbImageIgnore || []), r.view.tmdb])];
+      await putFile('data/site.json', b64encode(JSON.stringify(s, null, 2) + '\n'), 'media: hide TMDB still via admin', fresh.sha);
+    } else {
+      if (!confirm('ลบรูปนี้ออกจากเว็บ?')) return;
+      lists[group].splice(i, 1);
+      commit();
+      await save('media: remove photo via admin');
+      await deleteRepoFile(r.stored.src);
+    }
+    toast(r.view.tmdb ? 'ซ่อนแล้ว' : 'ลบแล้ว');
+    renderPanel();
+  };
+
   panel.onclick = async (e) => {
     const v = e.target.closest('[data-del-video]');
-    const im = e.target.closest('[data-del-img]');
+    const tile = e.target.closest('.photo');
     try {
       if (v && confirm('ลบวิดีโอนี้?')) {
         data.videos.splice(Number(v.dataset.delVideo), 1);
         await save('media: remove video via admin');
         toast('ลบแล้ว'); renderPanel();
-      } else if (im && confirm('ลบรูปนี้ออกจากเว็บ?')) {
-        const [g] = data.gallery.splice(Number(im.dataset.delImg), 1);
-        await save('media: remove photo via admin');
-        try {
-          const meta = await api(repoPath(`/contents/${g.src}?ref=${cfg.branch}`));
-          await api(repoPath(`/contents/${g.src}`), { method: 'DELETE', body: JSON.stringify({ message: 'media: delete photo file', sha: meta.sha, branch: cfg.branch }) });
-        } catch { /* file may already be gone */ }
-        toast('ลบแล้ว'); renderPanel();
+      } else if (tile) {
+        const { group } = tile.dataset;
+        const i = Number(tile.dataset.i);
+        const mv = e.target.closest('[data-move]');
+        if (mv) move(group, i, i + Number(mv.dataset.move));
+        else if (e.target.closest('[data-edit]')) openEdit(group, i);
+        else if (e.target.closest('[data-del]')) await removePhoto(group, i);
+      } else if (e.target.closest('[data-order-save]')) {
+        commit();
+        await save('media: reorder photos via admin');
+        toast('บันทึกลำดับแล้ว ✨', 'ok'); renderPanel();
+      } else if (e.target.closest('[data-order-reset]')) {
+        renderPanel();
       }
     } catch (err) { toast(err.message, 'err'); }
   };
+
+  // Drag & drop inside one group.
+  let drag = null;
+  panel.ondragstart = (e) => {
+    const tile = e.target.closest('.photo');
+    if (!tile) return;
+    drag = { group: tile.dataset.group, i: Number(tile.dataset.i) };
+    e.dataTransfer.effectAllowed = 'move';
+    tile.classList.add('dragging');
+  };
+  panel.ondragover = (e) => {
+    const tile = e.target.closest('.photo');
+    if (drag && tile?.dataset.group === drag.group) e.preventDefault();
+  };
+  panel.ondrop = (e) => {
+    const tile = e.target.closest('.photo');
+    if (!drag || tile?.dataset.group !== drag.group) return;
+    e.preventDefault();
+    move(drag.group, drag.i, Number(tile.dataset.i));
+    drag = null;
+  };
+  panel.ondragend = () => { drag = null; panel.querySelector('.photo.dragging')?.classList.remove('dragging'); };
 }
 
 /* ---------- boot ---------- */

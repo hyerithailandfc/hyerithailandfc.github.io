@@ -62,7 +62,7 @@
         { "th": "ยังได้ออกรายการอีกมาก เช่น We Got Married (ในฐานะน้องสาวของยูรา), 1 vs 100 ที่ไปถึงด่าน 8 และ Radio Star", "en": "She also popped up across TV: as Yura's cheeky little sister on We Got Married, reaching stage 8 alone on 1 vs 100, and on Radio Star", "ko": "《우리 결혼했어요》에 유라의 동생으로, 《1 대 100》에 1인으로 나가 8단계까지, 《라디오 스타》 등에 출연했다" },
         { "th": "ปลายปีเป็นพิธีกร MBC Gayo Daejejeon 2014", "en": "She closed the year as an MC of the 2014 MBC Gayo Daejejeon", "ko": "연말에는 2014 MBC 가요대제전 MC를 맡았다" }
       ],
-      "tags": [{ "th": "รางวัลหน้าใหม่", "en": "Rookie Award", "ko": "신인상" }, { "th": "The Show MC", "en": "The Show MC", "ko": "더 쇼 MC" }]
+      "tags": [{ "th": "MBC", "en": "MBC", "ko": "MBC" }, { "th": "รางวัลหน้าใหม่", "en": "Rookie Award", "ko": "신인상" }]
     },
     {
       "year": "2015",
@@ -141,7 +141,7 @@
         { "th": "มิถุนายน 2019 ได้รับเชิญจากพักนารีไปงานกีฬาครบรอบ 6 ปีของ Home Alone และโชว์กินจาจังมยอนคู่กับฮวาซา", "en": "In June 2019 Park Na-rae invited her to Home Alone's 6th-anniversary sports day, where she shared a jjajangmyeon mukbang with Hwasa", "ko": "2019년 6월 박나래의 초대로 《나 혼자 산다》 6주년 체육대회에 출연해 화사와 짜장면 먹방을 선보였다" },
         { "th": "Miss Lee ออกอากาศกันยายน 2019 ทาง tvN", "en": "“Miss Lee” aired on tvN from September 2019", "ko": "《청일전자 미쓰리》는 2019년 9월 tvN에서 방송" }
       ],
-      "tags": [{ "th": "YouTube", "en": "YouTube", "ko": "유튜브" }]
+      "tags": [{ "th": "tvN", "en": "tvN", "ko": "tvN" }, { "th": "บทนำ", "en": "Lead role", "ko": "주연" }]
     },
     {
       "year": "2021",
@@ -181,7 +181,7 @@
         { "th": "ปี 2023 เป็นสมาชิกประจำรายการ Hyemiriyechaepa ในฐานะพี่ใหญ่ของทีม และโดดเด่นในเกมทายเพลง", "en": "In 2023 she became a regular on Hyemiriyechaepa as the eldest of the cast, shining in its music quizzes", "ko": "2023년 맏언니로 《혜미리예채파》에 고정 출연해 음악 퀴즈에서 활약했다" },
         { "th": "Agents of Mystery ซีซันแรกฉายทาง Netflix ในปี 2024", "en": "Season 1 of Agents of Mystery premiered on Netflix in 2024", "ko": "2024년 넷플릭스 《미스터리 수사단 1》 공개" }
       ],
-      "tags": [{ "th": "ภาพยนตร์", "en": "Film", "ko": "영화" }, { "th": "Netflix", "en": "Netflix", "ko": "넷플릭스" }]
+      "tags": [{ "th": "ภาพยนตร์", "en": "Film", "ko": "영화" }]
     },
     {
       "year": "2025",
@@ -207,7 +207,7 @@
         "en": "2026 brings the ENA drama “Dream to You” (as Joo Yi-jae), the film “Night Fever” (as Ari), Netflix's “Agents of Mystery 2”, and the Reply 1988 10th-anniversary reunion show.",
         "ko": "2026년에는 ENA 드라마 《그대에게 드림》(주이재 역), 영화 《열대야》(아리 역), 《미스터리 수사단 2》, 《응답하라 1988 10주년》으로 활약 중이다."
       },
-      "tags": [{ "th": "ENA", "en": "ENA", "ko": "ENA" }]
+      "tags": [{ "th": "ENA", "en": "ENA", "ko": "ENA" }, { "th": "ภาพยนตร์", "en": "Film", "ko": "영화" }, { "th": "Netflix", "en": "Netflix", "ko": "넷플릭스" }]
     }
   ]
 }

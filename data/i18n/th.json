@@ -56,7 +56,7 @@
     "education": "การศึกษา",
     "family": "ครอบครัว",
     "nicknames": "ฉายา",
-    "nicknamesSub": "ที่มาของแต่ละฉายา อ้างอิงจาก namu.wiki",
+    "nicknamesSub": "ที่มาของแต่ละฉายา",
     "age": "อายุ {age} ปี"
   },
   "journey": {
@@ -65,7 +65,7 @@
     "deepTitle": "เจาะลึก",
     "deepSub": "เรื่องราวเบื้องหลังแต่ละช่วงสำคัญ",
     "keyFacts": "ข้อมูลน่ารู้",
-    "readSource": "อ่านต้นฉบับบน namu.wiki",
+    "readSource": "อ่านต้นฉบับ (ภาษาเกาหลี)",
     "readMore": "อ่านเพิ่มเติม",
     "readLess": "ย่อลง"
   },

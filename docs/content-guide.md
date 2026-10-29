@@ -17,7 +17,9 @@
 - Keep it positive and factual. Skip controversies/rumors unless the admin explicitly asks; never include private info about non-celebrities.
 - **No em dashes (—) anywhere in site text** (owner's style rule). Use ": " instead, e.g. "Reply 1988: Sung Deok-sun". En dashes in ranges (2018–2020) are fine.
 - Thai name for the fan base is **บ้านแฟนคลับ** (never "บ้านเบส").
-- Nickname origins (`profile.json → nicknames[].desc`) must come from the source. If namu.wiki gives no origin, say so and set `"unknown": true`; never guess.
+- Nickname origins (`profile.json → nicknames[].desc`) must come from the source (namu.wiki, or Korean news found online). If no source gives an origin,
+  write "Origin not documented yet" and set `"unknown": true`; never guess.
+- Don't name namu.wiki inside content text (nickname origins, journey cards…): the attribution lives in the footer and About page only.
 
 ## Sourcing
 - Source of truth: Korean namu.wiki article <https://namu.wiki/w/혜리> — text pasted by the admin in the request issue.
@@ -41,6 +43,8 @@ Optional: `agencyUrl` (makes the Agency fact a link), `nicknames[].unknown: true
 `data/journey.json` — `items[]`: `year` (string), optional `yearLabel` (localized, replaces year), `title`, `body`, `tags[]` (localized),
 optional `highlight: true` (shown on the home page "Signature moments"), optional `more[]` (localized bullets behind a "Read more" toggle on the card:
 extra facts from namu.wiki, summarized in our own words). Keep chronological order (oldest first).
+`tags[]` describe only the card's **title topic** (its network, role type, the award it won): never tag something mentioned in passing
+(e.g. no "Netflix" on the Victory card just because the body mentions Agents of Mystery), so fast readers aren't misled.
 
 `data/site.json → thaiNoBreak` — Thai proper nouns (Korean names, places, nicknames) that must never be split across lines.
 The Thai line-breaking dictionary doesn't know them ("คยอ|งกี"), so `t()`/`ui()` glue them with invisible word joiners.
@@ -93,6 +97,10 @@ Skip the controversies sub-page and private relationships unless the admin expli
 - `channels[]`: `type` (`instagram|youtube|x|weibo|weverse|rednote|web`), `name`, `handle`, `url` — official accounts only.
 - `videos[]`: `id` (11-char YouTube id), `title`, optional `date`.
 - `gallery[]`: `src` (`images/gallery/…webp`), `width`, `height`, `caption`, `credit`, optional `featured` (home hero), `avatar` (profile).
+- `workGallery[]` (optional, written by the Admin "รูปหมวด จากผลงานของเธอ" manager): the saved order of the Media page's "From her works" group.
+  Items are `{ "tmdb": "/still.jpg" }` (a TMDB still; optional `caption`/`credit` override the work title / "TMDB") or admin uploads
+  `{ src, width, height, caption, credit }`. Without it the group is sorted by work, newest first (`workPhotos()` in core.js).
+  Stills of works synced after the last save appear on top. Hiding a still in Admin adds it to `site.json → external.tmdbImageIgnore`.
 
 ## JSON formatting
 2-space indentation, UTF-8, trailing newline. The admin editor rewrites files in this format, so don't rely on custom alignment.

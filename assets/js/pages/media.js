@@ -1,11 +1,11 @@
-import { loadJSON, loadExternal, tmdbImg, t, tx, ui, esc, icon, formatDate, formatNumber } from '../core.js';
+import { loadJSON, loadExternal, tmdbImg, workPhotos, t, tx, ui, esc, icon, formatDate, formatNumber } from '../core.js';
 
 const SOCIAL_ICON = { instagram: 'instagram', youtube: 'youtube', x: 'x', weibo: 'weibo', weverse: 'weverse', rednote: 'rednote', web: 'globe' };
 let photos = [];
 let onKey;
 
 export async function render({ site }) {
-  const [media, ext] = await Promise.all([loadJSON('data/media.json'), loadExternal()]);
+  const [media, works, ext] = await Promise.all([loadJSON('data/media.json'), loadJSON('data/works.json'), loadExternal()]);
   const { channel } = ext.yt;
 
   // Admin-picked videos first, then the latest uploads from her channel (synced from YouTube).
@@ -24,11 +24,9 @@ export async function render({ site }) {
       src: tmdbImg(img.path, 'h632'), width: img.width, height: img.height, caption: person.name, credit: 'TMDB',
     })),
   ];
-  const stills = Object.values(ext.tmdb.works).flatMap((w) => (w.stills || []).filter((img) => !hidden.has(img.path)).map((img) => ({
-    src: tmdbImg(img.path, 'w780'), width: img.width, height: img.height, caption: w.title, credit: 'TMDB',
-  })));
+  const stills = workPhotos(media, ext.tmdb, works, hidden);
   photos = [...portraits, ...stills];
-  const galleryHtml = (list, offset) => `<div class="gallery">${list.map((g, i) => `
+  const galleryHtml = (list, offset, cls = '') => `<div class="gallery ${cls}">${list.map((g, i) => `
     <button class="gallery-item reveal" type="button" data-img="${offset + i}" style="--d:${(i % 3) * 0.05}s">
       <img src="${esc(g.src)}" alt="${tx(g.caption)}" loading="lazy" ${g.width ? `width="${g.width}" height="${g.height}"` : ''}>
       <span class="gallery-cap">${tx(g.caption)}${g.credit ? ` · © ${esc(g.credit)}` : ''}</span>
@@ -76,7 +74,7 @@ export async function render({ site }) {
       <h2 class="reveal">${esc(ui('media.gallery'))}</h2>
       ${photos.length ? `
         ${portraits.length ? `<h3 class="gallery-group reveal">${icon('user')} ${esc(ui('media.galleryHyeri'))} <span class="count">${portraits.length}</span></h3>${galleryHtml(portraits, 0)}` : ''}
-        ${stills.length ? `<h3 class="gallery-group reveal">${icon('film')} ${esc(ui('media.galleryWorks'))} <span class="count">${stills.length}</span></h3>${galleryHtml(stills, portraits.length)}` : ''}`
+        ${stills.length ? `<h3 class="gallery-group reveal">${icon('film')} ${esc(ui('media.galleryWorks'))} <span class="count">${stills.length}</span></h3>${galleryHtml(stills, portraits.length, 'gallery-works')}` : ''}`
       : `<div class="card empty reveal">${icon('image')}<p>${esc(ui('media.noPhotos'))}</p></div>`}
     </div>
   </section>

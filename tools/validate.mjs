@@ -116,6 +116,11 @@ if (media) {
     if (!g.src || !existsSync(join(root, g.src))) errors.push(`media.json gallery: file not found "${g.src}"`);
     if (/^https?:/.test(g.src || '')) errors.push(`media.json gallery: "${g.src}" must be a file in this repo, not a hotlink`);
   }
+  // "From her works" order: TMDB stills by path ({ tmdb: "/x.jpg" }) or admin uploads (same rules as gallery).
+  for (const g of media.workGallery || []) {
+    if (g.tmdb) { if (!/^\/[\w-]+\.(jpg|png)$/.test(g.tmdb)) errors.push(`media.json workGallery: bad TMDB path "${g.tmdb}"`); continue; }
+    if (!g.src || /^https?:/.test(g.src) || !existsSync(join(root, g.src))) errors.push(`media.json workGallery: file not found "${g.src}"`);
+  }
   for (const v of media.videos || []) {
     if (!/^[\w-]{11}$/.test(v.id || '')) errors.push(`media.json videos: bad YouTube id "${v.id}"`);
   }

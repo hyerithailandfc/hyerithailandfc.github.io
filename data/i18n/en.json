@@ -56,7 +56,7 @@
     "education": "Education",
     "family": "Family",
     "nicknames": "Nicknames",
-    "nicknamesSub": "Where each nickname came from, according to namu.wiki.",
+    "nicknamesSub": "Where each nickname came from.",
     "age": "{age} years old"
   },
   "journey": {
@@ -65,7 +65,7 @@
     "deepTitle": "Deep dives",
     "deepSub": "The stories behind the milestones.",
     "keyFacts": "Key facts",
-    "readSource": "Read the original on namu.wiki",
+    "readSource": "Read the original (Korean)",
     "readMore": "Read more",
     "readLess": "Show less"
   },

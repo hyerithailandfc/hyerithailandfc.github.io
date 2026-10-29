@@ -28,6 +28,41 @@ export function tmdbImg(path, size = 'w342') {
   return /^(https?:|data:|images\/)/.test(path) ? path : `https://image.tmdb.org/t/p/${size}${path}`;
 }
 
+/**
+ * Photos for the Media page's "From her works" group, shared with the Admin page.
+ * Default: TMDB stills grouped by work, newest work first (works.json year; later entries win ties).
+ * Once the admin saves an order, `media.workGallery` lists it: `{ tmdb: "/still.jpg" }` items (optional caption/credit
+ * overrides) and admin uploads `{ src, width, height, caption, credit }`. Stills synced after that (new works) go on top.
+ * Hidden paths (`site.external.tmdbImageIgnore`) never show.
+ */
+export function workPhotos(media, tmdb, works, hidden = new Set()) {
+  const order = [...(works.drama || []).map((w) => ['drama', w]), ...(works.movie || []).map((w) => ['movie', w])]
+    .map(([kind, w], i) => ({ key: workKey(kind, w), year: Number(w.year) || 0, i }))
+    .sort((a, b) => b.year - a.year || b.i - a.i);
+  const auto = [];
+  const byPath = new Map();
+  for (const { key } of order) {
+    const w = tmdb.works?.[key];
+    for (const s of w?.stills || []) {
+      if (hidden.has(s.path) || byPath.has(s.path)) continue;
+      const item = { tmdb: s.path, src: tmdbImg(s.path, 'w780'), width: s.width, height: s.height, caption: w.title, credit: 'TMDB' };
+      auto.push(item);
+      byPath.set(s.path, item);
+    }
+  }
+  const curated = media.workGallery || [];
+  if (!curated.length) return auto;
+  const listed = new Set(curated.map((c) => c.tmdb).filter(Boolean));
+  return [
+    ...auto.filter((a) => !listed.has(a.tmdb)),
+    ...curated.flatMap((c) => {
+      if (!c.tmdb) return c.src ? [{ ...c }] : [];
+      const a = byPath.get(c.tmdb);
+      return a ? [{ ...a, ...(c.caption ? { caption: c.caption } : {}), ...(c.credit ? { credit: c.credit } : {}) }] : [];
+    }),
+  ];
+}
+
 /** Synced data from TMDB and YouTube (written weekly by tools/sync-external.mjs). Never throws. */
 export async function loadExternal() {
   const [tmdb, yt] = await Promise.all([
@@ -154,6 +189,15 @@ export function reveal(root = document) {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   root.querySelectorAll('.reveal:not(.in)').forEach((el) => revealObserver.observe(el));
+}
+
+/** Smooth-scroll so `el` sits just below the sticky header. Uses layout offsets, so a running
+ *  `.reveal` slide-in (translateY) doesn't push the target under the header. */
+export function scrollToEl(el, gap = 20) {
+  let y = 0;
+  for (let n = el; n; n = n.offsetParent) y += n.offsetTop;
+  const header = document.getElementById('site-header')?.offsetHeight || 0;
+  window.scrollTo({ top: Math.max(0, y - header - gap), behavior: 'smooth' });
 }
 
 /** Small inline SVG icon set (stroke icons, 24×24). */

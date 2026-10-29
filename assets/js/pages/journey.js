@@ -1,4 +1,4 @@
-import { loadJSON, tx, ui, esc, icon, routeQuery } from '../core.js';
+import { loadJSON, tx, ui, esc, icon, routeQuery, scrollToEl } from '../core.js';
 
 export async function render() {
   const [{ items }, stories] = await Promise.all([loadJSON('data/journey.json'), loadJSON('data/stories.json')]);
@@ -71,8 +71,7 @@ export function mount(root) {
   // Wait for the router's scroll-to-top after navigation, then jump to the entry.
   setTimeout(() => {
     target.classList.add('in');
-    const y = target.getBoundingClientRect().top + window.scrollY - (document.getElementById('site-header')?.offsetHeight || 0) - 24;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    scrollToEl(target);
     target.querySelector('.tl-card')?.classList.add('flash');
   }, 120);
 }

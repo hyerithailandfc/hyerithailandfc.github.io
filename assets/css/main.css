@@ -301,8 +301,8 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .polaroid-img { width: 100%; height: 100%; border-radius: 12px; background: var(--grad-hero); display: grid; place-items: center; overflow: hidden; position: relative; }
 .polaroid-img img { width: 100%; height: 100%; object-fit: cover; }
 .polaroid-mono { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(5rem, 16vw, 9rem); background: var(--grad-pop); -webkit-background-clip: text; background-clip: text; color: transparent; }
-/* Hyeri's real signature (white PNG, public domain) "signed" on the photo in dark ink; the white halo keeps it readable on any photo. */
-.polaroid-img .polaroid-sign { position: absolute; right: 6%; bottom: 4%; width: 46%; height: auto; object-fit: contain; transform: rotate(-8deg); filter: brightness(0) drop-shadow(0 0 1.5px rgba(255, 255, 255, .95)) drop-shadow(0 0 6px rgba(255, 255, 255, .7)); opacity: .85; pointer-events: none; }
+/* Hyeri's real signature (black SVG, public domain) "signed" on the photo; the white halo keeps it readable on dark photos too. */
+.polaroid-img .polaroid-sign { position: absolute; right: 6%; bottom: 4%; width: 46%; height: auto; object-fit: contain; transform: rotate(-8deg); filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, .95)) drop-shadow(0 0 6px rgba(255, 255, 255, .7)); opacity: .95; pointer-events: none; }
 .polaroid-cap { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: var(--font-display); color: var(--ink-2); font-size: 1.05rem; }
 .sticker { position: absolute; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; box-shadow: var(--shadow); font-size: 1.6rem; animation: float 5s ease-in-out infinite; z-index: 2; }
 .sticker svg { width: 30px; height: 30px; color: #fff; }
@@ -510,12 +510,15 @@ a.chip-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--a
 .video-meta { padding: 14px 18px 18px; }
 .video-meta h3 { font-size: 1.05rem; margin: 0; }
 
-.gallery { columns: 3 260px; column-gap: 14px; }
+/* Row-by-row grid (reads left→right in the saved order); photos are cropped to one shape per group, the lightbox shows them whole. */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 14px; }
 .gallery-group { display: flex; align-items: center; gap: 8px; font-size: 1.15rem; margin: 22px 0 12px; color: var(--ink-2); }
 .gallery-group svg { width: 20px; height: 20px; color: var(--accent); }
 .gallery-group .count { background: var(--accent-soft); color: var(--accent); border-radius: var(--radius-pill); padding: 0 10px; font-size: .85rem; }
-.gallery-item { break-inside: avoid; margin: 0 0 14px; border-radius: var(--radius); overflow: hidden; position: relative; cursor: zoom-in; box-shadow: var(--shadow-sm); border: 0; padding: 0; display: block; width: 100%; background: var(--surface); }
-.gallery-item img { width: 100%; height: auto; transition: transform .6s var(--ease-out); }
+.gallery-item { margin: 0; border-radius: var(--radius); overflow: hidden; position: relative; cursor: zoom-in; box-shadow: var(--shadow-sm); border: 0; padding: 0; display: block; width: 100%; aspect-ratio: 4 / 5; background: var(--surface); }
+.gallery-works .gallery-item { aspect-ratio: 16 / 9; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; transition: transform .6s var(--ease-out); }
+.gallery-works .gallery-item img { object-position: center; }
 .gallery-item:hover img { transform: scale(1.05); }
 .gallery-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 14px 10px; color: #fff; font-size: .88rem; text-align: left; background: linear-gradient(transparent, rgba(10, 25, 50, .7)); opacity: 0; transition: opacity .3s; }
 .gallery-item:hover .gallery-cap, .gallery-item:focus-visible .gallery-cap { opacity: 1; }

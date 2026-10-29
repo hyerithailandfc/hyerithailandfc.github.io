@@ -52,6 +52,7 @@ If you add a token, add it to **both** light and dark blocks.
 | `.counter`, `.counter-num[data-count]` | Animated number tiles (call `countUp(root)` in `mount`) |
 | `.timeline > .tl-item` | Alternating vertical timeline |
 | `.highlight` + `.g-0..g-3` | Gradient-topped feature cards |
+| `.gallery` (+ `.gallery-works`) > `.gallery-item` | Photo grid, row by row in data order; tiles cropped 4:5 (16:9 for work stills), lightbox shows the full photo |
 | `.row-card` | Compact list row (year / title / badge) |
 | `.marquee > .marquee-track` | Infinite scrolling chip strip (duplicate the content once) |
 | `.work-card.has-poster` + `.work-poster` / `.work-info` | Work card with a TMDB poster on the left |
@@ -65,6 +66,7 @@ If you add a token, add it to **both** light and dark blocks.
 
 ## Motion
 - Entrance: add `.reveal` to blocks; stagger with `style="--d:.1s"` (max ~0.3s). `reveal()` runs after every render.
+- To jump to an element (deep links like `?item=`), use `scrollToEl(el)` from core.js: it ignores the `.reveal` slide-in offset so the target never ends up under the sticky header.
 - Hover: lift (`translateY(-3…-6px)`) and/or tiny rotate with `--ease-pop`.
 - Ambient: floating stickers, drifting background blobs, twinkle sparkles — keep to the hero/headers, never behind long text.
 - Durations 0.3–0.9s for UI; ambient loops 5–40s. Never flash, never autoplay sound.

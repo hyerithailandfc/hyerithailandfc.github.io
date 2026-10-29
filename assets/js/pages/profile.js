@@ -1,4 +1,4 @@
-import { loadJSON, loadExternal, tmdbImg, tx, ui, esc, icon, formatDate, seoulToday, routeQuery } from '../core.js';
+import { loadJSON, loadExternal, tmdbImg, tx, ui, esc, icon, formatDate, seoulToday, routeQuery, scrollToEl } from '../core.js';
 
 function age(iso) {
   const [y, m, d] = iso.split('-').map(Number);
@@ -108,8 +108,5 @@ export function mount(root) {
   });
   if (routeQuery().section !== 'nicknames') return;
   const target = root.querySelector('#nicknames');
-  setTimeout(() => {
-    const y = target.getBoundingClientRect().top + window.scrollY - (document.getElementById('site-header')?.offsetHeight || 0) - 8;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }, 120);
+  setTimeout(() => scrollToEl(target, 8), 120);
 }

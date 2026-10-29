@@ -62,6 +62,28 @@
 .thumb img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .thumb .btn { position: absolute; right: 6px; bottom: 6px; padding: 4px 10px; font-size: .8rem; }
 
+/* Photo manager (Media tab): reorder by drag or arrows, edit, delete/hide */
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.photo-grid-wide { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.photo { position: relative; display: flex; flex-direction: column; border-radius: var(--radius-sm); overflow: hidden; background: var(--surface-2); border: 2px solid var(--line); cursor: grab; transition: transform .2s var(--ease-out), opacity .2s; }
+.photo.dragging { opacity: .45; transform: scale(.97); }
+.photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; }
+.photo-grid-wide .photo img { aspect-ratio: 16 / 9; object-position: center; }
+.photo-num { position: absolute; left: 6px; top: 6px; min-width: 26px; height: 26px; padding: 0 6px; border-radius: var(--radius-pill); background: var(--surface); color: var(--accent); font-weight: 800; font-size: .8rem; display: grid; place-items: center; box-shadow: var(--shadow-sm); }
+.photo-cap { padding: 8px 10px 0; font-size: .8rem; display: flex; flex-direction: column; gap: 2px; min-height: 52px; }
+.photo-cap b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.photo-cap span, .photo-cap i { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.photo-tools { display: flex; gap: 4px; padding: 8px 10px 10px; flex-wrap: wrap; }
+.photo-tools button { border: 0; border-radius: 8px; padding: 4px 8px; font: inherit; font-size: .8rem; font-weight: 700; background: var(--surface); color: var(--ink-2); box-shadow: var(--shadow-sm); cursor: pointer; }
+.photo-tools button:hover:not(:disabled) { color: var(--accent); }
+.photo-tools button:disabled { opacity: .35; cursor: default; }
+.photo-tools .danger { margin-left: auto; background: #FFE3E7; color: #B3243C; }
+:root[data-theme="dark"] .photo-tools .danger { background: #4A2230; color: #FF9BAA; }
+.save-bar[hidden], [data-hyeri-only][hidden] { display: none; }
+.edit-dialog { width: min(92vw, 640px); max-height: 90vh; overflow: auto; border: 0; color: var(--ink); }
+.edit-dialog::backdrop { background: rgba(10, 25, 50, .45); }
+.edit-preview { width: 100%; max-height: 240px; object-fit: contain; border-radius: var(--radius-sm); background: var(--surface-2); margin-bottom: 12px; }
+
 .toast-wrap { position: fixed; left: 50%; bottom: 20px; translate: -50% 0; z-index: 100; display: flex; flex-direction: column; gap: 8px; width: min(92vw, 460px); }
 .toast { padding: 12px 16px; border-radius: var(--radius-sm); background: var(--ink); color: var(--bg); box-shadow: var(--shadow-lg); animation: page-in .35s var(--ease-out); font-weight: 700; }
 .toast.err { background: #C7344F; color: #fff; }
